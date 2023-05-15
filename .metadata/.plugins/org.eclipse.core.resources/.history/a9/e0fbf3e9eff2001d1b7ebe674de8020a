@@ -1,0 +1,135 @@
+package com.demo.setup;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import com.demo.testcases.LoginTest;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class BaseSelenium {
+	public static WebDriver driver;
+	public Properties properties;
+	Logger logger = Logger.getLogger(BaseSelenium.class);
+
+	public BaseSelenium() {
+		// Constructor for loading the properties file
+		String filepath = System.getProperty("user.dir") + "\\src\\test\\java\\com\\demo\\properties\\demo.properties";
+		properties = new Properties();
+		FileInputStream fis = null;
+		try {
+			fis = new FileInputStream(filepath);
+			properties.load(fis);
+			//logger.info("Property file loaded successfully");
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if (fis != null) {
+				try {
+					fis.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+
+	// @BeforeClass annotated method will be run before the first test method in the
+	// current class is invoked
+	@BeforeClass
+	public void setup() {
+		BaseSelenium base = new BaseSelenium();
+		String browser_name = properties.getProperty("browser_name");
+		logger.info("Browser name type =" + " " + browser_name);
+		if (browser_name.equals("chrome")) {
+
+			// System cromedriver path
+			String cromedriverPath = System.getProperty("user.dir") + "\\driver\\chromedriver.exe";
+
+			// Set the path to the chromedriver executable
+			System.setProperty("webdriver.chrome.driver", cromedriverPath);
+
+			// Create a new ChromeDriver instance
+			driver = new ChromeDriver();
+
+			/*
+			 * 2nd way to initilize the chrome driver add webdriver manager dependency on
+			 * pom.xml WebDriverManager.chromedriver().setup();
+			 */
+             logger.info("Chrome driver executed successfully");
+		} else if (browser_name.equals("firefox")) {
+
+			// System cromedriver path
+			String geckodriverPath = System.getProperty("user.dir") + "\\driver\\geckodriver.exe";
+
+			// Set the path to the geckodriver executable
+			System.setProperty("webdriver.gecko.driver", geckodriverPath);
+
+			// Create a new FirefoxDriver instance
+
+			driver = new FirefoxDriver();
+
+			/*
+			 * 2nd way to initilize the firefox driver add webdriver manager dependency on
+			 * pom.xml WebDriverManager.firefoxdriver().setup();
+			 */
+			logger.info("Fire fox browseer executed successfully");
+
+		} else {
+			throw new IllegalArgumentException("Invalid browser type: " + browser_name);
+		}
+
+		// Delete all the cookies for the current domain
+		driver.manage().deleteAllCookies();
+
+		// Maximize Browser in Selenium
+		driver.manage().window().maximize();
+
+		// Wait for a certain measure of time before throwing an exception.
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+		// Navigate to the base appliction url
+		driver.get(properties.getProperty("app_url"));
+		logger.info("Url is opening successfully");
+
+	}
+	// capture failed screenshot method
+	public static void screenshot() {
+		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		try {
+			String destination_path = System.getProperty("user.dir");
+			FileUtils.copyFile(screenshot, new File(destination_path + "\\screenshot\\" + "failedscreenshot.png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	// @AfterClass annotated method will be run after all the test methods in the
+	// current class have been run
+
+	@AfterClass
+	public void tearDown() {
+
+		if (driver != null) {
+			driver.quit();
+			logger.info("Browser instance closed successfully");
+		}
+	}
+
+}

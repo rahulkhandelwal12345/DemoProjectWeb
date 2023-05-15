@@ -1,0 +1,23 @@
+package com.demo.testcases;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+import com.demo.pages.LoginPage;
+import com.demo.setup.BaseSelenium;
+
+public class LoginTest extends BaseSelenium {
+
+	@Test
+	public void login() throws InterruptedException {
+		LoginPage page = new LoginPage(driver);
+
+		page.enterValidEmail();
+
+		page.enterValidPassword();
+		page.click_login_btn();
+
+	}
+
+}

@@ -1,0 +1,25 @@
+package com.demo.utilities;
+
+import org.openqa.selenium.WebElement;
+
+public class Utilities {
+	public void sendkeys(WebElement element, String value) {
+		element.sendKeys(value);
+
+	}
+
+	public void click(WebElement element) {
+		element.click();
+	}
+	
+	public void screenshot() {
+		
+		File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(screenshotFile, new File("screenshot.png"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+	
+
+}

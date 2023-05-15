@@ -1,0 +1,27 @@
+package com.demo.testcases;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+import com.demo.pages.LoginPage;
+import com.demo.setup.BaseSelenium;
+
+import dev.failsafe.internal.util.Assert;
+
+public class LoginTest extends BaseSelenium {
+
+	@Test
+	public void login() throws InterruptedException {
+		LoginPage page = new LoginPage(driver);
+		page.enterValidEmail();
+		page.enterValidPassword();
+		page.click_login_btn();
+	    String actual_username=page.verify_user_name().getText();
+	    Assert.assertEquals("Jayu", actual_username);
+	      
+		
+
+	}
+
+}

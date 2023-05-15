@@ -1,0 +1,13 @@
+package com.demo.utilities;
+
+import org.openqa.selenium.WebElement;
+
+public class Utilities {
+	
+	public String sendkeys(WebElement element,String value) {
+		element.sendKeys(value);
+		return value;
+		
+	}
+
+}
