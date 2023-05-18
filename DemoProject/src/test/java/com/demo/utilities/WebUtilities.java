@@ -6,7 +6,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.github.dockerjava.api.command.PullImageCmd;
 
-public class Utilities {
+public class WebUtilities {
 	public void sendkeys(WebElement element, String value) {
 		element.sendKeys(value);
 

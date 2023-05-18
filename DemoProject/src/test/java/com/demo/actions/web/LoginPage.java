@@ -1,4 +1,4 @@
-package com.demo.pages;
+package com.demo.actions.web;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,24 +6,24 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.demo.setup.BaseSelenium;
-import com.demo.utilities.Utilities;
+import com.demo.utilities.WebUtilities;
 
 import net.bytebuddy.asm.MemberSubstitution.FieldValue;
 
 public class LoginPage extends BaseSelenium {
 	public WebDriver driver;
-	Utilities utilities = new Utilities();
+	WebUtilities utilities = new WebUtilities();
 
-	@FindBy(id = "email")
+	@FindBy(xpath = "//input[@placeholder=\"Username\"]")
 	private WebElement Email;
 
-	@FindBy(id = "pass")
+	@FindBy(xpath = "//input[@placeholder=\"Password\"]")
 	private WebElement Password;
 
-	@FindBy(name = "login")
+	@FindBy(xpath = "//button[@type=\"submit\"]")
 	private WebElement Login_btn;
 
-	@FindBy(xpath = "//span[contains(text(),'Jay')]")
+	@FindBy(xpath = "//span[contains(text(),'Admin')]")
 	private WebElement Login_Username;
 
 	@FindBy(xpath = "//*[@id=\"scrollview\"]/div/div/div/div[1]/div/div[3]/div[1]/div[1]/span/div/i")
@@ -68,11 +68,11 @@ public class LoginPage extends BaseSelenium {
 	}
 
 	public void enterValidEmail() {
-		utilities.sendkeys(Email, "rahul.khandelwal664@gmail.com");
+		utilities.sendkeys(Email, "Admin");
 	}
 
 	public void enterValidPassword() {
-		utilities.sendkeys(Password, "rahul@123");
+		utilities.sendkeys(Password, "admin123");
 	}
 
 	public void enterInvalidPassword() {

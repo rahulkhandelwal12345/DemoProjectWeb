@@ -7,7 +7,7 @@
 	</listeners>
 	<test thread-count="5" name="Test">
 		<classes>
-			<class name="com.demo.testcases.LoginTest" />
+			<class name="com.demo.testcases.mobile.MobileLogin" />
 			<class name="com.demo.setup.BaseSelenium" />
 		</classes>
 	</test>
