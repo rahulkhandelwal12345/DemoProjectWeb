@@ -1,5 +1,7 @@
 package com.demo.actions.web;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,15 +16,21 @@ public class LoginPage extends BaseSelenium {
 	public WebDriver driver;
 	WebUtilities utilities = new WebUtilities();
 
-	@FindBy(xpath = "//input[@placeholder=\"Username\"]")
+	@FindBy(id = "input_0")
 	private WebElement Email;
 
-	@FindBy(xpath = "//input[@placeholder=\"Password\"]")
+	@FindBy(id = "input_1")
 	private WebElement Password;
 
-	@FindBy(xpath = "//button[@type=\"submit\"]")
+	@FindBy(xpath = "//*[@class=\"text-left mt-10\"]/button")
 	private WebElement Login_btn;
 
+	@FindBy(xpath = "//*[@class = 'ng-isolate-scope' ]/div/input")
+	private List<WebElement> otp;
+	
+	@FindBy(css = ".btn")
+	private WebElement verifybtn;
+	
 	@FindBy(xpath = "//span[contains(text(),'Admin')]")
 	private WebElement Login_Username;
 
@@ -66,21 +74,13 @@ public class LoginPage extends BaseSelenium {
 		PageFactory.initElements(driver, this);
 
 	}
-
-	public void enterValidEmail() {
-		utilities.sendkeys(Email, "Admin");
-	}
-
-	public void enterValidPassword() {
-		utilities.sendkeys(Password, "admin123");
-	}
-
+	
 	public void enterInvalidPassword() {
 		utilities.sendkeys(Password, "rahul@12356");
 	}
 
-	public void click_login_btn() {
-		utilities.click(Login_btn);
+	public void enterValidEmail() {
+		utilities.sendkeys(Email, "josh_doctor");
 	}
 
 	public WebElement verify_user_name() {
@@ -89,6 +89,29 @@ public class LoginPage extends BaseSelenium {
 
 	public String validateErrorMessage() {
 		return utilities.getText(errormessage);
+	}
+	
+	public void enterValidPassword() {
+		utilities.sendkeys(Password, "josh123");
+	}
+
+	
+	public void click_login_btn() {
+		utilities.click(Login_btn);
+	}
+
+	public void enter_otp() {
+		for (WebElement element : otp){
+			utilities.sendkeys(element, element.getAttribute("Placeholder"));
+		}
+	}
+	
+	public void verify_otp() {
+		utilities.click(verifybtn);
+	}
+	
+	public void implicitWait() {
+		utilities.implicitWait();
 	}
 
 }

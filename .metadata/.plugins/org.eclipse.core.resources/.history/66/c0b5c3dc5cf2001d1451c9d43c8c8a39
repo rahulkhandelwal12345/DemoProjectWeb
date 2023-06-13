@@ -1,7 +1,0 @@
-package com.demo.listeners;
-
-import org.testng.ITestListener;
-
-public class MyTestListener implements ITestListener {
-
-}

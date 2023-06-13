@@ -22,6 +22,9 @@ public class WebLoginTest extends BaseSelenium {
 		page.enterValidEmail();
 		page.enterValidPassword();
 		page.click_login_btn();
+		page.enter_otp();
+		page.verify_otp();
+		page.implicitWait();
 		logger.info("Login test cases executed successfully");
 	}
 

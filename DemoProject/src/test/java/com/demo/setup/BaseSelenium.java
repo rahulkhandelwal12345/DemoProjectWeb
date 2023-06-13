@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -17,7 +18,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 
 import io.appium.java_client.AppiumDriver;
 
@@ -30,7 +33,7 @@ public class BaseSelenium {
 	public static URL url;
 
 	public BaseSelenium() {
-		String filepath = System.getProperty("user.dir") + "\\src\\test\\java\\com\\demo\\properties\\demo.properties";
+		String filepath = System.getProperty("user.dir") + "/src/test/java/com/demo/properties/demo.properties";
 		properties = new Properties();
 		FileInputStream fis = null;
 		try {
@@ -79,7 +82,7 @@ public class BaseSelenium {
 		}
 	}
 
-	@BeforeClass
+	@BeforeTest
 	public void setup() throws MalformedURLException {
 		BaseSelenium base = new BaseSelenium();
 		String runMode = properties.getProperty("run_mode");
@@ -115,13 +118,13 @@ public class BaseSelenium {
 
 		if (browser_name.equals("chrome")) {
 			System.out.println("Test");
-			String cromedriverPath = System.getProperty("user.dir") + "\\driver\\chromedriver.exe";
+			String cromedriverPath = System.getProperty("user.dir") + "/driver/chromedriver";
 			System.setProperty("webdriver.chrome.driver", cromedriverPath);
 			driver = new ChromeDriver();
 
 			logger.info("Chrome driver executed successfully");
 		} else if (browser_name.equals("firefox")) {
-			String geckodriverPath = System.getProperty("user.dir") + "\\driver\\geckodriver.exe";
+			String geckodriverPath = System.getProperty("user.dir") + "/drivergeckodriver.exe";
 			System.setProperty("webdriver.gecko.driver", geckodriverPath);
 			driver = new FirefoxDriver();
 
@@ -133,17 +136,17 @@ public class BaseSelenium {
 		
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get(properties.getProperty("app_url"));
 		logger.info("Url is opening successfully");
 
 	}
 
-	@AfterClass
+	@AfterTest
 	public void tearDown() {
 
 		if (driver != null) {
-			driver.quit();
+			//driver.quit();
 			logger.info("Browser instance closed successfully");
 		} else if( appiumDriver != null) {
 			appiumDriver.quit();
