@@ -1,0 +1,172 @@
+package com.demo.actions.web;
+
+import java.util.List;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+
+import com.demo.setup.BaseSelenium;
+import com.demo.utilities.WebUtilities;
+
+public class Prescription extends BaseSelenium {
+	public WebDriver driver;
+	WebUtilities utilities = new WebUtilities();
+	
+	public Prescription(WebDriver driver) {
+
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	@FindBy(xpath = "//label[@class='item item-input']/input")
+	private WebElement searchbox;
+	
+	@FindBy(xpath = "//*[@class=\"search-result ng-scope\"]/div/a")
+	private List<WebElement> search_result_drugs;
+	
+	@FindBy(xpath= "//*[@class=\"dropdown flex-100 border-0\"]/a/span")
+	private List<WebElement> added_drugs_list;
+	
+	@FindBy(xpath = "//*[@class=\"icon-trash mr-0\"]")
+	private WebElement delete_drugs;
+	
+	//@FindBy(xpath = "delete-block ng-scope")
+	@FindBy(xpath = "//*[@id=\"content\"]/div/div[1]/div[1]/div[2]/div[3]/a/i")
+	private WebElement delete_all_drugs_icon;
+	
+	@FindBy(xpath = "//*[@class=\"btn btn-blue\"]")
+	private WebElement add_new_drug_btn;
+	
+	public void verify_20_popular_drugs() {
+		utilities.implicitWait();
+		int count = 0;
+		for(WebElement result : search_result_drugs)
+		{
+			if(result.isDisplayed())
+			{
+				count++;
+			}
+		}
+		Assert.assertTrue(count==20);
+
+	}
+	
+	public void verify_popular_drugs_delete_icon() {
+		Assert.assertTrue(delete_all_drugs_icon.isDisplayed());
+	}
+	
+	public void add_popular_drug() {
+		for(WebElement result : search_result_drugs)
+		{
+			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>POPULAR DRUGS  "+result);
+//				try {
+//
+//					if(result.getText().contains("Tab COMBIFLAM (500 mg) "))
+//					{
+//						 Actions builder = new Actions(driver);
+//					     builder.moveToElement(result).click(result);
+//					     builder.perform();
+//						
+//					    break;
+//					}
+//				}
+//				catch(org.openqa.selenium.StaleElementReferenceException ex)
+//				{
+//					try {
+//						if(result.getText().contains("Tab COMBIFLAM (500 mg) "))
+//						{
+//							 Actions builder = new Actions(driver);
+//						     builder.moveToElement(result).click(result);
+//						     builder.perform();
+//							
+//						    break;
+//						}
+//					}
+//					catch(org.openqa.selenium.StaleElementReferenceException e)
+//					{
+//						if(result.getText().contains("Tab COMBIFLAM (500 mg) "))
+//						{
+//							 Actions builder = new Actions(driver);
+//						     builder.moveToElement(result).click(result);
+//						     builder.perform();
+//						     
+//						    break;
+//						}
+//					}
+//				}
+		}
+	}
+	
+	public void verify_added_popular_drug() {
+		for(WebElement added_drug : added_drugs_list)
+		{
+			Assert.assertTrue(added_drug.getText().contains("COMBIFLAM"));
+		}
+	}
+	
+	public void verify_added_drug() {
+		for(WebElement added_drug : added_drugs_list)
+		{
+			Assert.assertTrue(added_drug.getText().contains("NAXDOM"));
+		}
+	}
+	
+	
+	public void verify_delete_icon_for_added_drug() {
+		Assert.assertTrue(delete_drugs.isDisplayed());
+
+	}
+	
+	public void delete_added_drug() {
+		utilities.click(delete_drugs);
+	}
+	
+	public void search_drugs() {
+		utilities.sendkeys(searchbox, "Naxdom");
+		
+	}
+	
+	public void add_searched_drug() {
+		for(WebElement result : search_result_drugs)
+		{
+			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEARCHED DRUGS  "+result);
+
+//				try {
+//					if(result.getText().contains("Tab NAXDOM 250"))
+//					{
+//						System.out.println(">>>>>>>>>>>>>>>>>>>>DRUGS"+result.getText());
+//
+//						Actions builder = new Actions(driver);
+//					    builder.moveToElement(result).click(result);
+//					    builder.perform();
+//					    break;
+//					}
+//				}
+//				catch(org.openqa.selenium.StaleElementReferenceException ex)
+//				{
+//					if(result.getText().contains("Tab NAXDOM 250"))
+//					{
+//						System.out.println(">>>>>>>>>>>>>>>>>>>>DRUGS"+result.getText());
+//
+//						Actions builder = new Actions(driver);
+//					    builder.moveToElement(result).click(result);
+//					    builder.perform();
+//					    break;
+//					}
+//				}
+		}
+	
+	
+	}
+	
+	public void click_on_add_new_drug_btn() {
+		utilities.click(add_new_drug_btn);
+	}
+	
+	
+}

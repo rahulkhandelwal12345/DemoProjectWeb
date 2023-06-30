@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="4" total="6" passed="1" failed="1" skipped="0">
+<testng-results ignored="11" total="29" passed="13" failed="5" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-13T17:11:57 IST" name="Suite" finished-at="2023-06-13T17:12:14 IST" duration-ms="17035">
+  <suite started-at="2023-06-30T12:01:50 IST" name="Suite" finished-at="2023-06-30T12:02:32 IST" duration-ms="41393">
     <groups>
     </groups>
-    <test started-at="2023-06-13T17:11:57 IST" name="Test" finished-at="2023-06-13T17:12:14 IST" duration-ms="17035">
-      <class name="com.demo.testcases.web.WebAppointmentTest">
-        <test-method signature="appointment_for_existing_patient()[pri:1, instance:com.demo.testcases.web.WebAppointmentTest@126945f9]" started-at="2023-06-13T17:12:13 IST" name="appointment_for_existing_patient" finished-at="2023-06-13T17:12:14 IST" duration-ms="1668" status="FAIL">
+    <test started-at="2023-06-30T12:01:50 IST" name="Test" finished-at="2023-06-30T12:02:32 IST" duration-ms="41393">
+      <class name="com.demo.testcases.web.WebAppointmentInstructionsPageTest">
+        <test-method signature="instructions_tab()[pri:1, instance:com.demo.testcases.web.WebAppointmentInstructionsPageTest@1e636ea3]" started-at="2023-06-30T12:02:29 IST" name="instructions_tab" finished-at="2023-06-30T12:02:30 IST" duration-ms="955" status="FAIL">
           <exception class="org.openqa.selenium.StaleElementReferenceException">
             <message>
               <![CDATA[stale element reference: element is not attached to the page document
@@ -16,10 +16,10 @@ For documentation on this error, please visit: https://selenium.dev/exceptions/#
 Build info: version: '4.9.0', revision: 'd7057100a6'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.14.0-1059-oem', java.version: '17.0.5'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [32aff6623ff529a43d46fdd03641f804, getElementAttribute {id=c3a4c2f5-0ac4-4b05-9005-d28d93d40fc1, name=class}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.OAclJH}, goog:chromeOptions: {debuggerAddress: localhost:44747}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:44747/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on LINUX (32aff6623ff529a43d46fdd03641f804)] -> css selector: .panel.panel-default.panel-appointment.flex-gt-md-auto.flex-100]
-Session ID: 32aff6623ff529a43d46fdd03641f804]]>
+Command: [eea8190a8d1ca2eb32e9dfa94c1f7251, getElementText {id=69a6bc1c-c8a9-487f-94c9-89f66ac93a4e}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.3ZVfsm}, goog:chromeOptions: {debuggerAddress: localhost:33411}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:33411/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on LINUX (eea8190a8d1ca2eb32e9dfa94c1f7251)] -> css selector: .nav.nav-tabs>li]
+Session ID: eea8190a8d1ca2eb32e9dfa94c1f7251]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
@@ -28,10 +28,10 @@ For documentation on this error, please visit: https://selenium.dev/exceptions/#
 Build info: version: '4.9.0', revision: 'd7057100a6'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.14.0-1059-oem', java.version: '17.0.5'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [32aff6623ff529a43d46fdd03641f804, getElementAttribute {id=c3a4c2f5-0ac4-4b05-9005-d28d93d40fc1, name=class}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.OAclJH}, goog:chromeOptions: {debuggerAddress: localhost:44747}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:44747/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on LINUX (32aff6623ff529a43d46fdd03641f804)] -> css selector: .panel.panel-default.panel-appointment.flex-gt-md-auto.flex-100]
-Session ID: 32aff6623ff529a43d46fdd03641f804
+Command: [eea8190a8d1ca2eb32e9dfa94c1f7251, getElementText {id=69a6bc1c-c8a9-487f-94c9-89f66ac93a4e}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.3ZVfsm}, goog:chromeOptions: {debuggerAddress: localhost:33411}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:33411/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on LINUX (eea8190a8d1ca2eb32e9dfa94c1f7251)] -> css selector: .nav.nav-tabs>li]
+Session ID: eea8190a8d1ca2eb32e9dfa94c1f7251
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -45,9 +45,9 @@ at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(Driver
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
 at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-at org.openqa.selenium.remote.RemoteWebElement.getAttribute(RemoteWebElement.java:158)
-at com.demo.actions.web.HomePage.select_a_slot(HomePage.java:80)
-at com.demo.testcases.web.WebAppointmentTest.appointment_for_existing_patient(WebAppointmentTest.java:19)
+at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:207)
+at com.demo.actions.web.HomePage.open_instruction_tab(HomePage.java:410)
+at com.demo.testcases.web.WebAppointmentInstructionsPageTest.instructions_tab(WebAppointmentInstructionsPageTest.java:16)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -81,18 +81,317 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
           <reporter-output>
           </reporter-output>
+        </test-method> <!-- instructions_tab -->
+        <test-method signature="search_test()[pri:2, instance:com.demo.testcases.web.WebAppointmentInstructionsPageTest@1e636ea3]" started-at="2023-06-30T12:02:30 IST" name="search_test" finished-at="2023-06-30T12:02:31 IST" duration-ms="1514" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- search_test -->
+        <test-method signature="search_instruction()[pri:3, instance:com.demo.testcases.web.WebAppointmentInstructionsPageTest@1e636ea3]" started-at="2023-06-30T12:02:31 IST" name="search_instruction" finished-at="2023-06-30T12:02:31 IST" duration-ms="305" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- search_instruction -->
+        <test-method signature="search_procedure()[pri:4, instance:com.demo.testcases.web.WebAppointmentInstructionsPageTest@1e636ea3]" started-at="2023-06-30T12:02:31 IST" name="search_procedure" finished-at="2023-06-30T12:02:32 IST" duration-ms="425" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- search_procedure -->
+      </class> <!-- com.demo.testcases.web.WebAppointmentInstructionsPageTest -->
+      <class name="com.demo.testcases.web.WebAppointmentPrescriptionPageTest">
+        <test-method signature="prescription_tab()[pri:1, instance:com.demo.testcases.web.WebAppointmentPrescriptionPageTest@3da05287]" started-at="2023-06-30T12:02:13 IST" name="prescription_tab" finished-at="2023-06-30T12:02:13 IST" duration-ms="226" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- prescription_tab -->
+        <test-method signature="verify_20_popular_drugs()[pri:2, instance:com.demo.testcases.web.WebAppointmentPrescriptionPageTest@3da05287]" started-at="2023-06-30T12:02:13 IST" name="verify_20_popular_drugs" finished-at="2023-06-30T12:02:13 IST" duration-ms="54" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1577)
+at org.testng.Assert.assertTrue(Assert.java:56)
+at org.testng.Assert.assertTrue(Assert.java:66)
+at com.demo.actions.web.Prescription.verify_20_popular_drugs(Prescription.java:122)
+at com.demo.testcases.web.WebAppointmentPrescriptionPageTest.verify_20_popular_drugs(WebAppointmentPrescriptionPageTest.java:26)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_20_popular_drugs -->
+        <test-method signature="search_drugs()[pri:3, instance:com.demo.testcases.web.WebAppointmentPrescriptionPageTest@3da05287]" started-at="2023-06-30T12:02:13 IST" name="search_drugs" finished-at="2023-06-30T12:02:13 IST" duration-ms="420" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1577)
+at org.testng.Assert.assertTrue(Assert.java:56)
+at org.testng.Assert.assertTrue(Assert.java:66)
+at com.demo.actions.web.Prescription.verify_added_drug(Prescription.java:192)
+at com.demo.testcases.web.WebAppointmentPrescriptionPageTest.search_drugs(WebAppointmentPrescriptionPageTest.java:38)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- search_drugs -->
+        <test-method signature="verify_delete_icon_for_added_drugs()[pri:4, instance:com.demo.testcases.web.WebAppointmentPrescriptionPageTest@3da05287]" started-at="2023-06-30T12:02:13 IST" name="verify_delete_icon_for_added_drugs" finished-at="2023-06-30T12:02:23 IST" duration-ms="10063" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[@class="icon-trash mr-0"]"}
+  (Session info: chrome=111.0.5563.146)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.9.0', revision: 'd7057100a6'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.14.0-1059-oem', java.version: '17.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [eea8190a8d1ca2eb32e9dfa94c1f7251, findElement {using=xpath, value=//*[@class="icon-trash mr-0"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.3ZVfsm}, goog:chromeOptions: {debuggerAddress: localhost:33411}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:33411/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: eea8190a8d1ca2eb32e9dfa94c1f7251]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@class="icon-trash mr-0"]"}
+  (Session info: chrome=111.0.5563.146)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.9.0', revision: 'd7057100a6'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.14.0-1059-oem', java.version: '17.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [eea8190a8d1ca2eb32e9dfa94c1f7251, findElement {using=xpath, value=//*[@class="icon-trash mr-0"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.3ZVfsm}, goog:chromeOptions: {debuggerAddress: localhost:33411}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:33411/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: eea8190a8d1ca2eb32e9dfa94c1f7251
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+at jdk.proxy2/jdk.proxy2.$Proxy17.isDisplayed(Unknown Source)
+at com.demo.actions.web.Prescription.verify_delete_icon_for_added_drug(Prescription.java:198)
+at com.demo.testcases.web.WebAppointmentPrescriptionPageTest.verify_delete_icon_for_added_drugs(WebAppointmentPrescriptionPageTest.java:44)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_delete_icon_for_added_drugs -->
+        <test-method signature="add_new_drug_form_details()[pri:5, instance:com.demo.testcases.web.WebAppointmentPrescriptionPageTest@3da05287]" started-at="2023-06-30T12:02:23 IST" name="add_new_drug_form_details" finished-at="2023-06-30T12:02:29 IST" duration-ms="5317" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- add_new_drug_form_details -->
+      </class> <!-- com.demo.testcases.web.WebAppointmentPrescriptionPageTest -->
+      <class name="com.demo.testcases.web.WebAppointmentTest">
+        <test-method signature="appointment_for_existing_patient()[pri:1, instance:com.demo.testcases.web.WebAppointmentTest@15dcfae7]" started-at="2023-06-30T12:02:06 IST" name="appointment_for_existing_patient" description="Verify doctor&#039;s should be able to create appointment for the available appointment slot." finished-at="2023-06-30T12:02:09 IST" duration-ms="2691" status="PASS">
+          <reporter-output>
+          </reporter-output>
         </test-method> <!-- appointment_for_existing_patient -->
+        <test-method signature="verify_booked_slot()[pri:2, instance:com.demo.testcases.web.WebAppointmentTest@15dcfae7]" started-at="2023-06-30T12:02:09 IST" name="verify_booked_slot" description="Verify that doctor shouldn&#039;t able to create appointment in the already booked appointment slot." finished-at="2023-06-30T12:02:09 IST" duration-ms="465" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_booked_slot -->
+        <test-method signature="verify_disabled_slot()[pri:3, instance:com.demo.testcases.web.WebAppointmentTest@15dcfae7]" started-at="2023-06-30T12:02:09 IST" name="verify_disabled_slot" description="Verify if appointment slot is expired slot should be disable for appointment creation &amp; doctor shouldn&#039;t able to create appointment for the same expired slot ." finished-at="2023-06-30T12:02:10 IST" duration-ms="714" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_disabled_slot -->
+        <test-method signature="open_created_appointment()[pri:4, instance:com.demo.testcases.web.WebAppointmentTest@15dcfae7]" started-at="2023-06-30T12:02:10 IST" name="open_created_appointment" finished-at="2023-06-30T12:02:10 IST" duration-ms="232" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- open_created_appointment -->
+        <test-method signature="verify_20_popular_diagnosis()[pri:5, instance:com.demo.testcases.web.WebAppointmentTest@15dcfae7]" started-at="2023-06-30T12:02:10 IST" name="verify_20_popular_diagnosis" finished-at="2023-06-30T12:02:11 IST" duration-ms="1012" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_20_popular_diagnosis -->
+        <test-method signature="add_popular_diagnosis()[pri:6, instance:com.demo.testcases.web.WebAppointmentTest@15dcfae7]" started-at="2023-06-30T12:02:11 IST" name="add_popular_diagnosis" finished-at="2023-06-30T12:02:12 IST" duration-ms="546" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- add_popular_diagnosis -->
+        <test-method signature="diagnosis_tab_add_cfd()[pri:8, instance:com.demo.testcases.web.WebAppointmentTest@15dcfae7]" started-at="2023-06-30T12:02:12 IST" name="diagnosis_tab_add_cfd" finished-at="2023-06-30T12:02:12 IST" duration-ms="897" status="FAIL">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
+            <message>
+              <![CDATA[stale element reference: element is not attached to the page document
+  (Session info: chrome=111.0.5563.146)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.9.0', revision: 'd7057100a6'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.14.0-1059-oem', java.version: '17.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [eea8190a8d1ca2eb32e9dfa94c1f7251, getElementText {id=487d1760-531f-4cdd-9720-ee621b4bfd7f}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.3ZVfsm}, goog:chromeOptions: {debuggerAddress: localhost:33411}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:33411/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on LINUX (eea8190a8d1ca2eb32e9dfa94c1f7251)] -> xpath: //div[@ng-repeat="result in vm.search_results"]/a]
+Session ID: eea8190a8d1ca2eb32e9dfa94c1f7251]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=111.0.5563.146)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.9.0', revision: 'd7057100a6'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.14.0-1059-oem', java.version: '17.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [eea8190a8d1ca2eb32e9dfa94c1f7251, getElementText {id=487d1760-531f-4cdd-9720-ee621b4bfd7f}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.3ZVfsm}, goog:chromeOptions: {debuggerAddress: localhost:33411}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:33411/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on LINUX (eea8190a8d1ca2eb32e9dfa94c1f7251)] -> xpath: //div[@ng-repeat="result in vm.search_results"]/a]
+Session ID: eea8190a8d1ca2eb32e9dfa94c1f7251
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:207)
+at com.demo.actions.web.HomePage.search_diagnosis(HomePage.java:266)
+at com.demo.testcases.web.WebAppointmentTest.diagnosis_tab_add_cfd(WebAppointmentTest.java:75)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- diagnosis_tab_add_cfd -->
+        <test-method signature="diagnosis_tab_verify_added_cfd()[pri:9, instance:com.demo.testcases.web.WebAppointmentTest@15dcfae7]" started-at="2023-06-30T12:02:12 IST" name="diagnosis_tab_verify_added_cfd" finished-at="2023-06-30T12:02:13 IST" duration-ms="44" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- diagnosis_tab_verify_added_cfd -->
       </class> <!-- com.demo.testcases.web.WebAppointmentTest -->
       <class name="com.demo.testcases.web.WebLoginTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.demo.testcases.web.WebLoginTest@4ff4357f]" started-at="2023-06-13T17:11:57 IST" name="setup" finished-at="2023-06-13T17:12:02 IST" duration-ms="4313" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.demo.testcases.web.WebLoginTest@12c7a01b]" started-at="2023-06-30T12:01:50 IST" name="setup" finished-at="2023-06-30T12:01:55 IST" duration-ms="4223" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="login()[pri:1, instance:com.demo.testcases.web.WebLoginTest@4ff4357f]" started-at="2023-06-13T17:12:02 IST" name="login" finished-at="2023-06-13T17:12:13 IST" duration-ms="10974" status="PASS">
+        <test-method signature="login()[pri:1, instance:com.demo.testcases.web.WebLoginTest@12c7a01b]" started-at="2023-06-30T12:01:55 IST" name="login" finished-at="2023-06-30T12:02:06 IST" duration-ms="11134" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.demo.testcases.web.WebLoginTest@4ff4357f]" started-at="2023-06-13T17:12:14 IST" name="tearDown" finished-at="2023-06-13T17:12:14 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.demo.testcases.web.WebLoginTest@12c7a01b]" started-at="2023-06-30T12:02:32 IST" name="tearDown" finished-at="2023-06-30T12:02:32 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

@@ -1,0 +1,7 @@
+package com.demo.actions.web;
+
+import com.demo.setup.BaseSelenium;
+
+public class Instructions extends BaseSelenium {
+
+}

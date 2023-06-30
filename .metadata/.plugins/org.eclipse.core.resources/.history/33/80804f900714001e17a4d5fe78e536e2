@@ -1,0 +1,23 @@
+package com.demo.actions.web;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.demo.setup.BaseSelenium;
+import com.demo.utilities.WebUtilities;
+
+public class Instructions extends BaseSelenium {
+	public WebDriver driver;
+	WebUtilities utilities = new WebUtilities();
+	
+	public Instructions(WebDriver driver) {
+
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	@FindBy(xpath = "//*[@class=\"btn btn-blue\"]")
+	private WebElement add_new_drug_btn;
+}

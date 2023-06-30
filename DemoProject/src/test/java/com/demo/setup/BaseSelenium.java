@@ -26,7 +26,7 @@ import io.appium.java_client.AppiumDriver;
 
 public class BaseSelenium {
 	public static WebDriver driver;
-	public Properties properties;
+	public static Properties properties;
 	Logger logger = Logger.getLogger(BaseSelenium.class);
 	public static AppiumDriver appiumDriver;
 	public static DesiredCapabilities caps;
@@ -80,6 +80,14 @@ public class BaseSelenium {
 			}
 
 		}
+	}
+	
+	public static Properties test_data() throws IOException {
+		String filepath = System.getProperty("user.dir") + "/src/test/java/com/demo/properties/demo.properties";
+		properties = new Properties();
+		FileInputStream fis = new FileInputStream(filepath);
+		properties.load(fis);
+		return properties;
 	}
 
 	@BeforeTest

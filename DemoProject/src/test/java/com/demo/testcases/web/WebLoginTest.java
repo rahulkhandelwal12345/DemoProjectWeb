@@ -3,6 +3,8 @@ package com.demo.testcases.web;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+import java.io.IOException;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,7 +19,7 @@ public class WebLoginTest extends BaseSelenium {
 	Logger logger = Logger.getLogger(WebLoginTest.class);
 
 	@Test(priority = 1)
-	public void login() throws InterruptedException {
+	public void login() throws InterruptedException, IOException {
 		LoginPage page = new LoginPage(driver);
 		page.enterValidEmail();
 		page.enterValidPassword();
@@ -41,7 +43,7 @@ public class WebLoginTest extends BaseSelenium {
 	}
 
 	@Test(priority = 3, enabled = false)
-	public void validate_error_message() throws InterruptedException {
+	public void validate_error_message() throws InterruptedException, IOException {
 		LoginPage page = new LoginPage(driver);
 		page.enterValidEmail();
 		page.enterInvalidPassword();

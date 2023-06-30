@@ -1,0 +1,75 @@
+package com.demo.actions.web;
+
+import java.util.List;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.demo.setup.BaseSelenium;
+import com.demo.utilities.WebUtilities;
+
+public class Instructions extends BaseSelenium {
+	public WebDriver driver;
+	WebUtilities utilities = new WebUtilities();
+	
+	public Instructions(WebDriver driver) {
+
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	@FindBy(xpath = "//label[@class='item item-input']/input")
+	private WebElement searchbox;
+	
+	@FindBy(xpath = "//*[@class=\"search-result mb-0 ng-scope\"]/div/a")
+	private List<WebElement> search_result_instructions;
+	
+	public void search_test() {
+		utilities.sendkeys(searchbox, "test");
+	}
+	
+	public void add_test() {
+		for(WebElement result : search_result_instructions)
+		{
+				try {
+
+					if(result.getText().contains("Urine Acetone"))
+					{
+						 Actions builder = new Actions(driver);
+					     builder.moveToElement(result).click(result);
+					     builder.perform();
+						
+					    break;
+					}
+				}
+				catch(org.openqa.selenium.StaleElementReferenceException ex)
+				{
+					try {
+						if(result.getText().contains("Urine Acetone"))
+						{
+							 Actions builder = new Actions(driver);
+						     builder.moveToElement(result).click(result);
+						     builder.perform();
+							
+						    break;
+						}
+					}
+					catch(org.openqa.selenium.StaleElementReferenceException e)
+					{
+						if(result.getText().contains("Urine Acetone"))
+						{
+							 Actions builder = new Actions(driver);
+						     builder.moveToElement(result).click(result);
+						     builder.perform();
+						     
+						    break;
+						}
+					}
+				}
+		}
+	}
+	
+}

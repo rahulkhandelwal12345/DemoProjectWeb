@@ -1,6 +1,9 @@
 package com.demo.actions.web;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.List;
+import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -79,7 +82,9 @@ public class LoginPage extends BaseSelenium {
 		utilities.sendkeys(Password, "rahul@12356");
 	}
 
-	public void enterValidEmail() {
+	public void enterValidEmail() throws IOException {
+		//Properties pro = BaseSelenium.test_data();
+		//utilities.sendkeys(Email, properties.getProperty("user_name"));
 		utilities.sendkeys(Email, "josh_doctor");
 	}
 
@@ -91,7 +96,8 @@ public class LoginPage extends BaseSelenium {
 		return utilities.getText(errormessage);
 	}
 	
-	public void enterValidPassword() {
+	public void enterValidPassword() throws IOException {
+		Properties pro = BaseSelenium.test_data();
 		utilities.sendkeys(Password, "josh123");
 	}
 

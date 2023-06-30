@@ -1,0 +1,10 @@
+mobile_number = 7972007624
+popular_diagnosis = DENGUE FEVER - 1
+searched_diagnosis = HYPERTHYROIDISM
+searched_complaint = SORE THROAT
+searched_finding = OTHER FINDINGS
+
+#Should be accroding to added diagnosis
+popular_drug = Tab COMBIFLAM (500 mg) 
+
+searched_drug = Tab NAXDOM 250

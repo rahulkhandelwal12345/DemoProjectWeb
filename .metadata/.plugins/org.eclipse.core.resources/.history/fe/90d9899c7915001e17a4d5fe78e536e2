@@ -1,0 +1,22 @@
+mobile_number = 7972007624
+popular_diagnosis = DENGUE FEVER - 1
+searched_diagnosis = HYPERTHYROIDISM
+searched_complaint = SORE THROAT
+searched_finding = OTHER FINDINGS
+
+#Should be accroding to added diagnosis
+popular_drug = Tab COMBIFLAM (500 mg) 
+
+searched_drug = Tab NAXDOM 250
+
+#Add new drug form details:
+new_drug_name = drug101
+new_drug_company = Company
+new_drug_price = 200
+
+# Oral or Non-Oral
+new_drug_mode = Oral
+
+test = Urine Acetone
+instruction = Drink boiled water
+procedure = ARTHROSCOPIC STABILISATION PROCEDURE
