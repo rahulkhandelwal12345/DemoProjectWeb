@@ -1,0 +1,26 @@
+package com.demo.actions.web;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.demo.setup.BaseSelenium;
+import com.demo.utilities.WebUtilities;
+
+public class SummaryPage extends BaseSelenium {
+	public WebDriver driver;
+	WebUtilities utilities = new WebUtilities();
+	
+	public SummaryPage(WebDriver driver) {
+
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	@FindBy(xpath = "//p[@class = 'ng-binding' and text() = 'Diagnosis']")
+	private WebElement DiagnosisCard;
+
+	@FindBy(xpath = "//p[@class = 'ng-binding' and text() = 'Complaints and Findings']")
+	private WebElement ComplaintsFindingsCard;
+}

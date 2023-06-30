@@ -2,6 +2,7 @@ package com.demo.actions.web;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import java.util.Properties;
 
@@ -12,6 +13,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.demo.setup.BaseSelenium;
@@ -33,12 +35,13 @@ public class Prescription extends BaseSelenium {
 	@FindBy(xpath = "//*[@class=\"search-result ng-scope\"]/div/a")
 	private List<WebElement> search_result_drugs;
 	
-	//@FindBy(xpath= "//*[@class=\"dropdown flex-100 border-0\"]/a/span")
-	@FindBy(xpath = "//div[@ng-repeat=\"drug in vm.search_results\"]/a")
+	@FindBy(xpath= "//*[@class=\"dropdown flex-100 border-0\"]/a/span")
+	//@FindBy(xpath = "//*[@id=\"content\"]/div/div[1]/div[2]/div[2]/section/div[3]/div[1]/div[2]/div/div")
 	private List<WebElement> added_drugs_list;
 	
-	@FindBy(xpath = "//*[@class=\"icon-trash mr-0\"]")
-	private WebElement delete_drugs;
+	//@FindBy(xpath = "//*[@ng-click=\"vm.deleteDrug(drug, $index)\"]")
+	@FindBy(xpath = "//*[@id=\"content\"]/div/div[1]/div[2]/div[2]/section/div[3]/div[1]/div[2]/div[1]/div/div[10]/div/div[2]/div/a/i")
+	private WebElement delete_drugs_icon;
 	
 	//@FindBy(xpath = "delete-block ng-scope")
 	@FindBy(xpath = "//*[@id=\"content\"]/div/div[1]/div[1]/div[2]/div[3]/a/i")
@@ -195,12 +198,12 @@ public class Prescription extends BaseSelenium {
 	
 	
 	public void verify_delete_icon_for_added_drug() {
-		Assert.assertTrue(delete_drugs.isDisplayed());
+		Assert.assertTrue(delete_drugs_icon.isDisplayed());
 
 	}
 	
 	public void delete_added_drug() {
-		utilities.click(delete_drugs);
+		utilities.click(delete_drugs_icon);
 	}
 	
 	public void search_drugs() throws IOException {
@@ -347,11 +350,21 @@ public class Prescription extends BaseSelenium {
 	}
 	
 	public void verify_created_drug_added() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
 		//Properties pro = BaseSelenium.test_data();
 		for(WebElement added_drug : added_drugs_list)
 		{
+			synchronized (added_drug) {
+	            try {
+	            	added_drug.wait(5000);
+	            } catch (InterruptedException e) {
+	                e.printStackTrace();
+	            }
+	        }
+			System.out.println(">>>>>>>>DRuG NAME ADDED GET TEXT: "+added_drug.getText());
 //			Assert.assertTrue(added_drug.getText().contains(pro.getProperty("searched_drug")));
-			Assert.assertTrue(added_drug.getText().contains("Drug101"));
+			Assert.assertTrue(added_drug.getText().contains("DRUG101"));
 		}
 	}
 	

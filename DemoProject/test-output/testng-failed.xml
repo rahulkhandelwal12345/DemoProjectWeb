@@ -13,18 +13,11 @@
           <include name="diagnosis_tab_add_cfd"/>
         </methods>
       </class> <!-- com.demo.testcases.web.WebAppointmentTest -->
-      <class name="com.demo.testcases.web.WebAppointmentInstructionsPageTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="instructions_tab"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.demo.testcases.web.WebAppointmentInstructionsPageTest -->
       <class name="com.demo.testcases.web.WebAppointmentPrescriptionPageTest">
         <methods>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="search_drugs"/>
+          <include name="verify_created_drug_is_added"/>
           <include name="verify_20_popular_drugs"/>
           <include name="verify_delete_icon_for_added_drugs"/>
         </methods>

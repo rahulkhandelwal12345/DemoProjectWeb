@@ -11,6 +11,7 @@
 			<class name="com.demo.testcases.web.WebAppointmentTest" />
 			<class name="com.demo.testcases.web.WebAppointmentPrescriptionPageTest" />
 			<class name="com.demo.testcases.web.WebAppointmentInstructionsPageTest" />
+			<class name="com.demo.testcases.web.WebAppointmentSummaryPageTest" />
 		</classes>
 	</test>
 </suite>
