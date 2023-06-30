@@ -346,31 +346,12 @@ public class Prescription extends BaseSelenium {
 		utilities.click(new_drug_form_submit_btn_page3);
 	}
 	
-	public void verify_created_drug_added() {
+	public void verify_new_created_drug_added() {
 		//Properties pro = BaseSelenium.test_data();
 		for(WebElement added_drug : added_drugs_list)
 		{
 //			Assert.assertTrue(added_drug.getText().contains(pro.getProperty("searched_drug")));
 			Assert.assertTrue(added_drug.getText().contains("Drug101"));
-		}
-	}
-	
-	public void verify_created_drug_appears_in_search() {
-		searchbox.clear();
-		utilities.sendkeys(searchbox, "Drug101");
-		for(WebElement result : search_result_drugs)
-		{
-				try 
-				{
-					Assert.assertTrue(result.getText().contains("Drug101"));
-						
-				}
-
-				catch(org.openqa.selenium.StaleElementReferenceException ex)
-				{
-					Assert.assertTrue(result.getText().contains("Drug101"));
-
-				}
 		}
 	}
 }

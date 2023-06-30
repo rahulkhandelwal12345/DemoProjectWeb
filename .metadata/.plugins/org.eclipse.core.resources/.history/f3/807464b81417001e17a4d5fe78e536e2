@@ -55,6 +55,8 @@ public class WebAppointmentPrescriptionPageTest extends BaseSelenium {
 		prescription.select_relation_with_food();
 		prescription.add_drug_instructions();
 		prescription.click_submit_btn();
+		prescription.verify_created_drug_added();
+		prescription.verify_created_drug_appears_in_search();
 	}
 	
 	@Test(priority = 6, enabled = true)
