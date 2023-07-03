@@ -10,15 +10,13 @@
         <methods>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="diagnosis_tab_verify_added_cfd"/>
-          <include name="add_popular_diagnosis"/>
+          <include name="diagnosis_tab_add_cfd"/>
         </methods>
       </class> <!-- com.demo.testcases.web.WebAppointmentTest -->
       <class name="com.demo.testcases.web.WebAppointmentInstructionsPageTest">
         <methods>
           <include name="search_procedure"/>
           <include name="tearDown"/>
-          <include name="search_test"/>
           <include name="setup"/>
           <include name="search_instruction"/>
         </methods>
@@ -26,10 +24,9 @@
       <class name="com.demo.testcases.web.WebAppointmentSummaryPageTest">
         <methods>
           <include name="tearDown"/>
-          <include name="summary_tab"/>
-          <include name="verify_dagnosis"/>
+          <include name="verify_record_is_printed"/>
           <include name="setup"/>
-          <include name="verify_drug"/>
+          <include name="verify_record_is_saved"/>
         </methods>
       </class> <!-- com.demo.testcases.web.WebAppointmentSummaryPageTest -->
       <class name="com.demo.testcases.web.WebAppointmentPrescriptionPageTest">
@@ -37,10 +34,8 @@
           <include name="tearDown"/>
           <include name="verify_created_drug_is_added"/>
           <include name="setup"/>
-          <include name="search_drugs"/>
-          <include name="prescription_tab"/>
-          <include name="verify_20_popular_drugs"/>
           <include name="verify_delete_icon_for_added_drugs"/>
+          <include name="verify_20_popular_drugs"/>
         </methods>
       </class> <!-- com.demo.testcases.web.WebAppointmentPrescriptionPageTest -->
     </classes>

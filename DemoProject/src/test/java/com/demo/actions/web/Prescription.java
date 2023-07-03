@@ -328,8 +328,6 @@ System.out.println("******************************* Drug price "+newdrugPrice);
 				JavascriptExecutor executor = (JavascriptExecutor) driver;
 				executor.executeScript("arguments[0].click();", drug_frequency);
 
-				//utilities.click(drug_frequency);
-
 			}
 		}
 	}
