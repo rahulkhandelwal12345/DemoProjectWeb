@@ -1,7 +1,6 @@
 package com.demo.actions.web;
 
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
 
@@ -11,6 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.demo.setup.BaseSelenium;
+import com.demo.utilities.ExcelUtils;
 import com.demo.utilities.WebUtilities;
 
 import net.bytebuddy.asm.MemberSubstitution.FieldValue;
@@ -82,10 +82,10 @@ public class LoginPage extends BaseSelenium {
 		utilities.sendkeys(Password, "rahul@12356");
 	}
 
-	public void enterValidEmail() throws IOException {
-		//Properties pro = BaseSelenium.test_data();
-		//utilities.sendkeys(Email, properties.getProperty("user_name"));
-		utilities.sendkeys(Email, "josh_doctor");
+	public void enterValidEmail() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Login");
+		String username = data.getCellDataasstring(1, 0);
+		utilities.sendkeys(Email, username);
 	}
 
 	public WebElement verify_user_name() {
@@ -96,9 +96,10 @@ public class LoginPage extends BaseSelenium {
 		return utilities.getText(errormessage);
 	}
 	
-	public void enterValidPassword() throws IOException {
-		Properties pro = BaseSelenium.test_data();
-		utilities.sendkeys(Password, "josh123");
+	public void enterValidPassword() throws Exception {
+	    ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Login");
+	    String password = data.getCellDataasstring(1, 1);
+		utilities.sendkeys(Password, password);
 	}
 
 	

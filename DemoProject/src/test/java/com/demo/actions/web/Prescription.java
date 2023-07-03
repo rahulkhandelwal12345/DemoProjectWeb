@@ -1,7 +1,6 @@
 package com.demo.actions.web;
 
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import java.util.Properties;
@@ -17,6 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.demo.setup.BaseSelenium;
+import com.demo.utilities.ExcelUtils;
 import com.demo.utilities.WebUtilities;
 
 public class Prescription extends BaseSelenium {
@@ -131,15 +131,15 @@ public class Prescription extends BaseSelenium {
 		Assert.assertTrue(delete_all_drugs_icon.isDisplayed());
 	}
 	
-	public void add_popular_drug() throws IOException {
-		Properties pro = BaseSelenium.test_data();
+	public void add_popular_drug() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Prescription");
+		String popularDrug = data.getCellDataasstring(1, 0);
 		utilities.implicitWait();
 		for(WebElement result : search_result_drugs)
 		{
 			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>POPULAR DRUGS  "+result.getText());
 				try {
-					if(result.getText().contains("Tab COMBIFLAM (500 mg) "))
-					//if(result.getText().contains(pro.getProperty("popular_drug")))
+					if(result.getText().contains(popularDrug))
 					{
 						 Actions builder = new Actions(driver);
 					     builder.moveToElement(result).click(result);
@@ -151,8 +151,7 @@ public class Prescription extends BaseSelenium {
 				catch(org.openqa.selenium.StaleElementReferenceException ex)
 				{
 					try {
-						if(result.getText().contains("Tab COMBIFLAM (500 mg) "))
-						//if(result.getText().contains(pro.getProperty("popular_drug")))
+						if(result.getText().contains(popularDrug))
 						{
 							 Actions builder = new Actions(driver);
 						     builder.moveToElement(result).click(result);
@@ -163,8 +162,7 @@ public class Prescription extends BaseSelenium {
 					}
 					catch(org.openqa.selenium.StaleElementReferenceException e)
 					{
-						if(result.getText().contains("Tab COMBIFLAM (500 mg) "))
-						//if(result.getText().contains(pro.getProperty("popular_drug")))
+						if(result.getText().contains(popularDrug))
 						{
 							 Actions builder = new Actions(driver);
 						     builder.moveToElement(result).click(result);
@@ -177,22 +175,22 @@ public class Prescription extends BaseSelenium {
 		}
 	}
 	
-	public void verify_added_popular_drug() throws IOException {
-		Properties pro = BaseSelenium.test_data();
+	public void verify_added_popular_drug() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Prescription");
+		String popularDrug = data.getCellDataasstring(1, 0);
 		for(WebElement added_drug : added_drugs_list)
 		{
-//			Assert.assertTrue(added_drug.getText().contains(pro.getProperty("popular_drug")));
-			Assert.assertTrue(added_drug.getText().contains("Tab COMBIFLAM (500 mg) "));
+			Assert.assertTrue(added_drug.getText().contains(popularDrug));
 
 		}
 	}
 	
-	public void verify_added_drug() throws IOException {
-		Properties pro = BaseSelenium.test_data();
+	public void verify_added_drug() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Prescription");
+		String searchedDrug = data.getCellDataasstring(1, 1);
 		for(WebElement added_drug : added_drugs_list)
 		{
-//			Assert.assertTrue(added_drug.getText().contains(pro.getProperty("searched_drug")));
-			Assert.assertTrue(added_drug.getText().contains("Tab NAXDOM 250"));
+			Assert.assertTrue(added_drug.getText().contains(searchedDrug));
 		}
 	}
 	
@@ -206,22 +204,23 @@ public class Prescription extends BaseSelenium {
 		utilities.click(delete_drugs_icon);
 	}
 	
-	public void search_drugs() throws IOException {
-		Properties pro = BaseSelenium.test_data();
-		//utilities.sendkeys(searchbox, pro.getProperty("searched_drug"));
-		utilities.sendkeys(searchbox, "Tab NAXDOM 250");
+	public void search_drugs() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Prescription");
+		String searchedDrug = data.getCellDataasstring(1, 1);
+		utilities.implicitWait();
+		utilities.sendkeys(searchbox, searchedDrug);
 		
 	}
 	
-	public void add_searched_drug() throws IOException {
-		Properties pro = BaseSelenium.test_data();
+	public void add_searched_drug() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Prescription");
+		String searchedDrug = data.getCellDataasstring(1, 1);
 		for(WebElement result : search_result_drugs)
 		{
 			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEARCHED DRUGS  "+result.getText());
 
 				try {
-					if(result.getText().contains("Tab NAXDOM 250"))
-				//	if(result.getText().contains(pro.getProperty("searched_drug")))
+					if(result.getText().contains(searchedDrug))
 					{
 						System.out.println(">>>>>>>>>>>>>>>>>>>>DRUGS"+result.getText());
 
@@ -233,15 +232,28 @@ public class Prescription extends BaseSelenium {
 				}
 				catch(org.openqa.selenium.StaleElementReferenceException ex)
 				{
-					if(result.getText().contains("Tab NAXDOM 250"))
-					//if(result.getText().contains(pro.getProperty("searched_drug")))
-					{
-						System.out.println(">>>>>>>>>>>>>>>>>>>>DRUGS"+result.getText());
+					try {
+						if(result.getText().contains(searchedDrug))
+						{
+							System.out.println(">>>>>>>>>>>>>>>>>>>>DRUGS"+result.getText());
 
-						Actions builder = new Actions(driver);
-					    builder.moveToElement(result).click(result);
-					    builder.perform();
-					    break;
+							Actions builder = new Actions(driver);
+						    builder.moveToElement(result).click(result);
+						    builder.perform();
+						    break;
+						}
+					}
+					catch(org.openqa.selenium.StaleElementReferenceException e)
+					{
+						if(result.getText().contains(searchedDrug))
+						{
+							System.out.println(">>>>>>>>>>>>>>>>>>>>DRUGS"+result.getText());
+
+							Actions builder = new Actions(driver);
+						    builder.moveToElement(result).click(result);
+						    builder.perform();
+						    break;
+						}
 					}
 				}
 		}
@@ -255,20 +267,22 @@ public class Prescription extends BaseSelenium {
 
 	}
 	
-	public void add_new_drug_details() throws IOException {
-		Properties pro = BaseSelenium.test_data();
-//		utilities.sendkeys(new_drug_name, pro.getProperty("new_drug_name"));
-//		utilities.sendkeys(new_drug_company_name, pro.getProperty("new_drug_company"));
-//		utilities.sendkeys(new_drug_price, pro.getProperty("new_drug_price"));
+	public void add_new_drug_details() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Prescription");
+		String newdrugName = data.getCellDataasstring(1, 2);
+		String newdrugCompany = data.getCellDataasstring(1, 3);
+		String newdrugPrice = data.getCellDataasstring(1, 4);
+		String newdrugMode = data.getCellDataasstring(1, 5);
+		String newdrugFormulation = data.getCellDataasstring(1, 6);
+System.out.println("******************************* Drug price "+newdrugPrice);
 		
-		utilities.sendkeys(new_drug_name, "Drug101");
-		utilities.sendkeys(new_drug_company_name, "Company");
-		utilities.sendkeys(new_drug_price, "200");
+		utilities.sendkeys(new_drug_name, newdrugName);
+		utilities.sendkeys(new_drug_company_name, newdrugCompany);
+		utilities.sendkeys(new_drug_price, newdrugPrice);
 		
 		for(WebElement drug_mode : new_drug_mode)
 		{
-			if(drug_mode.getText().equalsIgnoreCase("Oral"))
-			//if(drug_mode.getText().equalsIgnoreCase(pro.getProperty("new_drug_mode")))
+			if(drug_mode.getText().equalsIgnoreCase(newdrugMode))
 			{
 				utilities.click(drug_mode);
 			}
@@ -276,7 +290,7 @@ public class Prescription extends BaseSelenium {
 		
 		for(WebElement drug_form : new_drug_formulation)
 		{
-			if(drug_form.getText().equalsIgnoreCase("Tablet"))
+			if(drug_form.getText().equalsIgnoreCase(newdrugFormulation))
 			{
 				utilities.click(drug_form);
 			}
@@ -287,8 +301,11 @@ public class Prescription extends BaseSelenium {
 		action.moveToElement(new_drug_form_next_btn_page1).click().perform();
 	}
 	
-	public void add_new_drug_strength() {
-		utilities.sendkeys(new_drug_strength, "250");
+	public void add_new_drug_strength() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Prescription");
+		String newdrugStrength = data.getCellDataasstring(1, 7);
+		utilities.sendkeys(new_drug_strength, newdrugStrength );
+		
 //		utilities.click(new_drug_strength_unit_dropdown_btn);
 //		for(WebElement strength_unit : drug_strength_unit_drop_options)
 //		{
@@ -317,28 +334,36 @@ public class Prescription extends BaseSelenium {
 		}
 	}
 	
-	public void add_new_drug_duration() {
-		utilities.sendkeys(drug_duration, "5");
+	public void add_new_drug_duration() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Prescription");
+		String newdrugDuration = data.getCellDataasstring(1, 8);
+		String newdrugDurationype = data.getCellDataasstring(1, 9);
+
+		utilities.sendkeys(drug_duration, newdrugDuration);
 		utilities.click(drug_duration_type_dropdown_btn);
 		Select select = new Select(drug_duration_type_dropdown_btn);
-		select.selectByVisibleText("days");
+		select.selectByVisibleText(newdrugDurationype);
 	}
 	
-	public void select_relation_with_food() {
+	public void select_relation_with_food() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Prescription");
+		String foodRelation = data.getCellDataasstring(1, 10);
 		for(WebElement food_relation : food_relation_radios)
 		{
-			if(food_relation.getText().equalsIgnoreCase("After"))
+			if(food_relation.getText().equalsIgnoreCase(foodRelation))
 			{
 				utilities.click(food_relation);
 			}
 		}
 	}
 	
-	public void add_drug_instructions() {
-		utilities.sendkeys(drug_instruction_searchbox, "take with water");
+	public void add_drug_instructions() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Prescription");
+		String newDrugInstruction = data.getCellDataasstring(1, 11);
+		utilities.sendkeys(drug_instruction_searchbox, newDrugInstruction);
 		for(WebElement instruction : drug_instruction_search_result)
 		{
-			if(instruction.getText().equalsIgnoreCase("take with water"))
+			if(instruction.getText().equalsIgnoreCase(newDrugInstruction))
 			{
 				utilities.click(instruction);
 			}
@@ -349,10 +374,9 @@ public class Prescription extends BaseSelenium {
 		utilities.click(new_drug_form_submit_btn_page3);
 	}
 	
-	public void verify_created_drug_added() {
+	public void verify_created_drug_added() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
-		//Properties pro = BaseSelenium.test_data();
 		for(WebElement added_drug : added_drugs_list)
 		{
 			synchronized (added_drug) {
@@ -363,25 +387,28 @@ public class Prescription extends BaseSelenium {
 	            }
 	        }
 			System.out.println(">>>>>>>>DRuG NAME ADDED GET TEXT: "+added_drug.getText());
-//			Assert.assertTrue(added_drug.getText().contains(pro.getProperty("searched_drug")));
-			Assert.assertTrue(added_drug.getText().contains("DRUG101"));
+			ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Prescription");
+			String newdrugName = data.getCellDataasstring(1, 2);
+			Assert.assertTrue(added_drug.getText().contains(newdrugName));
 		}
 	}
 	
-	public void verify_created_drug_appears_in_search() {
+	public void verify_created_drug_appears_in_search() throws Exception {
 		searchbox.clear();
-		utilities.sendkeys(searchbox, "Drug101");
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Prescription");
+		String newdrugName = data.getCellDataasstring(1, 2);
+		utilities.sendkeys(searchbox, newdrugName);
 		for(WebElement result : search_result_drugs)
 		{
 				try 
 				{
-					Assert.assertTrue(result.getText().contains("Drug101"));
+					Assert.assertTrue(result.getText().contains(newdrugName));
 						
 				}
 
 				catch(org.openqa.selenium.StaleElementReferenceException ex)
 				{
-					Assert.assertTrue(result.getText().contains("Drug101"));
+					Assert.assertTrue(result.getText().contains(newdrugName));
 
 				}
 		}

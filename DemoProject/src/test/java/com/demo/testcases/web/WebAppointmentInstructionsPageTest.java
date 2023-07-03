@@ -1,7 +1,5 @@
 package com.demo.testcases.web;
 
-import java.io.IOException;
-
 import org.testng.annotations.Test;
 
 import com.demo.actions.web.HomePage;
@@ -17,21 +15,21 @@ public class WebAppointmentInstructionsPageTest extends BaseSelenium {
 	}
 	
 	@Test(priority = 2, enabled = true)
-	public void search_test() throws IOException {
+	public void search_test() throws Exception {
 		Instructions instruction = new Instructions(driver);
 		instruction.search_test();
 		instruction.add_test();
 	}
 	
 	@Test(priority = 3, enabled = true)
-	public void search_instruction() throws IOException {
+	public void search_instruction() throws Exception {
 		Instructions instruction = new Instructions(driver);
 		instruction.search_instruction();
 		instruction.add_instruction();
 	}
 	
 	@Test(priority = 4, enabled = true)
-	public void search_procedure() throws IOException {
+	public void search_procedure() throws Exception {
 		Instructions instruction = new Instructions(driver);
 		instruction.search_procedure();
 		instruction.add_procedure();

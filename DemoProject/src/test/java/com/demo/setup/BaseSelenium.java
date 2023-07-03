@@ -83,9 +83,9 @@ public class BaseSelenium {
 	}
 	
 	public static Properties test_data() throws IOException {
-		String filepath = System.getProperty("user.dir") + "/src/test/java/com/demo/properties/demo.properties";
-		properties = new Properties();
-		FileInputStream fis = new FileInputStream(filepath);
+		String path = System.getProperty("user.dir") + "/src/test/java/com/demo/properties/demo.properties";
+		Properties properties = new Properties();
+		FileInputStream fis = new FileInputStream(path);
 		properties.load(fis);
 		return properties;
 	}

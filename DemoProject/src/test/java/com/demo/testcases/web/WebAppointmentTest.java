@@ -56,7 +56,7 @@ public class WebAppointmentTest extends BaseSelenium {
 	}
 	
 	@Test(priority = 6, enabled = true)
-	public void add_popular_diagnosis() throws IOException {
+	public void add_popular_diagnosis() throws Exception {
 		HomePage page = new HomePage(driver);
 		page.add_popular_diagnosis();
 		page.verify_added_cfd();
@@ -70,7 +70,7 @@ public class WebAppointmentTest extends BaseSelenium {
 	}
 	
 	@Test(priority = 8, enabled = true)
-	public void diagnosis_tab_add_cfd() throws IOException {
+	public void diagnosis_tab_add_cfd() throws Exception {
 		HomePage page = new HomePage(driver);
 		page.search_diagnosis();
 		page.search_complaint();
@@ -78,7 +78,7 @@ public class WebAppointmentTest extends BaseSelenium {
 	}
 	
 	@Test(priority = 9, enabled = true)
-	public void diagnosis_tab_verify_added_cfd() throws IOException {
+	public void diagnosis_tab_verify_added_cfd() throws Exception {
 		HomePage page = new HomePage(driver);
 		page.verify_added_cfd();
 	}

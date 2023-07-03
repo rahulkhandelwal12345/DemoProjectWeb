@@ -19,13 +19,13 @@ public class WebAppointmentSummaryPageTest extends BaseSelenium {
 	}
 	
 	@Test(priority = 2, enabled = true)
-	public void verify_dagnosis() {
+	public void verify_dagnosis() throws Exception {
 		SummaryPage summary =  new SummaryPage(driver);
 		summary.verify_diagnosis_in_summary();
 	}
 	
 	@Test(priority = 3, enabled = true)
-	public void verify_drug() {
+	public void verify_drug() throws Exception {
 		SummaryPage summary =  new SummaryPage(driver);
 		summary.verify_drugs_in_summary();
 	}

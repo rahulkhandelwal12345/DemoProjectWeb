@@ -1,6 +1,5 @@
 package com.demo.actions.web;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
 
@@ -11,6 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.demo.setup.BaseSelenium;
+import com.demo.utilities.ExcelUtils;
 import com.demo.utilities.WebUtilities;
 
 public class Instructions extends BaseSelenium {
@@ -29,20 +29,20 @@ public class Instructions extends BaseSelenium {
 	@FindBy(xpath = "//*[@class=\"search-result mb-0 ng-scope\"]/div/a")
 	private List<WebElement> search_result_instructions;
 	
-	public void search_test() throws IOException {
-		Properties pro = BaseSelenium.test_data();
-		//utilities.sendkeys(searchbox, pro.getProperty("test"));
-		utilities.sendkeys(searchbox, "Urine Acetone");
+	public void search_test() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Test Instructions");
+		String test = data.getCellDataasstring(1, 0);
+		utilities.sendkeys(searchbox, test);
 
 	}
 	
-	public void add_test() throws IOException {
-		Properties pro = BaseSelenium.test_data();
+	public void add_test() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Test Instructions");
+		String test = data.getCellDataasstring(1, 0);
 		for(WebElement result : search_result_instructions)
 		{
 				try {
-					if(result.getText().contains("Urine Acetone"))
-					//if(result.getText().contains(pro.getProperty("test")))
+					if(result.getText().contains(test))
 					{
 						 Actions builder = new Actions(driver);
 					     builder.moveToElement(result).click(result);
@@ -54,8 +54,7 @@ public class Instructions extends BaseSelenium {
 				catch(org.openqa.selenium.StaleElementReferenceException ex)
 				{
 					try {
-						if(result.getText().contains("Urine Acetone"))
-//						if(result.getText().contains(pro.getProperty("test")))
+						if(result.getText().contains(test))
 						{
 							 Actions builder = new Actions(driver);
 						     builder.moveToElement(result).click(result);
@@ -66,8 +65,7 @@ public class Instructions extends BaseSelenium {
 					}
 					catch(org.openqa.selenium.StaleElementReferenceException e)
 					{
-						if(result.getText().contains("Urine Acetone"))
-						//if(result.getText().contains(pro.getProperty("test")))
+						if(result.getText().contains(test))
 						{
 							 Actions builder = new Actions(driver);
 						     builder.moveToElement(result).click(result);
@@ -80,21 +78,21 @@ public class Instructions extends BaseSelenium {
 		}
 	}
 	
-	public void search_instruction() throws IOException {
-		Properties pro = BaseSelenium.test_data();
+	public void search_instruction() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Test Instructions");
+		String instruction = data.getCellDataasstring(1, 1);
 		searchbox.clear();
-		//utilities.sendkeys(searchbox, pro.getProperty("instruction"));
-		utilities.sendkeys(searchbox, "Drink boiled water");
+		utilities.sendkeys(searchbox, instruction);
 	}
 	
-	public void add_instruction() throws IOException {
-		Properties pro = BaseSelenium.test_data();
+	public void add_instruction() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Test Instructions");
+		String instruction = data.getCellDataasstring(1, 1);
 		for(WebElement result : search_result_instructions)
 		{
 			String backgroundColor = result.getCssValue("background-color");
 				try {
-					if(result.getText().contains("Drink boiled water"))
-					//if(result.getText().equalsIgnoreCase(pro.getProperty("instruction"))&& backgroundColor.equalsIgnoreCase("#3ec0a1"))
+					if(result.getText().contains(instruction))
 					{
 						 Actions builder = new Actions(driver);
 					     builder.moveToElement(result).click(result);
@@ -106,8 +104,7 @@ public class Instructions extends BaseSelenium {
 				catch(org.openqa.selenium.StaleElementReferenceException ex)
 				{
 					try {
-						if(result.getText().contains("Drink boiled water"))
-						//if(result.getText().equalsIgnoreCase(pro.getProperty("instruction"))&& backgroundColor.equalsIgnoreCase("#3ec0a1"))
+						if(result.getText().contains(instruction))
 						{
 							 Actions builder = new Actions(driver);
 						     builder.moveToElement(result).click(result);
@@ -118,8 +115,7 @@ public class Instructions extends BaseSelenium {
 					}
 					catch(org.openqa.selenium.StaleElementReferenceException e)
 					{
-						if(result.getText().contains("Drink boiled water"))
-						//if(result.getText().equalsIgnoreCase(pro.getProperty("instruction"))&& backgroundColor.equalsIgnoreCase("#3ec0a1"))
+						if(result.getText().contains(instruction))
 						{
 							 Actions builder = new Actions(driver);
 						     builder.moveToElement(result).click(result);
@@ -132,23 +128,23 @@ public class Instructions extends BaseSelenium {
 		}
 	}
 	
-	public void search_procedure() throws IOException {
-		Properties pro = BaseSelenium.test_data();
+	public void search_procedure() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Test Instructions");
+		String procedure = data.getCellDataasstring(1, 2);
 		searchbox.clear();
-		//utilities.sendkeys(searchbox, pro.getProperty("procedure"));
-		utilities.sendkeys(searchbox, "ARTHROSCOPIC STABILISATION PROCEDURE");
+		utilities.sendkeys(searchbox, procedure);
 
 	}
 	
-	public void add_procedure() throws IOException {
-		Properties pro = BaseSelenium.test_data();
+	public void add_procedure() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Test Instructions");
+		String procedure = data.getCellDataasstring(1, 2);
 		for(WebElement result : search_result_instructions)
 		{
 			String backgroundColor = result.getCssValue("background-color");
 				try {
 
-					if(result.getText().contains("ARTHROSCOPIC STABILISATION PROCEDURE"))
-					//if(result.getText().equalsIgnoreCase(pro.getProperty("procedure"))&& backgroundColor.equalsIgnoreCase("#f7941e"))
+					if(result.getText().contains(procedure))
 					{
 						 Actions builder = new Actions(driver);
 					     builder.moveToElement(result).click(result);
@@ -160,8 +156,7 @@ public class Instructions extends BaseSelenium {
 				catch(org.openqa.selenium.StaleElementReferenceException ex)
 				{
 					try {
-						if(result.getText().contains("ARTHROSCOPIC STABILISATION PROCEDURE"))
-						//if(result.getText().equalsIgnoreCase(pro.getProperty("procedure"))&& backgroundColor.equalsIgnoreCase("#f7941e"))
+						if(result.getText().contains(procedure))
 						{
 							 Actions builder = new Actions(driver);
 						     builder.moveToElement(result).click(result);
@@ -172,8 +167,7 @@ public class Instructions extends BaseSelenium {
 					}
 					catch(org.openqa.selenium.StaleElementReferenceException e)
 					{
-						if(result.getText().contains("ARTHROSCOPIC STABILISATION PROCEDURE"))
-						//if(result.getText().equalsIgnoreCase(pro.getProperty("procedure"))&& backgroundColor.equalsIgnoreCase("#f7941e"))
+						if(result.getText().contains(procedure))
 						{
 							 Actions builder = new Actions(driver);
 						     builder.moveToElement(result).click(result);

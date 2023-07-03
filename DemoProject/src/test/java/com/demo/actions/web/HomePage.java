@@ -23,6 +23,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.demo.setup.BaseSelenium;
+import com.demo.utilities.ExcelUtils;
 import com.demo.utilities.WebUtilities;
 
 public class HomePage extends BaseSelenium {
@@ -194,15 +195,15 @@ public class HomePage extends BaseSelenium {
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + count);
 	}
 
-	public void add_popular_diagnosis() throws IOException {
-		Properties pro = BaseSelenium.test_data();
+	public void add_popular_diagnosis() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","CFD");
+		String popularDiagnosis = data.getCellDataasstring(1, 3);
 		for (WebElement result : Search_Result_cfd) {
 			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>POPULAR DIAGNOSIS  "+result.getText());
 
 			try {
 
-				if (result.getText().contains("DENGUE FEVER - 1")) {
-				//if (result.getText().contains(pro.getProperty("popular_diagnosis"))) {
+				if (result.getText().contains(popularDiagnosis)) {
 					Actions builder = new Actions(driver);
 					builder.moveToElement(result).click(result);
 					builder.perform();
@@ -211,8 +212,7 @@ public class HomePage extends BaseSelenium {
 				}
 			} catch (org.openqa.selenium.StaleElementReferenceException ex) {
 				try {
-					if (result.getText().contains("DENGUE FEVER - 1")) {
-					//if (result.getText().contains(pro.getProperty("popular_diagnosis"))) {
+					if (result.getText().contains(popularDiagnosis)) {
 						Actions builder = new Actions(driver);
 						builder.moveToElement(result).click(result);
 						builder.perform();
@@ -220,8 +220,7 @@ public class HomePage extends BaseSelenium {
 						break;
 					}
 				} catch (org.openqa.selenium.StaleElementReferenceException e) {
-					if (result.getText().contains("DENGUE FEVER - 1")) {
-					//if (result.getText().contains(pro.getProperty("popular_diagnosis"))) {
+					if (result.getText().contains("popularDiagnosis")) {
 						Actions builder = new Actions(driver);
 						builder.moveToElement(result).click(result);
 						builder.perform();
@@ -233,19 +232,18 @@ public class HomePage extends BaseSelenium {
 		}
 	}
 
-	public void search_diagnosis() throws IOException {
-		Properties pro = BaseSelenium.test_data();
+	public void search_diagnosis() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","CFD");
+		String searchedDiagnosis = data.getCellDataasstring(1, 2);
 		utilities.implicitWait();
-		//utilities.sendkeys(searchbox, pro.getProperty("searched_diagnosis"));
-		utilities.sendkeys(searchbox, "HYPERTHYROIDISM");
+		utilities.sendkeys(searchbox, searchedDiagnosis);
 
 		
 		for (WebElement result : Search_Result_cfd) {
 			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEARCHED DIAGNOSIS  "+result.getText());
 
 			try {
-				if (result.getText().contains("HYPERTHYROIDISM")) {
-				//if (result.getText().contains(pro.getProperty("searched_diagnosis"))) {
+				if (result.getText().contains(searchedDiagnosis)) {
 					Actions builder = new Actions(driver);
 					builder.moveToElement(result).click(result);
 					builder.perform();
@@ -254,8 +252,7 @@ public class HomePage extends BaseSelenium {
 				}
 			} catch (org.openqa.selenium.StaleElementReferenceException ex) {
 				try {
-					if (result.getText().contains("HYPERTHYROIDISM")) {
-					//if (result.getText().contains(pro.getProperty("searched_diagnosis"))) {
+					if (result.getText().contains(searchedDiagnosis)) {
 						Actions builder = new Actions(driver);
 						builder.moveToElement(result).click(result);
 						builder.perform();
@@ -263,8 +260,7 @@ public class HomePage extends BaseSelenium {
 						break;
 					}
 				} catch (org.openqa.selenium.StaleElementReferenceException e) {
-					if (result.getText().contains("HYPERTHYROIDISM")) {
-					//if (result.getText().contains(pro.getProperty("searched_diagnosis"))) {
+					if (result.getText().contains(searchedDiagnosis)) {
 						Actions builder = new Actions(driver);
 						builder.moveToElement(result).click(result);
 						builder.perform();
@@ -276,20 +272,19 @@ public class HomePage extends BaseSelenium {
 		}
 	}
 
-	public void search_complaint() throws IOException {
-		Properties pro = BaseSelenium.test_data();
+	public void search_complaint() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","CFD");
+		String searchedComplaint = data.getCellDataasstring(1, 0);
 		utilities.implicitWait();
 		searchbox.clear();
-		//utilities.sendkeys(searchbox, pro.getProperty("searched_complaint"));
-		utilities.sendkeys(searchbox, "SORE THROAT");
+		utilities.sendkeys(searchbox, searchedComplaint);
 		utilities.implicitWait();
 
 		for (WebElement result : Search_Result_cfd) {
 			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEARCHED COMPLAINT  "+result.getText());
 
 			try {
-				if (result.getText().contains("SORE THROAT")) {
-				//if (result.getText().contains(pro.getProperty("searched_complaint"))) {
+				if (result.getText().contains(searchedComplaint)) {
 					Actions builder = new Actions(driver);
 					builder.moveToElement(result).click(result);
 					builder.perform();
@@ -298,8 +293,7 @@ public class HomePage extends BaseSelenium {
 				}
 			} catch (org.openqa.selenium.StaleElementReferenceException ex) {
 				try {
-					if (result.getText().contains("SORE THROAT")) {
-					//if (result.getText().contains(pro.getProperty("searched_complaint"))) {
+					if (result.getText().contains(searchedComplaint)) {
 						Actions builder = new Actions(driver);
 						builder.moveToElement(result).click(result);
 						builder.perform();
@@ -307,8 +301,7 @@ public class HomePage extends BaseSelenium {
 						break;
 					}
 				} catch (org.openqa.selenium.StaleElementReferenceException e) {
-					if (result.getText().contains("SORE THROAT")) {
-					//if (result.getText().contains(pro.getProperty("searched_complaint"))) {
+					if (result.getText().contains(searchedComplaint)) {
 						Actions builder = new Actions(driver);
 						builder.moveToElement(result).click(result);
 						builder.perform();
@@ -320,11 +313,11 @@ public class HomePage extends BaseSelenium {
 		}
 	}
 
-	public void search_finding() throws IOException {
-		Properties pro = BaseSelenium.test_data();
+	public void search_finding() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","CFD");
+		String searchedFinding = data.getCellDataasstring(1, 1);
 		utilities.implicitWait();
 		searchbox.clear();
-		//utilities.sendkeys(searchbox, pro.getProperty("searched_finding"));
 		utilities.sendkeys(searchbox, "OTHER FINDINGS");
 		utilities.implicitWait();
 
@@ -332,8 +325,7 @@ public class HomePage extends BaseSelenium {
 			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEARCHED FINDINGS  "+result.getText());
 
 			try {
-				if (result.getText().contains(pro.getProperty("OTHER FINDINGS")) ){
-				//if (result.getText().contains(pro.getProperty("searched_finding"))) {
+				if (result.getText().contains(searchedFinding) ){
 					Actions builder = new Actions(driver);
 					builder.moveToElement(result).click(result);
 					builder.perform();
@@ -342,8 +334,7 @@ public class HomePage extends BaseSelenium {
 				}
 			} catch (org.openqa.selenium.StaleElementReferenceException ex) {
 				try {
-					if (result.getText().contains(pro.getProperty("OTHER FINDINGS")) ){
-//					if (result.getText().contains(pro.getProperty("searched_finding"))) {
+					if (result.getText().contains(searchedFinding) ){
 						Actions builder = new Actions(driver);
 						builder.moveToElement(result).click(result);
 						builder.perform();
@@ -351,8 +342,7 @@ public class HomePage extends BaseSelenium {
 						break;
 					}
 				} catch (org.openqa.selenium.StaleElementReferenceException e) {
-					if (result.getText().contains(pro.getProperty("OTHER FINDINGS")) ){
-//					if (result.getText().contains(pro.getProperty("searched_finding"))) {
+					if (result.getText().contains(searchedFinding)) {
 						Actions builder = new Actions(driver);
 						builder.moveToElement(result).click(result);
 						builder.perform();
@@ -365,13 +355,15 @@ public class HomePage extends BaseSelenium {
 
 	}
 
-	public void verify_added_cfd() throws IOException {
-		Properties pro = BaseSelenium.test_data();
+	public void verify_added_cfd() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","CFD");
+		String popularDiagnosis = data.getCellDataasstring(1, 3);
+		String searchedDiagnosis = data.getCellDataasstring(1, 2);
+		String searchedComplaint = data.getCellDataasstring(1, 0);
+		String searchedFinding = data.getCellDataasstring(1, 1);
+		
 		for (WebElement added_cfd : added_cfd_list) {
-			Assert.assertTrue(added_cfd.getText().contains("DENGUE FEVER - 1") || added_cfd.getText().contains("SORE THROAT")|| added_cfd.getText().contains("OTHER FINDINGS"));
-
-//			Assert.assertTrue(added_cfd.getText().contains(pro.getProperty("searched_diagnosis")) || added_cfd.getText().contains(pro.getProperty("searched_complaint"))
-//					|| added_cfd.getText().contains(pro.getProperty("searched_finding")));
+			Assert.assertTrue(added_cfd.getText().contains(popularDiagnosis)||added_cfd.getText().contains(searchedDiagnosis) || added_cfd.getText().contains(searchedComplaint)|| added_cfd.getText().contains(searchedFinding));
 
 		}
 	}

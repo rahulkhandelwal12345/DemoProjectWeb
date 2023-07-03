@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import com.demo.setup.BaseSelenium;
+import com.demo.utilities.ExcelUtils;
 import com.demo.utilities.WebUtilities;
 
 public class SummaryPage extends BaseSelenium {
@@ -67,48 +68,64 @@ public class SummaryPage extends BaseSelenium {
 	private List<WebElement> Drug_Dosage_Table_Cells;
 	
 	
-	
-	public void verify_diagnosis_in_summary() {
+	public void verify_diagnosis_in_summary() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","CFD");
+		String popularDiagnosis = data.getCellDataasstring(1, 3);
+
 		for(WebElement diagnosis : Diagnosis_List)
 		{
-			Assert.assertTrue(diagnosis.getText().equals("DENGUE FEVER - 1"));
+			Assert.assertTrue(diagnosis.getText().equals(popularDiagnosis));
 			System.out.println(">>>>>>SUMARRY DIAGNOSIS: "+diagnosis.getText());
 		}
 	}
 	
-	public void verify_complaintfinding__in_summary() {
+	public void verify_complaintfinding__in_summary() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","CFD");
+		String searchedComplaint = data.getCellDataasstring(1, 0);
+		String searchedFinding = data.getCellDataasstring(1, 1);
+
 		for(WebElement complaints : Complaints_Findings_List)
 		{
-			Assert.assertTrue(complaints.getText().equals("SORE THROAT"));
-			Assert.assertTrue(complaints.getText().equals("OTHER FINDINGS"));
+			Assert.assertTrue(complaints.getText().equals(searchedComplaint));
+			Assert.assertTrue(complaints.getText().equals(searchedFinding));
 		}
 	}
 	
-	public void verify_instructions_in_summary() {
+	public void verify_instructions_in_summary() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Test Instructions");
+		String instructionName = data.getCellDataasstring(1, 1);
 		for(WebElement instruction : Instructions_List)
 		{
-			Assert.assertTrue(instruction.getText().equals("Drink boiled water"));
+			Assert.assertTrue(instruction.getText().equals(instructionName));
 		}
 	}
 	
-	public void verify_tests__in_summary() {
+	public void verify_tests__in_summary() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Test Instructions");
+		String testName = data.getCellDataasstring(1, 0);
 		for(WebElement test : Tests_List)
 		{
-			Assert.assertTrue(test.getText().equals("Urine Acetone"));
+			Assert.assertTrue(test.getText().equals(testName));
 		}
 	}
 	
-	public void verify_procedures_in_summary() {
+	public void verify_procedures_in_summary() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Test Instructions");
+		String procedureName = data.getCellDataasstring(1, 2);
 		for(WebElement procedure : Procedures_List)
 		{
-			Assert.assertTrue(procedure.getText().equals("ARTHROSCOPIC STABILISATION PROCEDURE"));
+			Assert.assertTrue(procedure.getText().equals(procedureName));
 		}
 	}
 	
-	public void verify_drugs_in_summary() {
+	public void verify_drugs_in_summary() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Prescription");
+		String newdrugName = data.getCellDataasstring(1, 2);
+		String popularDrug = data.getCellDataasstring(1, 0);
+		String searchedDrug = data.getCellDataasstring(1, 1);
 		for(WebElement drug : Drugs_Names_List)
 		{
-			Assert.assertTrue(drug.getText().contains("DRUG101"));
+			Assert.assertTrue(drug.getText().contains(newdrugName));
 			System.out.println(">>>>>>SUMARRY DRUG: "+drug.getText());
 		}
 	}

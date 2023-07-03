@@ -1,7 +1,5 @@
 package com.demo.testcases.web;
 
-import java.io.IOException;
-
 import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
 
@@ -21,7 +19,7 @@ public class WebAppointmentPrescriptionPageTest extends BaseSelenium {
 	}
 	
 	@Test(priority = 2, enabled = true)
-	public void verify_20_popular_drugs() throws IOException {
+	public void verify_20_popular_drugs() throws Exception {
 		Prescription prescription = new Prescription(driver);
 		prescription.verify_20_popular_drugs();
 		prescription.verify_popular_drugs_delete_icon();
@@ -31,7 +29,7 @@ public class WebAppointmentPrescriptionPageTest extends BaseSelenium {
 	}
 	
 	@Test(priority = 3, enabled = true)
-	public void search_drugs() throws IOException {
+	public void search_drugs() throws Exception {
 		Prescription prescription = new Prescription(driver);
 		prescription.search_drugs();
 		prescription.add_searched_drug();
@@ -45,7 +43,7 @@ public class WebAppointmentPrescriptionPageTest extends BaseSelenium {
 	}
 
 	@Test(priority = 5, enabled = true)
-	public void add_new_drug_form_details() throws IOException {
+	public void add_new_drug_form_details() throws Exception {
 		Prescription prescription = new Prescription(driver);
 		prescription.click_on_add_new_drug_btn();
 		prescription.add_new_drug_details();
@@ -58,7 +56,7 @@ public class WebAppointmentPrescriptionPageTest extends BaseSelenium {
 	}
 	
 	@Test(priority = 6, enabled = true)
-	public void verify_created_drug_is_added() {
+	public void verify_created_drug_is_added() throws Exception {
 		Prescription prescription = new Prescription(driver);
 		prescription.verify_created_drug_added();
 		prescription.verify_created_drug_appears_in_search();
