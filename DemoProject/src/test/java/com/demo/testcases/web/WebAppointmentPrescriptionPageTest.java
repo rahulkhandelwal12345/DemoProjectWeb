@@ -37,12 +37,6 @@ public class WebAppointmentPrescriptionPageTest extends BaseSelenium {
 	}
 	
 	@Test(priority = 4, enabled = true)
-	public void verify_delete_icon_for_added_drugs() {
-		Prescription prescription = new Prescription(driver);
-		prescription.verify_delete_icon_for_added_drug();
-	}
-
-	@Test(priority = 5, enabled = true)
 	public void add_new_drug_form_details() throws Exception {
 		Prescription prescription = new Prescription(driver);
 		prescription.click_on_add_new_drug_btn();
@@ -55,11 +49,17 @@ public class WebAppointmentPrescriptionPageTest extends BaseSelenium {
 		prescription.click_submit_btn();
 	}
 	
-	@Test(priority = 6, enabled = true)
+	@Test(priority = 5, enabled = true)
 	public void verify_created_drug_is_added() throws Exception {
 		Prescription prescription = new Prescription(driver);
 		prescription.verify_created_drug_added();
 		prescription.verify_created_drug_appears_in_search();
+	}
+	
+	@Test(priority = 6, enabled = true)
+	public void verify_delete_icon_for_added_drugs() {
+		Prescription prescription = new Prescription(driver);
+		prescription.verify_delete_icon_for_added_drug();
 	}
 	
 	@Test(priority = 7, enabled = true)

@@ -2,7 +2,6 @@ package com.demo.actions.web;
 
 import java.io.FileInputStream;
 import java.io.FileReader;
-import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
@@ -118,10 +117,10 @@ public class HomePage extends BaseSelenium {
 		}
 	}
 
-	public void enter_mobile_no() throws IOException {
-		Properties pro = BaseSelenium.test_data();
-		//utilities.sendkeys(enter_mobile, pro.getProperty("mobile_number"));
-		utilities.sendkeys(enter_mobile, "7972007624");
+	public void enter_mobile_no() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Appointment");
+		String mobileNo = data.getCellDataasstring(0, 1);
+		utilities.sendkeys(enter_mobile, mobileNo);
 	}
 
 	public void choose_patient() {
@@ -237,10 +236,6 @@ public class HomePage extends BaseSelenium {
 		String searchedDiagnosis = data.getCellDataasstring(1, 2);
 		utilities.implicitWait();
 		utilities.sendkeys(searchbox, searchedDiagnosis);
-
-		
-		//for (WebElement result : Search_Result_cfd) {
-		//	System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEARCHED DIAGNOSIS  "+result.getText());
 
 			try {
 				for (WebElement result : Search_Result_cfd) {

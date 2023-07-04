@@ -8,3 +8,4 @@
 1688446055581	Rename method 'add_new_drug_duration'
 1688446082894	Rename method 'select_relation_with_food'
 1688446099832	Rename method 'add_drug_instructions'
+1688449049617	Rename field 'search_result_instructions'

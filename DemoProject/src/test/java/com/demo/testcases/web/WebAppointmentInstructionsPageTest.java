@@ -35,4 +35,12 @@ public class WebAppointmentInstructionsPageTest extends BaseSelenium {
 		instruction.add_procedure();
 	}
 	
+	@Test(priority = 5,  enabled = true)
+	public void create_new_test_inst_procedure() throws Exception {
+		Instructions instruction = new Instructions(driver);
+		instruction.create_new_test();
+		instruction.create_new_instruction();
+		instruction.create_new_procedure();
+	}
+	
 }

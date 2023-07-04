@@ -424,10 +424,8 @@ System.out.println("******************************* Drug price "+newdrugPrice);
 		utilities.sendkeys(searchbox, newdrugName);
 		for(WebElement result : search_result_drugs)
 		{
-			if(result.getText().equals(newdrugName))
-			{
 				try {
-					if(result.getText().contains(newdrugName))
+					if(result.getText().equals(newdrugName))
 					{
 						Actions builder = new Actions(driver);
 					    builder.moveToElement(result).click(result);
@@ -438,7 +436,7 @@ System.out.println("******************************* Drug price "+newdrugPrice);
 				catch(org.openqa.selenium.StaleElementReferenceException ex)
 				{
 					try {
-						if(result.getText().contains(newdrugName))
+						if(result.getText().equals(newdrugName))
 						{
 							Actions builder = new Actions(driver);
 						    builder.moveToElement(result).click(result);
@@ -448,7 +446,7 @@ System.out.println("******************************* Drug price "+newdrugPrice);
 					}
 					catch(org.openqa.selenium.StaleElementReferenceException e)
 					{
-						if(result.getText().contains(newdrugName))
+						if(result.getText().equals(newdrugName))
 						{
 							Actions builder = new Actions(driver);
 						    builder.moveToElement(result).click(result);
@@ -457,7 +455,6 @@ System.out.println("******************************* Drug price "+newdrugPrice);
 						}
 					}
 				}
-			}
 		}
 		
 		Assert.assertTrue(drug_already_added_msg.getText().contains("Drug already added"));

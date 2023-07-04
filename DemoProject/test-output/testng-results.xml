@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="13" total="39" passed="15" failed="11" skipped="0">
+<testng-results ignored="13" total="40" passed="20" failed="7" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-07-04T10:32:05 IST" name="Suite" finished-at="2023-07-04T10:35:54 IST" duration-ms="228606">
+  <suite started-at="2023-07-04T12:08:30 IST" name="Suite" finished-at="2023-07-04T12:12:13 IST" duration-ms="223031">
     <groups>
     </groups>
-    <test started-at="2023-07-04T10:32:05 IST" name="Test" finished-at="2023-07-04T10:35:54 IST" duration-ms="228606">
+    <test started-at="2023-07-04T12:08:30 IST" name="Test" finished-at="2023-07-04T12:12:13 IST" duration-ms="223031">
       <class name="com.demo.testcases.web.WebAppointmentInstructionsPageTest">
-        <test-method signature="instructions_tab()[pri:1, instance:com.demo.testcases.web.WebAppointmentInstructionsPageTest@7cf6a5f9]" started-at="2023-07-04T10:34:47 IST" name="instructions_tab" finished-at="2023-07-04T10:34:47 IST" duration-ms="298" status="PASS">
+        <test-method signature="instructions_tab()[pri:1, instance:com.demo.testcases.web.WebAppointmentInstructionsPageTest@623e088f]" started-at="2023-07-04T12:11:55 IST" name="instructions_tab" finished-at="2023-07-04T12:11:56 IST" duration-ms="494" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- instructions_tab -->
-        <test-method signature="search_test()[pri:2, instance:com.demo.testcases.web.WebAppointmentInstructionsPageTest@7cf6a5f9]" started-at="2023-07-04T10:34:47 IST" name="search_test" finished-at="2023-07-04T10:34:58 IST" duration-ms="10635" status="PASS">
+        <test-method signature="search_test()[pri:2, instance:com.demo.testcases.web.WebAppointmentInstructionsPageTest@623e088f]" started-at="2023-07-04T12:11:56 IST" name="search_test" finished-at="2023-07-04T12:11:56 IST" duration-ms="688" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- search_test -->
-        <test-method signature="search_instruction()[pri:3, instance:com.demo.testcases.web.WebAppointmentInstructionsPageTest@7cf6a5f9]" started-at="2023-07-04T10:34:58 IST" name="search_instruction" finished-at="2023-07-04T10:35:08 IST" duration-ms="10376" status="PASS">
+        <test-method signature="search_instruction()[pri:3, instance:com.demo.testcases.web.WebAppointmentInstructionsPageTest@623e088f]" started-at="2023-07-04T12:11:56 IST" name="search_instruction" finished-at="2023-07-04T12:11:57 IST" duration-ms="487" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- search_instruction -->
-        <test-method signature="search_procedure()[pri:4, instance:com.demo.testcases.web.WebAppointmentInstructionsPageTest@7cf6a5f9]" started-at="2023-07-04T10:35:08 IST" name="search_procedure" finished-at="2023-07-04T10:35:18 IST" duration-ms="10039" status="PASS">
+        <test-method signature="search_procedure()[pri:4, instance:com.demo.testcases.web.WebAppointmentInstructionsPageTest@623e088f]" started-at="2023-07-04T12:11:57 IST" name="search_procedure" finished-at="2023-07-04T12:11:57 IST" duration-ms="474" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- search_procedure -->
+        <test-method signature="create_new_test_inst_procedure()[pri:5, instance:com.demo.testcases.web.WebAppointmentInstructionsPageTest@623e088f]" started-at="2023-07-04T12:11:57 IST" name="create_new_test_inst_procedure" finished-at="2023-07-04T12:11:58 IST" duration-ms="1036" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- create_new_test_inst_procedure -->
       </class> <!-- com.demo.testcases.web.WebAppointmentInstructionsPageTest -->
       <class name="com.demo.testcases.web.WebAppointmentPrescriptionPageTest">
-        <test-method signature="prescription_tab()[pri:1, instance:com.demo.testcases.web.WebAppointmentPrescriptionPageTest@eda25e5]" started-at="2023-07-04T10:33:16 IST" name="prescription_tab" finished-at="2023-07-04T10:33:26 IST" duration-ms="10064" status="PASS">
+        <test-method signature="prescription_tab()[pri:1, instance:com.demo.testcases.web.WebAppointmentPrescriptionPageTest@7cf6a5f9]" started-at="2023-07-04T12:09:08 IST" name="prescription_tab" finished-at="2023-07-04T12:09:09 IST" duration-ms="332" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- prescription_tab -->
-        <test-method signature="verify_20_popular_drugs()[pri:2, instance:com.demo.testcases.web.WebAppointmentPrescriptionPageTest@eda25e5]" started-at="2023-07-04T10:33:26 IST" name="verify_20_popular_drugs" finished-at="2023-07-04T10:33:36 IST" duration-ms="10068" status="FAIL">
+        <test-method signature="verify_20_popular_drugs()[pri:2, instance:com.demo.testcases.web.WebAppointmentPrescriptionPageTest@7cf6a5f9]" started-at="2023-07-04T12:09:09 IST" name="verify_20_popular_drugs" finished-at="2023-07-04T12:09:11 IST" duration-ms="2545" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
@@ -40,8 +44,8 @@ at org.testng.Assert.fail(Assert.java:110)
 at org.testng.Assert.failNotEquals(Assert.java:1577)
 at org.testng.Assert.assertTrue(Assert.java:56)
 at org.testng.Assert.assertTrue(Assert.java:66)
-at com.demo.actions.web.Prescription.verify_20_popular_drugs(Prescription.java:126)
-at com.demo.testcases.web.WebAppointmentPrescriptionPageTest.verify_20_popular_drugs(WebAppointmentPrescriptionPageTest.java:24)
+at com.demo.actions.web.Prescription.verify_added_popular_drug(Prescription.java:185)
+at com.demo.testcases.web.WebAppointmentPrescriptionPageTest.verify_20_popular_drugs(WebAppointmentPrescriptionPageTest.java:27)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -76,29 +80,31 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_20_popular_drugs -->
-        <test-method signature="search_drugs()[pri:3, instance:com.demo.testcases.web.WebAppointmentPrescriptionPageTest@eda25e5]" started-at="2023-07-04T10:33:36 IST" name="search_drugs" finished-at="2023-07-04T10:33:46 IST" duration-ms="10174" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method signature="search_drugs()[pri:3, instance:com.demo.testcases.web.WebAppointmentPrescriptionPageTest@7cf6a5f9]" started-at="2023-07-04T12:09:11 IST" name="search_drugs" finished-at="2023-07-04T12:09:12 IST" duration-ms="627" status="FAIL">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//label[@class='item item-input']/input"}
+              <![CDATA[stale element reference: element is not attached to the page document
   (Session info: chrome=111.0.5563.146)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
 Build info: version: '4.9.0', revision: 'd7057100a6'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.14.0-1059-oem', java.version: '17.0.5'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54e7d880252ef0eaad87292b713bb448, findElement {using=xpath, value=//label[@class='item item-input']/input}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.ci2Oog}, goog:chromeOptions: {debuggerAddress: localhost:32835}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:32835/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 54e7d880252ef0eaad87292b713bb448]]>
+Command: [cbf0a82334c975602a415522e5a611f1, getElementText {id=2e821161-3c71-4f5a-8bb5-018e8d51ade1}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.ri21go}, goog:chromeOptions: {debuggerAddress: localhost:46495}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:46495/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on LINUX (cbf0a82334c975602a415522e5a611f1)] -> xpath: //*[@class="search-result ng-scope"]/div/a]
+Session ID: cbf0a82334c975602a415522e5a611f1]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//label[@class='item item-input']/input"}
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
   (Session info: chrome=111.0.5563.146)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
 Build info: version: '4.9.0', revision: 'd7057100a6'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.14.0-1059-oem', java.version: '17.0.5'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54e7d880252ef0eaad87292b713bb448, findElement {using=xpath, value=//label[@class='item item-input']/input}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.ci2Oog}, goog:chromeOptions: {debuggerAddress: localhost:32835}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:32835/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 54e7d880252ef0eaad87292b713bb448
+Command: [cbf0a82334c975602a415522e5a611f1, getElementText {id=2e821161-3c71-4f5a-8bb5-018e8d51ade1}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.ri21go}, goog:chromeOptions: {debuggerAddress: localhost:46495}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:46495/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on LINUX (cbf0a82334c975602a415522e5a611f1)] -> xpath: //*[@class="search-result ng-scope"]/div/a]
+Session ID: cbf0a82334c975602a415522e5a611f1
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -111,16 +117,10 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-at jdk.proxy2/jdk.proxy2.$Proxy17.sendKeys(Unknown Source)
-at com.demo.utilities.WebUtilities.sendkeys(WebUtilities.java:14)
-at com.demo.actions.web.Prescription.search_drugs(Prescription.java:217)
-at com.demo.testcases.web.WebAppointmentPrescriptionPageTest.search_drugs(WebAppointmentPrescriptionPageTest.java:34)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:207)
+at com.demo.actions.web.Prescription.add_searched_drug(Prescription.java:226)
+at com.demo.testcases.web.WebAppointmentPrescriptionPageTest.search_drugs(WebAppointmentPrescriptionPageTest.java:35)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -151,33 +151,33 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- search_drugs -->
-        <test-method signature="verify_delete_icon_for_added_drugs()[pri:4, instance:com.demo.testcases.web.WebAppointmentPrescriptionPageTest@eda25e5]" started-at="2023-07-04T10:33:46 IST" name="verify_delete_icon_for_added_drugs" finished-at="2023-07-04T10:33:56 IST" duration-ms="10067" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method signature="add_new_drug_form_details()[pri:4, instance:com.demo.testcases.web.WebAppointmentPrescriptionPageTest@7cf6a5f9]" started-at="2023-07-04T12:09:12 IST" name="add_new_drug_form_details" finished-at="2023-07-04T12:09:13 IST" duration-ms="1166" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="content"]/div/div[1]/div[2]/div[2]/section/div[3]/div[1]/div[2]/div[1]/div/div[10]/div/div[2]/div/a/i"}
+              <![CDATA[element click intercepted: Element <a href="javascript:void(0);" class="btn btn-blue" ng-click="vm.addDrugToDirectory($event)" ng-disabled="!(vm.currentUser.role_name == 'Doctor' || (vm.currentUser.role_name == 'Nurse' &amp;&amp; vm.currentUser.permissions.indexOf('Prescription') !== -1))">...</a> is not clickable at point (584, 15). Other element would receive the click: <header class="clearfix">...</header>
   (Session info: chrome=111.0.5563.146)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.9.0', revision: 'd7057100a6'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.14.0-1059-oem', java.version: '17.0.5'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54e7d880252ef0eaad87292b713bb448, findElement {using=xpath, value=//*[@id="content"]/div/div[1]/div[2]/div[2]/section/div[3]/div[1]/div[2]/div[1]/div/div[10]/div/div[2]/div/a/i}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.ci2Oog}, goog:chromeOptions: {debuggerAddress: localhost:32835}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:32835/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 54e7d880252ef0eaad87292b713bb448]]>
+Command: [cbf0a82334c975602a415522e5a611f1, clickElement {id=1a796887-09ff-43c1-a118-c716f5f84a5e}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.ri21go}, goog:chromeOptions: {debuggerAddress: localhost:46495}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:46495/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on LINUX (cbf0a82334c975602a415522e5a611f1)] -> xpath: //*[@class="btn btn-blue"]]
+Session ID: cbf0a82334c975602a415522e5a611f1]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="content"]/div/div[1]/div[2]/div[2]/section/div[3]/div[1]/div[2]/div[1]/div/div[10]/div/div[2]/div/a/i"}
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a href="javascript:void(0);" class="btn btn-blue" ng-click="vm.addDrugToDirectory($event)" ng-disabled="!(vm.currentUser.role_name == 'Doctor' || (vm.currentUser.role_name == 'Nurse' &amp;&amp; vm.currentUser.permissions.indexOf('Prescription') !== -1))">...</a> is not clickable at point (584, 15). Other element would receive the click: <header class="clearfix">...</header>
   (Session info: chrome=111.0.5563.146)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.9.0', revision: 'd7057100a6'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.14.0-1059-oem', java.version: '17.0.5'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54e7d880252ef0eaad87292b713bb448, findElement {using=xpath, value=//*[@id="content"]/div/div[1]/div[2]/div[2]/section/div[3]/div[1]/div[2]/div[1]/div/div[10]/div/div[2]/div/a/i}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.ci2Oog}, goog:chromeOptions: {debuggerAddress: localhost:32835}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:32835/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 54e7d880252ef0eaad87292b713bb448
+Command: [cbf0a82334c975602a415522e5a611f1, clickElement {id=1a796887-09ff-43c1-a118-c716f5f84a5e}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.ri21go}, goog:chromeOptions: {debuggerAddress: localhost:46495}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:46495/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on LINUX (cbf0a82334c975602a415522e5a611f1)] -> xpath: //*[@class="btn btn-blue"]]
+Session ID: cbf0a82334c975602a415522e5a611f1
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -190,94 +190,17 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-at jdk.proxy2/jdk.proxy2.$Proxy17.isDisplayed(Unknown Source)
-at com.demo.actions.web.Prescription.verify_delete_icon_for_added_drug(Prescription.java:201)
-at com.demo.testcases.web.WebAppointmentPrescriptionPageTest.verify_delete_icon_for_added_drugs(WebAppointmentPrescriptionPageTest.java:42)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:829)
-at org.testng.TestRunner.run(TestRunner.java:602)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-at org.testng.TestNG.runSuites(TestNG.java:1099)
-at org.testng.TestNG.run(TestNG.java:1067)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verify_delete_icon_for_added_drugs -->
-        <test-method signature="add_new_drug_form_details()[pri:5, instance:com.demo.testcases.web.WebAppointmentPrescriptionPageTest@eda25e5]" started-at="2023-07-04T10:33:56 IST" name="add_new_drug_form_details" finished-at="2023-07-04T10:34:06 IST" duration-ms="10077" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[@class="btn btn-blue"]"}
-  (Session info: chrome=111.0.5563.146)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.9.0', revision: 'd7057100a6'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.14.0-1059-oem', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54e7d880252ef0eaad87292b713bb448, findElement {using=xpath, value=//*[@class="btn btn-blue"]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.ci2Oog}, goog:chromeOptions: {debuggerAddress: localhost:32835}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:32835/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 54e7d880252ef0eaad87292b713bb448]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@class="btn btn-blue"]"}
-  (Session info: chrome=111.0.5563.146)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.9.0', revision: 'd7057100a6'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.14.0-1059-oem', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54e7d880252ef0eaad87292b713bb448, findElement {using=xpath, value=//*[@class="btn btn-blue"]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.ci2Oog}, goog:chromeOptions: {debuggerAddress: localhost:32835}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:32835/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 54e7d880252ef0eaad87292b713bb448
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
 at jdk.proxy2/jdk.proxy2.$Proxy17.click(Unknown Source)
 at com.demo.utilities.WebUtilities.click(WebUtilities.java:19)
 at com.demo.actions.web.Prescription.click_on_add_new_drug_btn(Prescription.java:271)
-at com.demo.testcases.web.WebAppointmentPrescriptionPageTest.add_new_drug_form_details(WebAppointmentPrescriptionPageTest.java:48)
+at com.demo.testcases.web.WebAppointmentPrescriptionPageTest.add_new_drug_form_details(WebAppointmentPrescriptionPageTest.java:42)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -308,54 +231,23 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- add_new_drug_form_details -->
-        <test-method signature="verify_created_drug_is_added()[pri:6, instance:com.demo.testcases.web.WebAppointmentPrescriptionPageTest@eda25e5]" started-at="2023-07-04T10:34:06 IST" name="verify_created_drug_is_added" finished-at="2023-07-04T10:34:26 IST" duration-ms="20124" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method signature="verify_created_drug_is_added()[pri:5, instance:com.demo.testcases.web.WebAppointmentPrescriptionPageTest@7cf6a5f9]" started-at="2023-07-04T12:09:13 IST" name="verify_created_drug_is_added" finished-at="2023-07-04T12:09:18 IST" duration-ms="5240" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//label[@class='item item-input']/input"}
-  (Session info: chrome=111.0.5563.146)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.9.0', revision: 'd7057100a6'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.14.0-1059-oem', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54e7d880252ef0eaad87292b713bb448, findElement {using=xpath, value=//label[@class='item item-input']/input}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.ci2Oog}, goog:chromeOptions: {debuggerAddress: localhost:32835}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:32835/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 54e7d880252ef0eaad87292b713bb448]]>
+              <![CDATA[expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//label[@class='item item-input']/input"}
-  (Session info: chrome=111.0.5563.146)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.9.0', revision: 'd7057100a6'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.14.0-1059-oem', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54e7d880252ef0eaad87292b713bb448, findElement {using=xpath, value=//label[@class='item item-input']/input}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.ci2Oog}, goog:chromeOptions: {debuggerAddress: localhost:32835}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:32835/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 54e7d880252ef0eaad87292b713bb448
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-at jdk.proxy2/jdk.proxy2.$Proxy17.clear(Unknown Source)
-at com.demo.actions.web.Prescription.verify_created_drug_appears_in_search(Prescription.java:401)
-at com.demo.testcases.web.WebAppointmentPrescriptionPageTest.verify_created_drug_is_added(WebAppointmentPrescriptionPageTest.java:62)
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1577)
+at org.testng.Assert.assertTrue(Assert.java:56)
+at org.testng.Assert.assertTrue(Assert.java:66)
+at com.demo.actions.web.Prescription.verify_created_drug_added(Prescription.java:396)
+at com.demo.testcases.web.WebAppointmentPrescriptionPageTest.verify_created_drug_is_added(WebAppointmentPrescriptionPageTest.java:55)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -386,33 +278,37 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_created_drug_is_added -->
-        <test-method signature="verify_same_drug_cannot_be_added_twice()[pri:7, instance:com.demo.testcases.web.WebAppointmentPrescriptionPageTest@eda25e5]" started-at="2023-07-04T10:34:26 IST" name="verify_same_drug_cannot_be_added_twice" finished-at="2023-07-04T10:34:37 IST" duration-ms="10178" status="FAIL">
+        <test-method signature="verify_delete_icon_for_added_drugs()[pri:6, instance:com.demo.testcases.web.WebAppointmentPrescriptionPageTest@7cf6a5f9]" started-at="2023-07-04T12:09:18 IST" name="verify_delete_icon_for_added_drugs" finished-at="2023-07-04T12:09:19 IST" duration-ms="86" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_delete_icon_for_added_drugs -->
+        <test-method signature="verify_same_drug_cannot_be_added_twice()[pri:7, instance:com.demo.testcases.web.WebAppointmentPrescriptionPageTest@7cf6a5f9]" started-at="2023-07-04T12:09:19 IST" name="verify_same_drug_cannot_be_added_twice" finished-at="2023-07-04T12:09:39 IST" duration-ms="20393" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//label[@class='item item-input']/input"}
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/md-toast"}
   (Session info: chrome=111.0.5563.146)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.9.0', revision: 'd7057100a6'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.14.0-1059-oem', java.version: '17.0.5'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54e7d880252ef0eaad87292b713bb448, findElement {using=xpath, value=//label[@class='item item-input']/input}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.ci2Oog}, goog:chromeOptions: {debuggerAddress: localhost:32835}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:32835/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 54e7d880252ef0eaad87292b713bb448]]>
+Command: [cbf0a82334c975602a415522e5a611f1, findElement {using=xpath, value=/html/body/md-toast}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.ri21go}, goog:chromeOptions: {debuggerAddress: localhost:46495}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:46495/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: cbf0a82334c975602a415522e5a611f1]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//label[@class='item item-input']/input"}
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/md-toast"}
   (Session info: chrome=111.0.5563.146)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.9.0', revision: 'd7057100a6'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.14.0-1059-oem', java.version: '17.0.5'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54e7d880252ef0eaad87292b713bb448, findElement {using=xpath, value=//label[@class='item item-input']/input}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.ci2Oog}, goog:chromeOptions: {debuggerAddress: localhost:32835}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:32835/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 54e7d880252ef0eaad87292b713bb448
+Command: [cbf0a82334c975602a415522e5a611f1, findElement {using=xpath, value=/html/body/md-toast}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.ri21go}, goog:chromeOptions: {debuggerAddress: localhost:46495}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:46495/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: cbf0a82334c975602a415522e5a611f1
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -431,9 +327,8 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-at jdk.proxy2/jdk.proxy2.$Proxy17.sendKeys(Unknown Source)
-at com.demo.utilities.WebUtilities.sendkeys(WebUtilities.java:14)
-at com.demo.actions.web.Prescription.verify_same_drug_cannot_be_added_twice(Prescription.java:424)
+at jdk.proxy2/jdk.proxy2.$Proxy17.getText(Unknown Source)
+at com.demo.actions.web.Prescription.verify_same_drug_cannot_be_added_twice(Prescription.java:460)
 at com.demo.testcases.web.WebAppointmentPrescriptionPageTest.verify_same_drug_cannot_be_added_twice(WebAppointmentPrescriptionPageTest.java:68)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -469,266 +364,73 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_same_drug_cannot_be_added_twice -->
-        <test-method signature="delete_all_added_drugs()[pri:8, instance:com.demo.testcases.web.WebAppointmentPrescriptionPageTest@eda25e5]" started-at="2023-07-04T10:34:37 IST" name="delete_all_added_drugs" finished-at="2023-07-04T10:34:47 IST" duration-ms="10022" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="content"]/div/div[1]/div[1]/div[2]/div[3]/a/i"}
-  (Session info: chrome=111.0.5563.146)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.9.0', revision: 'd7057100a6'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.14.0-1059-oem', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54e7d880252ef0eaad87292b713bb448, findElement {using=xpath, value=//*[@id="content"]/div/div[1]/div[1]/div[2]/div[3]/a/i}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.ci2Oog}, goog:chromeOptions: {debuggerAddress: localhost:32835}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:32835/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 54e7d880252ef0eaad87292b713bb448]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="content"]/div/div[1]/div[1]/div[2]/div[3]/a/i"}
-  (Session info: chrome=111.0.5563.146)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.9.0', revision: 'd7057100a6'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.14.0-1059-oem', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54e7d880252ef0eaad87292b713bb448, findElement {using=xpath, value=//*[@id="content"]/div/div[1]/div[1]/div[2]/div[3]/a/i}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.ci2Oog}, goog:chromeOptions: {debuggerAddress: localhost:32835}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:32835/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 54e7d880252ef0eaad87292b713bb448
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-at jdk.proxy2/jdk.proxy2.$Proxy17.click(Unknown Source)
-at com.demo.utilities.WebUtilities.click(WebUtilities.java:19)
-at com.demo.actions.web.Prescription.delete_all_drugs(Prescription.java:210)
-at com.demo.testcases.web.WebAppointmentPrescriptionPageTest.delete_all_added_drugs(WebAppointmentPrescriptionPageTest.java:74)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:829)
-at org.testng.TestRunner.run(TestRunner.java:602)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-at org.testng.TestNG.runSuites(TestNG.java:1099)
-at org.testng.TestNG.run(TestNG.java:1067)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method signature="delete_all_added_drugs()[pri:8, instance:com.demo.testcases.web.WebAppointmentPrescriptionPageTest@7cf6a5f9]" started-at="2023-07-04T12:09:39 IST" name="delete_all_added_drugs" finished-at="2023-07-04T12:11:55 IST" duration-ms="136374" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- delete_all_added_drugs -->
       </class> <!-- com.demo.testcases.web.WebAppointmentPrescriptionPageTest -->
       <class name="com.demo.testcases.web.WebAppointmentTest">
-        <test-method signature="appointment_for_existing_patient()[pri:1, instance:com.demo.testcases.web.WebAppointmentTest@71454b9d]" started-at="2023-07-04T10:32:21 IST" name="appointment_for_existing_patient" description="Verify doctor&#039;s should be able to create appointment for the available appointment slot." finished-at="2023-07-04T10:32:24 IST" duration-ms="2435" status="PASS">
+        <test-method signature="appointment_for_existing_patient()[pri:1, instance:com.demo.testcases.web.WebAppointmentTest@eda25e5]" started-at="2023-07-04T12:08:52 IST" name="appointment_for_existing_patient" description="Verify doctor&#039;s should be able to create appointment for the available appointment slot." finished-at="2023-07-04T12:08:55 IST" duration-ms="3261" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- appointment_for_existing_patient -->
-        <test-method signature="verify_booked_slot()[pri:2, instance:com.demo.testcases.web.WebAppointmentTest@71454b9d]" started-at="2023-07-04T10:32:24 IST" name="verify_booked_slot" description="Verify that doctor shouldn&#039;t able to create appointment in the already booked appointment slot." finished-at="2023-07-04T10:32:24 IST" duration-ms="516" status="PASS">
+        <test-method signature="verify_booked_slot()[pri:2, instance:com.demo.testcases.web.WebAppointmentTest@eda25e5]" started-at="2023-07-04T12:08:55 IST" name="verify_booked_slot" description="Verify that doctor shouldn&#039;t able to create appointment in the already booked appointment slot." finished-at="2023-07-04T12:08:56 IST" duration-ms="552" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_booked_slot -->
-        <test-method signature="verify_disabled_slot()[pri:3, instance:com.demo.testcases.web.WebAppointmentTest@71454b9d]" started-at="2023-07-04T10:32:24 IST" name="verify_disabled_slot" description="Verify if appointment slot is expired slot should be disable for appointment creation &amp; doctor shouldn&#039;t able to create appointment for the same expired slot ." finished-at="2023-07-04T10:32:25 IST" duration-ms="725" status="PASS">
+        <test-method signature="verify_disabled_slot()[pri:3, instance:com.demo.testcases.web.WebAppointmentTest@eda25e5]" started-at="2023-07-04T12:08:56 IST" name="verify_disabled_slot" description="Verify if appointment slot is expired slot should be disable for appointment creation &amp; doctor shouldn&#039;t able to create appointment for the same expired slot ." finished-at="2023-07-04T12:08:57 IST" duration-ms="639" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_disabled_slot -->
-        <test-method signature="open_created_appointment()[pri:4, instance:com.demo.testcases.web.WebAppointmentTest@71454b9d]" started-at="2023-07-04T10:32:25 IST" name="open_created_appointment" finished-at="2023-07-04T10:32:25 IST" duration-ms="193" status="PASS">
+        <test-method signature="open_created_appointment()[pri:4, instance:com.demo.testcases.web.WebAppointmentTest@eda25e5]" started-at="2023-07-04T12:08:57 IST" name="open_created_appointment" finished-at="2023-07-04T12:08:57 IST" duration-ms="232" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- open_created_appointment -->
-        <test-method signature="verify_20_popular_diagnosis()[pri:5, instance:com.demo.testcases.web.WebAppointmentTest@71454b9d]" started-at="2023-07-04T10:32:25 IST" name="verify_20_popular_diagnosis" finished-at="2023-07-04T10:32:35 IST" duration-ms="10066" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:110)
-at org.testng.Assert.failNotEquals(Assert.java:1577)
-at org.testng.Assert.assertTrue(Assert.java:56)
-at org.testng.Assert.assertTrue(Assert.java:66)
-at com.demo.actions.web.HomePage.verify_popular_diagnosis(HomePage.java:194)
-at com.demo.testcases.web.WebAppointmentTest.verify_20_popular_diagnosis(WebAppointmentTest.java:55)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:829)
-at org.testng.TestRunner.run(TestRunner.java:602)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-at org.testng.TestNG.runSuites(TestNG.java:1099)
-at org.testng.TestNG.run(TestNG.java:1067)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method signature="verify_20_popular_diagnosis()[pri:5, instance:com.demo.testcases.web.WebAppointmentTest@eda25e5]" started-at="2023-07-04T12:08:57 IST" name="verify_20_popular_diagnosis" finished-at="2023-07-04T12:09:06 IST" duration-ms="9128" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_20_popular_diagnosis -->
-        <test-method signature="add_popular_diagnosis()[pri:6, instance:com.demo.testcases.web.WebAppointmentTest@71454b9d]" started-at="2023-07-04T10:32:35 IST" name="add_popular_diagnosis" finished-at="2023-07-04T10:32:55 IST" duration-ms="20401" status="PASS">
+        <test-method signature="add_popular_diagnosis()[pri:6, instance:com.demo.testcases.web.WebAppointmentTest@eda25e5]" started-at="2023-07-04T12:09:06 IST" name="add_popular_diagnosis" finished-at="2023-07-04T12:09:07 IST" duration-ms="1100" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- add_popular_diagnosis -->
-        <test-method signature="diagnosis_tab_add_cfd()[pri:8, instance:com.demo.testcases.web.WebAppointmentTest@71454b9d]" started-at="2023-07-04T10:32:55 IST" name="diagnosis_tab_add_cfd" finished-at="2023-07-04T10:33:06 IST" duration-ms="10154" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//label[@class='item item-input']/input"}
-  (Session info: chrome=111.0.5563.146)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.9.0', revision: 'd7057100a6'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.14.0-1059-oem', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54e7d880252ef0eaad87292b713bb448, findElement {using=xpath, value=//label[@class='item item-input']/input}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.ci2Oog}, goog:chromeOptions: {debuggerAddress: localhost:32835}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:32835/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 54e7d880252ef0eaad87292b713bb448]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//label[@class='item item-input']/input"}
-  (Session info: chrome=111.0.5563.146)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.9.0', revision: 'd7057100a6'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.14.0-1059-oem', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54e7d880252ef0eaad87292b713bb448, findElement {using=xpath, value=//label[@class='item item-input']/input}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.ci2Oog}, goog:chromeOptions: {debuggerAddress: localhost:32835}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:32835/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 54e7d880252ef0eaad87292b713bb448
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-at jdk.proxy2/jdk.proxy2.$Proxy17.sendKeys(Unknown Source)
-at com.demo.utilities.WebUtilities.sendkeys(WebUtilities.java:14)
-at com.demo.actions.web.HomePage.search_diagnosis(HomePage.java:239)
-at com.demo.testcases.web.WebAppointmentTest.diagnosis_tab_add_cfd(WebAppointmentTest.java:75)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:829)
-at org.testng.TestRunner.run(TestRunner.java:602)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-at org.testng.TestNG.runSuites(TestNG.java:1099)
-at org.testng.TestNG.run(TestNG.java:1067)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method signature="diagnosis_tab_add_cfd()[pri:8, instance:com.demo.testcases.web.WebAppointmentTest@eda25e5]" started-at="2023-07-04T12:09:07 IST" name="diagnosis_tab_add_cfd" finished-at="2023-07-04T12:09:08 IST" duration-ms="1287" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- diagnosis_tab_add_cfd -->
-        <test-method signature="diagnosis_tab_verify_added_cfd()[pri:9, instance:com.demo.testcases.web.WebAppointmentTest@71454b9d]" started-at="2023-07-04T10:33:06 IST" name="diagnosis_tab_verify_added_cfd" finished-at="2023-07-04T10:33:16 IST" duration-ms="10165" status="PASS">
+        <test-method signature="diagnosis_tab_verify_added_cfd()[pri:9, instance:com.demo.testcases.web.WebAppointmentTest@eda25e5]" started-at="2023-07-04T12:09:08 IST" name="diagnosis_tab_verify_added_cfd" finished-at="2023-07-04T12:09:08 IST" duration-ms="200" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- diagnosis_tab_verify_added_cfd -->
       </class> <!-- com.demo.testcases.web.WebAppointmentTest -->
       <class name="com.demo.testcases.web.WebLoginTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.demo.testcases.web.WebLoginTest@55dfcc6]" started-at="2023-07-04T10:32:05 IST" name="setup" finished-at="2023-07-04T10:32:09 IST" duration-ms="4124" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.demo.testcases.web.WebLoginTest@222eb8aa]" started-at="2023-07-04T12:08:30 IST" name="setup" finished-at="2023-07-04T12:08:40 IST" duration-ms="9837" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="login()[pri:1, instance:com.demo.testcases.web.WebLoginTest@55dfcc6]" started-at="2023-07-04T10:32:09 IST" name="login" finished-at="2023-07-04T10:32:21 IST" duration-ms="12012" status="PASS">
+        <test-method signature="login()[pri:1, instance:com.demo.testcases.web.WebLoginTest@222eb8aa]" started-at="2023-07-04T12:08:40 IST" name="login" finished-at="2023-07-04T12:08:52 IST" duration-ms="12164" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.demo.testcases.web.WebLoginTest@55dfcc6]" started-at="2023-07-04T10:35:54 IST" name="tearDown" finished-at="2023-07-04T10:35:54 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.demo.testcases.web.WebLoginTest@222eb8aa]" started-at="2023-07-04T12:12:13 IST" name="tearDown" finished-at="2023-07-04T12:12:13 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.demo.testcases.web.WebLoginTest -->
       <class name="com.demo.testcases.web.WebAppointmentSummaryPageTest">
-        <test-method signature="summary_tab()[pri:1, instance:com.demo.testcases.web.WebAppointmentSummaryPageTest@623e088f]" started-at="2023-07-04T10:35:18 IST" name="summary_tab" finished-at="2023-07-04T10:35:18 IST" duration-ms="264" status="PASS">
+        <test-method signature="summary_tab()[pri:1, instance:com.demo.testcases.web.WebAppointmentSummaryPageTest@39fcbef6]" started-at="2023-07-04T12:11:58 IST" name="summary_tab" finished-at="2023-07-04T12:11:59 IST" duration-ms="300" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- summary_tab -->
-        <test-method signature="verify_dagnosis()[pri:2, instance:com.demo.testcases.web.WebAppointmentSummaryPageTest@623e088f]" started-at="2023-07-04T10:35:18 IST" name="verify_dagnosis" finished-at="2023-07-04T10:35:28 IST" duration-ms="10073" status="PASS">
+        <test-method signature="verify_dagnosis()[pri:2, instance:com.demo.testcases.web.WebAppointmentSummaryPageTest@39fcbef6]" started-at="2023-07-04T12:11:59 IST" name="verify_dagnosis" finished-at="2023-07-04T12:12:09 IST" duration-ms="10076" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_dagnosis -->
-        <test-method signature="verify_drug()[pri:3, instance:com.demo.testcases.web.WebAppointmentSummaryPageTest@623e088f]" started-at="2023-07-04T10:35:28 IST" name="verify_drug" finished-at="2023-07-04T10:35:49 IST" duration-ms="20333" status="PASS">
+        <test-method signature="verify_drug()[pri:3, instance:com.demo.testcases.web.WebAppointmentSummaryPageTest@39fcbef6]" started-at="2023-07-04T12:12:09 IST" name="verify_drug" finished-at="2023-07-04T12:12:09 IST" duration-ms="309" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_drug -->
-        <test-method signature="verify_record_is_saved()[pri:4, instance:com.demo.testcases.web.WebAppointmentSummaryPageTest@623e088f]" started-at="2023-07-04T10:35:49 IST" name="verify_record_is_saved" finished-at="2023-07-04T10:35:50 IST" duration-ms="1169" status="FAIL">
+        <test-method signature="verify_record_is_saved()[pri:4, instance:com.demo.testcases.web.WebAppointmentSummaryPageTest@39fcbef6]" started-at="2023-07-04T12:12:09 IST" name="verify_record_is_saved" finished-at="2023-07-04T12:12:10 IST" duration-ms="1028" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
@@ -775,7 +477,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_record_is_saved -->
-        <test-method signature="verify_record_is_printed()[pri:5, instance:com.demo.testcases.web.WebAppointmentSummaryPageTest@623e088f]" started-at="2023-07-04T10:35:50 IST" name="verify_record_is_printed" finished-at="2023-07-04T10:35:54 IST" duration-ms="3665" status="FAIL">
+        <test-method signature="verify_record_is_printed()[pri:5, instance:com.demo.testcases.web.WebAppointmentSummaryPageTest@39fcbef6]" started-at="2023-07-04T12:12:10 IST" name="verify_record_is_printed" finished-at="2023-07-04T12:12:13 IST" duration-ms="2807" status="FAIL">
           <exception class="java.util.NoSuchElementException">
             <full-stacktrace>
               <![CDATA[java.util.NoSuchElementException

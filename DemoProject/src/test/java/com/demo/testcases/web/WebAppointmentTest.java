@@ -1,7 +1,5 @@
 package com.demo.testcases.web;
 
-import java.io.IOException;
-
 import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
 
@@ -14,7 +12,7 @@ public class WebAppointmentTest extends BaseSelenium {
 	WebUtilities utilities = new WebUtilities();
 
 	@Test(priority = 1, enabled = true, description = "Verify doctor's should be able to create appointment for the available appointment slot.")
-	public void appointment_for_existing_patient() throws InterruptedException, IOException {
+	public void appointment_for_existing_patient() throws Exception {
 		HomePage page = new HomePage(driver);
 		utilities.implicitWait();
 		page.select_evening_time();
