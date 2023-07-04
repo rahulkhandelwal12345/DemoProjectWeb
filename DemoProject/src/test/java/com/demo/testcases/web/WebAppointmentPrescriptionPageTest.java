@@ -46,12 +46,12 @@ public class WebAppointmentPrescriptionPageTest extends BaseSelenium {
 	public void add_new_drug_form_details() throws Exception {
 		Prescription prescription = new Prescription(driver);
 		prescription.click_on_add_new_drug_btn();
-		prescription.add_new_drug_details();
-		prescription.add_new_drug_strength();
-		prescription.select_new_drug_frequency();
-		prescription.add_new_drug_duration();
-		prescription.select_relation_with_food();
-		prescription.add_drug_instructions();
+		prescription.create_new_drug_details();
+		prescription.create_new_drug_strength();
+		prescription.create_new_drug_frequency();
+		prescription.create_new_drug_duration();
+		prescription.craete_new_drug_relation_with_food();
+		prescription.create_drug_instructions();
 		prescription.click_submit_btn();
 	}
 	
@@ -60,6 +60,18 @@ public class WebAppointmentPrescriptionPageTest extends BaseSelenium {
 		Prescription prescription = new Prescription(driver);
 		prescription.verify_created_drug_added();
 		prescription.verify_created_drug_appears_in_search();
+	}
+	
+	@Test(priority = 7, enabled = true)
+	public void verify_same_drug_cannot_be_added_twice() throws Exception {
+		Prescription prescription = new Prescription(driver);
+		prescription.verify_same_drug_cannot_be_added_twice();
+	}
+	
+	@Test(priority = 8, enabled = true)
+	public void delete_all_added_drugs() {
+		Prescription prescription = new Prescription(driver);
+		prescription.delete_all_drugs();
 	}
 	
 	

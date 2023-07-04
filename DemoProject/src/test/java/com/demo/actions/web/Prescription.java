@@ -110,7 +110,8 @@ public class Prescription extends BaseSelenium {
 	@FindBy(xpath = "//*[@layout-align ='space-between center mt-5']/button[2]")
 	private WebElement new_drug_form_submit_btn_page3;
 	
-	
+	@FindBy(xpath = "/html/body/md-toast")
+	private WebElement drug_already_added_msg;
 	
 	public void verify_20_popular_drugs() {
 		utilities.implicitWait();
@@ -128,6 +129,7 @@ public class Prescription extends BaseSelenium {
 	}
 	
 	public void verify_popular_drugs_delete_icon() {
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", delete_all_drugs_icon);
 		Assert.assertTrue(delete_all_drugs_icon.isDisplayed());
 	}
 	
@@ -204,6 +206,10 @@ public class Prescription extends BaseSelenium {
 		utilities.click(delete_drugs_icon);
 	}
 	
+	public void delete_all_drugs() {
+		utilities.click(delete_all_drugs_icon);
+	}
+	
 	public void search_drugs() throws Exception {
 		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Prescription");
 		String searchedDrug = data.getCellDataasstring(1, 1);
@@ -267,7 +273,7 @@ public class Prescription extends BaseSelenium {
 
 	}
 	
-	public void add_new_drug_details() throws Exception {
+	public void create_new_drug_details() throws Exception {
 		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Prescription");
 		String newdrugName = data.getCellDataasstring(1, 2);
 		String newdrugCompany = data.getCellDataasstring(1, 3);
@@ -301,7 +307,7 @@ System.out.println("******************************* Drug price "+newdrugPrice);
 		action.moveToElement(new_drug_form_next_btn_page1).click().perform();
 	}
 	
-	public void add_new_drug_strength() throws Exception {
+	public void create_new_drug_strength() throws Exception {
 		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Prescription");
 		String newdrugStrength = data.getCellDataasstring(1, 7);
 		utilities.sendkeys(new_drug_strength, newdrugStrength );
@@ -320,7 +326,7 @@ System.out.println("******************************* Drug price "+newdrugPrice);
 		action.moveToElement(new_drug_form_next_btn_page2).click().perform();
 	}
 	
-	public void select_new_drug_frequency() {
+	public void create_new_drug_frequency() {
 		for(WebElement drug_frequency : drug_frequency_checknboxes)
 		{
 			if(drug_frequency.getAttribute("name").equals("frequency_m")||drug_frequency.getAttribute("name").equals("frequency_e")||drug_frequency.getAttribute("name").equals("frequency_a"))
@@ -332,7 +338,7 @@ System.out.println("******************************* Drug price "+newdrugPrice);
 		}
 	}
 	
-	public void add_new_drug_duration() throws Exception {
+	public void create_new_drug_duration() throws Exception {
 		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Prescription");
 		String newdrugDuration = data.getCellDataasstring(1, 8);
 		String newdrugDurationype = data.getCellDataasstring(1, 9);
@@ -343,7 +349,7 @@ System.out.println("******************************* Drug price "+newdrugPrice);
 		select.selectByVisibleText(newdrugDurationype);
 	}
 	
-	public void select_relation_with_food() throws Exception {
+	public void craete_new_drug_relation_with_food() throws Exception {
 		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Prescription");
 		String foodRelation = data.getCellDataasstring(1, 10);
 		for(WebElement food_relation : food_relation_radios)
@@ -355,7 +361,7 @@ System.out.println("******************************* Drug price "+newdrugPrice);
 		}
 	}
 	
-	public void add_drug_instructions() throws Exception {
+	public void create_drug_instructions() throws Exception {
 		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Prescription");
 		String newDrugInstruction = data.getCellDataasstring(1, 11);
 		utilities.sendkeys(drug_instruction_searchbox, newDrugInstruction);
@@ -410,5 +416,50 @@ System.out.println("******************************* Drug price "+newdrugPrice);
 
 				}
 		}
+	}
+	
+	public void verify_same_drug_cannot_be_added_twice() throws Exception {
+		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Prescription");
+		String newdrugName = data.getCellDataasstring(1, 2);
+		utilities.sendkeys(searchbox, newdrugName);
+		for(WebElement result : search_result_drugs)
+		{
+			if(result.getText().equals(newdrugName))
+			{
+				try {
+					if(result.getText().contains(newdrugName))
+					{
+						Actions builder = new Actions(driver);
+					    builder.moveToElement(result).click(result);
+					    builder.perform();
+					    break;
+					}
+				}
+				catch(org.openqa.selenium.StaleElementReferenceException ex)
+				{
+					try {
+						if(result.getText().contains(newdrugName))
+						{
+							Actions builder = new Actions(driver);
+						    builder.moveToElement(result).click(result);
+						    builder.perform();
+						    break;
+						}
+					}
+					catch(org.openqa.selenium.StaleElementReferenceException e)
+					{
+						if(result.getText().contains(newdrugName))
+						{
+							Actions builder = new Actions(driver);
+						    builder.moveToElement(result).click(result);
+						    builder.perform();
+						    break;
+						}
+					}
+				}
+			}
+		}
+		
+		Assert.assertTrue(drug_already_added_msg.getText().contains("Drug already added"));
 	}
 }

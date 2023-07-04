@@ -2,3 +2,9 @@
 1688367968971	Rename resource 'testdata.xlsx'
 1688367978031	Rename resource 'testdata (1).xlsx'
 1688368046527	Delete element
+1688445998660	Rename method 'add_new_drug_details'
+1688446014917	Rename method 'add_new_drug_strength'
+1688446035427	Rename method 'select_new_drug_frequency'
+1688446055581	Rename method 'add_new_drug_duration'
+1688446082894	Rename method 'select_relation_with_food'
+1688446099832	Rename method 'add_drug_instructions'

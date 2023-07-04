@@ -239,37 +239,46 @@ public class HomePage extends BaseSelenium {
 		utilities.sendkeys(searchbox, searchedDiagnosis);
 
 		
-		for (WebElement result : Search_Result_cfd) {
-			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEARCHED DIAGNOSIS  "+result.getText());
+		//for (WebElement result : Search_Result_cfd) {
+		//	System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEARCHED DIAGNOSIS  "+result.getText());
 
 			try {
+				for (WebElement result : Search_Result_cfd) {
+
 				if (result.getText().contains(searchedDiagnosis)) {
 					Actions builder = new Actions(driver);
 					builder.moveToElement(result).click(result);
 					builder.perform();
+					System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEARCHED DIAGNOSIS  "+result.getText());
 
 					break;
 				}
+				}
 			} catch (org.openqa.selenium.StaleElementReferenceException ex) {
 				try {
+					for (WebElement result : Search_Result_cfd) {
+
 					if (result.getText().contains(searchedDiagnosis)) {
 						Actions builder = new Actions(driver);
 						builder.moveToElement(result).click(result);
 						builder.perform();
-
+						System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEARCHED DIAGNOSIS  "+result.getText());
 						break;
 					}
+					}
 				} catch (org.openqa.selenium.StaleElementReferenceException e) {
+					for (WebElement result : Search_Result_cfd) {
 					if (result.getText().contains(searchedDiagnosis)) {
 						Actions builder = new Actions(driver);
 						builder.moveToElement(result).click(result);
 						builder.perform();
-
+						System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEARCHED DIAGNOSIS  "+result.getText());
 						break;
+					}
 					}
 				}
 			}
-		}
+		
 	}
 
 	public void search_complaint() throws Exception {
