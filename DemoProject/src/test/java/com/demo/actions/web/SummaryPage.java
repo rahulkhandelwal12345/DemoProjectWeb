@@ -72,9 +72,12 @@ public class SummaryPage extends BaseSelenium {
 	@FindBy(xpath = "//table[@class=\"table-fixed\"]/tbody/tr/td")
 	private List<WebElement> Drug_Dosage_Table_Cells;
 	
-	@FindBy(xpath = "//*[@class='icon-check ng-scope']")
-	private List<WebElement> Drug_Frequency_Checkmarks;
+	@FindBy(xpath = "//*[@class = 'table-prescription']/tbody/tr[1]/td[2]/table/tbody/tr/td")
+	private List<WebElement> Drug_Frequency_Checkmarks_row1;
 
+	@FindBy(xpath = "//*[@class = 'table-prescription']/tbody/tr[2]/td[2]/table/tbody/tr/td")
+	private List<WebElement> Drug_Frequency_Checkmarks_row2;
+	
 	@FindBy(xpath = "//table[@class='table-fixed']/tbody/tr[1]/td[7]/h6/span")
 	private List<WebElement> Duration_Column;
 	

@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import com.demo.setup.BaseSelenium;
 import com.demo.utilities.ExcelUtils;
@@ -86,6 +87,8 @@ public class LoginPage extends BaseSelenium {
 		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Login");
 		String username = data.getCellDataasstring(1, 0);
 		utilities.sendkeys(Email, username);
+		//Assert.assertTrue(Email.getText().equals(username));
+		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$Username: "+Email.getText());
 	}
 
 	public WebElement verify_user_name() {
@@ -100,6 +103,9 @@ public class LoginPage extends BaseSelenium {
 	    ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Login");
 	    String password = data.getCellDataasstring(1, 1);
 		utilities.sendkeys(Password, password);
+		//Assert.assertTrue(Password.getText().equals(password));
+		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$Username: "+Password.getText());
+
 	}
 
 	

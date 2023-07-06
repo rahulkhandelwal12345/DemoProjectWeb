@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.time.LocalTime;
 import java.util.Date;
 import java.util.List;
 import java.util.Properties;
@@ -49,7 +50,7 @@ public class HomePage extends BaseSelenium {
 	private List<WebElement> slots;
 
 	@FindBy(css = ".panel-body.ng-scope")
-	private WebElement rectangle;
+	private List<WebElement> rectangleList;
 
 	@FindBy(xpath = "//*[@class=\"btn-wrap ng-scope\"]/a[3]")
 	private List<WebElement> delete_appointment_buttons;
@@ -66,30 +67,7 @@ public class HomePage extends BaseSelenium {
 	@FindBy(css = ".flex-25.btn-save.md-button.ng-scope.md-ink-ripple")
 	private WebElement Add_Appointment_Btn;
 
-	@FindBy(xpath = "//label[@class='item item-input']/input")
-	private WebElement searchbox;
 
-	//@FindBy(xpath = "//a[@ng-class='vm.addClass(result)']")
-	@FindBy(xpath = "//div[@ng-repeat=\"result in vm.search_results\"]/a")
-	private List<WebElement> Search_Result_cfd;
-
-	@FindBy(css = ".nav.nav-tabs>li")
-	private List<WebElement> tabs;
-
-	@FindBy(css = ".field-wrap.field-name.ng-binding")
-	private List<WebElement> added_cfd_list;
-
-	@FindBy(xpath = "//*[@class= 'flex-15 layout-row field-wrap']/a[3]")
-	private WebElement delete_diagnosis;
-
-	@FindBy(xpath = "//*[@class= 'flex-30 field-wrap']/a[3]")
-	private WebElement delete_complaint;
-
-	@FindBy(xpath = "//*[@class= 'flex-15']/a[3]")
-	private WebElement delete_finding;
-
-	@FindBy(css = "md-toast > div > span")
-	private WebElement deleted_cfd_msg;
 
 	
 	
@@ -100,21 +78,38 @@ public class HomePage extends BaseSelenium {
 
 	public void select_a_slot() {
 
-		for (WebElement slot : All_slots_cards) {
+//		for (WebElement slot : All_slots_cards) {
+//
+//			if ((slot.getAttribute("class")).contains("disabled")
+//					|| (slot.getAttribute("class")).contains("non-members")) {
+//			}
+//
+//			else {
+//				WebElement slot_rect = slot.findElement(By.cssSelector(".panel-body.ng-scope"));
+//				// WebElement slot_rect = slot.findElements(rectangle);
+//				System.out.println(">>>>>" + slot.getAttribute("class"));
+//				JavascriptExecutor js = (JavascriptExecutor) driver;
+//				js.executeScript("arguments[0].click();", slot_rect);
+//				break;
+//			}
+//		}
+		
+		for (int i = 0; i < rectangleList.size(); i++) {
 
-			if ((slot.getAttribute("class")).contains("disabled")
-					|| (slot.getAttribute("class")).contains("non-members")) {
+		WebElement elementslot = rectangleList.get(i);
+		if ((elementslot.getAttribute("class")).contains("disabled")
+				|| (elementslot.getAttribute("class")).contains("non-members")) {
 			}
-
-			else {
-				WebElement slot_rect = slot.findElement(By.cssSelector(".panel-body.ng-scope"));
-				// WebElement slot_rect = slot.findElements(rectangle);
-				System.out.println(">>>>>" + slot.getAttribute("class"));
-				JavascriptExecutor js = (JavascriptExecutor) driver;
-				js.executeScript("arguments[0].click();", slot_rect);
-				break;
-			}
+		else {
+			//WebElement slot_rect = elementslot.findElement(By.cssSelector(".panel-body.ng-scope"));
+			//System.out.println(">>>>>" + elementslot.getAttribute("class"));
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();", elementslot);
+			break;
 		}
+//			System.out.println(">>>>>>>>>>>>>>>>>>>>>>Rectangle SIze"+rectangleList.size());
+		}
+				
 	}
 
 	public void enter_mobile_no() throws Exception {
@@ -141,26 +136,37 @@ public class HomePage extends BaseSelenium {
 	public void verify_diabled_slot() {
 		for (WebElement slot : All_slots_cards) {
 			// Create object of SimpleDateFormat class and decide the format
-			DateFormat dateFormat = new SimpleDateFormat("HH:mm");
+			SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm aa");
 			Date dateTime = new Date();
 			String time = dateFormat.format(dateTime);
 			System.out.println("Current date and time is " + time);
+			for(WebElement slot_time : Slots_Time)
+			{
+				String verify_time = slot_time.getText().substring(9).toLowerCase();
+				String t = verify_time.substring(0, 4);
+				String ampm = verify_time.substring(4);
+				String final_slot_time = t+" "+ampm;
+				System.out.println(">>>>>SLOT TIMES: "+final_slot_time);
+//				@SuppressWarnings("deprecation")
+//				long current_time = dateTime.parse(time);
+//				long slot_timing = dateTime.parse(verify_time);
+//				LocalTime current_time = LocalTime.parse(time);
+//				LocalTime slot_timing = LocalTime.parse(verify_time);
 
-			if ((slot.getAttribute("class")).contains("disabled")) {
-				WebElement timee = slot.findElement(By.cssSelector(".panel-body.ng-scope"));
-				System.out.println(">>> " + slot + " :Slot is disabled");
+//				if(verify_time < time)
+//				{
+//					Assert.assertTrue(slot.getAttribute("class").contains("disabled"));
+//				}
 			}
-
+			break;
 		}
 	}
 
 	public void verify_booked_slot() {
 		for (WebElement slot : All_slots_cards) {
 
-			if ((slot.getAttribute("class")).contains("non-members")) {
-				System.out.println(">>> " + slot + " :Slot is booked");
-			}
-
+			Assert.assertTrue(slot.getAttribute("class").contains("non-members"));
+	
 		}
 	}
 
@@ -180,243 +186,4 @@ public class HomePage extends BaseSelenium {
 		}
 
 	}
-
-	public void verify_popular_diagnosis() {
-		utilities.implicitWait();
-		int count = 0;
-		for (WebElement result : Search_Result_cfd) {
-			if (result.isDisplayed()) {
-				count++;
-			}
-		}
-
-		Assert.assertTrue(count == 20);
-		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + count);
-	}
-
-	public void add_popular_diagnosis() throws Exception {
-		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","CFD");
-		String popularDiagnosis = data.getCellDataasstring(1, 3);
-		for (WebElement result : Search_Result_cfd) {
-			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>POPULAR DIAGNOSIS  "+result.getText());
-
-			try {
-
-				if (result.getText().contains(popularDiagnosis)) {
-					Actions builder = new Actions(driver);
-					builder.moveToElement(result).click(result);
-					builder.perform();
-
-					break;
-				}
-			} catch (org.openqa.selenium.StaleElementReferenceException ex) {
-				try {
-					if (result.getText().contains(popularDiagnosis)) {
-						Actions builder = new Actions(driver);
-						builder.moveToElement(result).click(result);
-						builder.perform();
-
-						break;
-					}
-				} catch (org.openqa.selenium.StaleElementReferenceException e) {
-					if (result.getText().contains("popularDiagnosis")) {
-						Actions builder = new Actions(driver);
-						builder.moveToElement(result).click(result);
-						builder.perform();
-
-						break;
-					}
-				}
-			}
-		}
-	}
-
-	public void search_diagnosis() throws Exception {
-		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","CFD");
-		String searchedDiagnosis = data.getCellDataasstring(1, 2);
-		utilities.implicitWait();
-		utilities.sendkeys(searchbox, searchedDiagnosis);
-
-			try {
-				for (WebElement result : Search_Result_cfd) {
-
-				if (result.getText().contains(searchedDiagnosis)) {
-					Actions builder = new Actions(driver);
-					builder.moveToElement(result).click(result);
-					builder.perform();
-					System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEARCHED DIAGNOSIS  "+result.getText());
-
-					break;
-				}
-				}
-			} catch (org.openqa.selenium.StaleElementReferenceException ex) {
-				try {
-					for (WebElement result : Search_Result_cfd) {
-
-					if (result.getText().contains(searchedDiagnosis)) {
-						Actions builder = new Actions(driver);
-						builder.moveToElement(result).click(result);
-						builder.perform();
-						System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEARCHED DIAGNOSIS  "+result.getText());
-						break;
-					}
-					}
-				} catch (org.openqa.selenium.StaleElementReferenceException e) {
-					for (WebElement result : Search_Result_cfd) {
-					if (result.getText().contains(searchedDiagnosis)) {
-						Actions builder = new Actions(driver);
-						builder.moveToElement(result).click(result);
-						builder.perform();
-						System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEARCHED DIAGNOSIS  "+result.getText());
-						break;
-					}
-					}
-				}
-			}
-		
-	}
-
-	public void search_complaint() throws Exception {
-		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","CFD");
-		String searchedComplaint = data.getCellDataasstring(1, 0);
-		utilities.implicitWait();
-		searchbox.clear();
-		utilities.sendkeys(searchbox, searchedComplaint);
-		utilities.implicitWait();
-
-		for (WebElement result : Search_Result_cfd) {
-			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEARCHED COMPLAINT  "+result.getText());
-
-			try {
-				if (result.getText().contains(searchedComplaint)) {
-					Actions builder = new Actions(driver);
-					builder.moveToElement(result).click(result);
-					builder.perform();
-
-					break;
-				}
-			} catch (org.openqa.selenium.StaleElementReferenceException ex) {
-				try {
-					if (result.getText().contains(searchedComplaint)) {
-						Actions builder = new Actions(driver);
-						builder.moveToElement(result).click(result);
-						builder.perform();
-
-						break;
-					}
-				} catch (org.openqa.selenium.StaleElementReferenceException e) {
-					if (result.getText().contains(searchedComplaint)) {
-						Actions builder = new Actions(driver);
-						builder.moveToElement(result).click(result);
-						builder.perform();
-
-						break;
-					}
-				}
-			}
-		}
-	}
-
-	public void search_finding() throws Exception {
-		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","CFD");
-		String searchedFinding = data.getCellDataasstring(1, 1);
-		utilities.implicitWait();
-		searchbox.clear();
-		utilities.sendkeys(searchbox, "OTHER FINDINGS");
-		utilities.implicitWait();
-
-		for (WebElement result : Search_Result_cfd) {
-			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEARCHED FINDINGS  "+result.getText());
-
-			try {
-				if (result.getText().contains(searchedFinding) ){
-					Actions builder = new Actions(driver);
-					builder.moveToElement(result).click(result);
-					builder.perform();
-
-					break;
-				}
-			} catch (org.openqa.selenium.StaleElementReferenceException ex) {
-				try {
-					if (result.getText().contains(searchedFinding) ){
-						Actions builder = new Actions(driver);
-						builder.moveToElement(result).click(result);
-						builder.perform();
-
-						break;
-					}
-				} catch (org.openqa.selenium.StaleElementReferenceException e) {
-					if (result.getText().contains(searchedFinding)) {
-						Actions builder = new Actions(driver);
-						builder.moveToElement(result).click(result);
-						builder.perform();
-
-						break;
-					}
-				}
-			}
-		}
-
-	}
-
-	public void verify_added_cfd() throws Exception {
-		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","CFD");
-		String popularDiagnosis = data.getCellDataasstring(1, 3);
-		String searchedDiagnosis = data.getCellDataasstring(1, 2);
-		String searchedComplaint = data.getCellDataasstring(1, 0);
-		String searchedFinding = data.getCellDataasstring(1, 1);
-		
-		for (WebElement added_cfd : added_cfd_list) {
-			Assert.assertTrue(added_cfd.getText().contains(popularDiagnosis)||added_cfd.getText().contains(searchedDiagnosis) || added_cfd.getText().contains(searchedComplaint)|| added_cfd.getText().contains(searchedFinding));
-
-		}
-	}
-
-	public void delete_added_diagnosis() {
-		utilities.click(delete_diagnosis);
-	}
-
-	public void delete_added_complaint() {
-		Actions builder = new Actions(driver);
-		builder.moveToElement(delete_complaint).click(delete_complaint).perform();
-//		utilities.click(delete_complaint);
-	}
-
-	public void delete_added_finding() {
-		utilities.click(delete_finding);
-	}
-
-	public void verify_deleted_cfd() {
-		Assert.assertTrue(deleted_cfd_msg.getText().contains("deleted successfully"));
-	}
-
-	
-
-	public void open_prescription_tab() {
-		for (WebElement tab : tabs) {
-			if (tab.getText().equalsIgnoreCase("PRESCRIPTION")) {
-				utilities.click(tab);
-			}
-
-		}
-	}
-
-	public void open_instruction_tab() {
-		for (WebElement tab : tabs) {
-			if (tab.getText().equalsIgnoreCase("INSTRUCTIONS")) {
-				utilities.click(tab);
-			}
-
-		}
-	}
-
-	public void open_summary_tab() {
-		for (WebElement tab : tabs) {
-			if (tab.getText().equalsIgnoreCase("SUMMARY")) {
-				utilities.click(tab);
-			}
-
-		}
-	}
-
 }

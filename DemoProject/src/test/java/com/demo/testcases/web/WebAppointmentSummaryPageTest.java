@@ -3,6 +3,7 @@ package com.demo.testcases.web;
 import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
 
+import com.demo.actions.web.CFDPage;
 import com.demo.actions.web.HomePage;
 import com.demo.actions.web.SummaryPage;
 import com.demo.setup.BaseSelenium;
@@ -14,7 +15,7 @@ public class WebAppointmentSummaryPageTest extends BaseSelenium {
 	
 	@Test(priority = 1, enabled = true)
 	public void summary_tab() {
-		HomePage page = new HomePage(driver);
+		CFDPage page = new CFDPage(driver);
 		page.open_summary_tab();
 	}
 	

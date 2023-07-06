@@ -143,10 +143,10 @@ public class Prescription extends BaseSelenium {
 				try {
 					if(result.getText().contains(popularDrug))
 					{
-						 Actions builder = new Actions(driver);
-					     builder.moveToElement(result).click(result);
-					     builder.perform();
-						
+						Actions builder = new Actions(driver);
+					    builder.moveToElement(result).click(result);
+					    builder.perform();
+						Assert.assertTrue(result.getText().contains(popularDrug));
 					    break;
 					}
 				}
@@ -155,10 +155,10 @@ public class Prescription extends BaseSelenium {
 					try {
 						if(result.getText().contains(popularDrug))
 						{
-							 Actions builder = new Actions(driver);
-						     builder.moveToElement(result).click(result);
-						     builder.perform();
-							
+							Actions builder = new Actions(driver);
+						    builder.moveToElement(result).click(result);
+						    builder.perform();
+							Assert.assertTrue(result.getText().contains(popularDrug));
 						    break;
 						}
 					}
@@ -166,10 +166,10 @@ public class Prescription extends BaseSelenium {
 					{
 						if(result.getText().contains(popularDrug))
 						{
-							 Actions builder = new Actions(driver);
-						     builder.moveToElement(result).click(result);
-						     builder.perform();
-						     
+							Actions builder = new Actions(driver);
+						    builder.moveToElement(result).click(result);
+						    builder.perform();
+							Assert.assertTrue(result.getText().contains(popularDrug)); 
 						    break;
 						}
 					}
@@ -215,6 +215,7 @@ public class Prescription extends BaseSelenium {
 		String searchedDrug = data.getCellDataasstring(1, 1);
 		utilities.implicitWait();
 		utilities.sendkeys(searchbox, searchedDrug);
+		Assert.assertTrue(searchbox.getText().equals(searchedDrug));
 		
 	}
 	
@@ -229,7 +230,7 @@ public class Prescription extends BaseSelenium {
 					if(result.getText().contains(searchedDrug))
 					{
 						System.out.println(">>>>>>>>>>>>>>>>>>>>DRUGS"+result.getText());
-
+						Assert.assertTrue(result.getText().contains(searchedDrug));
 						Actions builder = new Actions(driver);
 					    builder.moveToElement(result).click(result);
 					    builder.perform();
@@ -242,7 +243,7 @@ public class Prescription extends BaseSelenium {
 						if(result.getText().contains(searchedDrug))
 						{
 							System.out.println(">>>>>>>>>>>>>>>>>>>>DRUGS"+result.getText());
-
+							Assert.assertTrue(result.getText().contains(searchedDrug));
 							Actions builder = new Actions(driver);
 						    builder.moveToElement(result).click(result);
 						    builder.perform();
@@ -254,7 +255,7 @@ public class Prescription extends BaseSelenium {
 						if(result.getText().contains(searchedDrug))
 						{
 							System.out.println(">>>>>>>>>>>>>>>>>>>>DRUGS"+result.getText());
-
+							Assert.assertTrue(result.getText().contains(searchedDrug));
 							Actions builder = new Actions(driver);
 						    builder.moveToElement(result).click(result);
 						    builder.perform();
@@ -280,7 +281,6 @@ public class Prescription extends BaseSelenium {
 		String newdrugPrice = data.getCellDataasstring(1, 4);
 		String newdrugMode = data.getCellDataasstring(1, 5);
 		String newdrugFormulation = data.getCellDataasstring(1, 6);
-System.out.println("******************************* Drug price "+newdrugPrice);
 		
 		utilities.sendkeys(new_drug_name, newdrugName);
 		utilities.sendkeys(new_drug_company_name, newdrugCompany);

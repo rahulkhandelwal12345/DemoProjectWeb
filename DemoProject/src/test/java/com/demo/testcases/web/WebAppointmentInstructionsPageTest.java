@@ -2,7 +2,7 @@ package com.demo.testcases.web;
 
 import org.testng.annotations.Test;
 
-import com.demo.actions.web.HomePage;
+import com.demo.actions.web.CFDPage;
 import com.demo.actions.web.Instructions;
 import com.demo.setup.BaseSelenium;
 
@@ -10,7 +10,7 @@ public class WebAppointmentInstructionsPageTest extends BaseSelenium {
 
 	@Test(priority = 1, enabled = true)
 	public void instructions_tab() {
-		HomePage page = new HomePage(driver);
+		CFDPage page = new CFDPage(driver);
 		page.open_instruction_tab();
 	}
 	

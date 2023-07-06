@@ -8,10 +8,10 @@
 	<test thread-count="5" name="Test">
 		<classes>
 			<class name="com.demo.testcases.web.WebLoginTest" />
-			<class name="com.demo.testcases.web.WebAppointmentTest" />
-			<class name="com.demo.testcases.web.WebAppointmentPrescriptionPageTest" />
+			<class name="com.demo.testcases.web.WebAppointmentCFDTest" />
+			<!-- <class name="com.demo.testcases.web.WebAppointmentPrescriptionPageTest" />
 			<class name="com.demo.testcases.web.WebAppointmentInstructionsPageTest" />
-			<class name="com.demo.testcases.web.WebAppointmentSummaryPageTest" />
+			<class name="com.demo.testcases.web.WebAppointmentSummaryPageTest" />-->
 		</classes>
 	</test>
 </suite>

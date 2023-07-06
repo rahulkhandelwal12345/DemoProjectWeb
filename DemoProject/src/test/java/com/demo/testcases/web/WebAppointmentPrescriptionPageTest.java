@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
 
 import com.demo.actions.web.Prescription;
+import com.demo.actions.web.CFDPage;
 import com.demo.actions.web.HomePage;
 import com.demo.setup.BaseSelenium;
 import com.demo.utilities.WebUtilities;
@@ -14,7 +15,7 @@ public class WebAppointmentPrescriptionPageTest extends BaseSelenium {
 	
 	@Test(priority = 1, enabled = true)
 	public void prescription_tab() {
-		HomePage page = new HomePage(driver);
+		CFDPage page = new CFDPage(driver);
 		page.open_prescription_tab();
 	}
 	
