@@ -347,7 +347,7 @@ public class Prescription extends BaseSelenium {
 		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Prescription");
 		String newdrugDuration = data.getCellDataasstring(1, 8);
 		String newdrugDurationype = data.getCellDataasstring(1, 9);
-
+		
 		utilities.sendkeys(drug_duration, newdrugDuration);
 		utilities.click(drug_duration_type_dropdown_btn);
 		Select select = new Select(drug_duration_type_dropdown_btn);

@@ -42,7 +42,7 @@ public class HomePage extends BaseSelenium {
 	@FindBy(xpath = "//*[@id=\"content\"]/div/div/div[2]/div[2]/md-grid-list/md-grid-tile/figure/div[2]")
 	private List<WebElement> slots;
 
-	@FindBy(xpath = "// div[@class='panel-body ng-scope']")
+	@FindBy(xpath = "//div[contains(@class, 'panel-body ng-scope')]")
 	private List<WebElement> rectangleList;
 
 	@FindBy(xpath = "//*[@class=\"btn-wrap ng-scope\"]/a[3]")
@@ -72,39 +72,39 @@ public class HomePage extends BaseSelenium {
 
 	public void select_a_slot() {
 
-//		for (WebElement slot : All_slots_cards) {
-//
-//			if ((slot.getAttribute("class")).contains("disabled")
-//					|| (slot.getAttribute("class")).contains("non-members")) {
-//			}
-//
-//			else {
-//				WebElement slot_rect = slot.findElement(By.cssSelector(".panel-body.ng-scope"));
-//				// WebElement slot_rect = slot.findElements(rectangle);
-//				System.out.println(">>>>>" + slot.getAttribute("class"));
-//				JavascriptExecutor js = (JavascriptExecutor) driver;
-//				js.executeScript("arguments[0].click();", slot_rect);
-//				break;
-//			}
-//		}
+		for (WebElement slot : All_slots_cards) {
+
+			if ((slot.getAttribute("class")).contains("disabled")
+					|| (slot.getAttribute("class")).contains("non-members")) {
+			}
+
+			else {
+				WebElement slot_rect = slot.findElement(By.cssSelector(".panel-body.ng-scope"));
+				// WebElement slot_rect = slot.findElements(rectangle);
+				System.out.println(">>>>>" + slot.getAttribute("class"));
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].click();", slot_rect);
+				break;
+			}
+		}
 		
 
-		List<WebElement> list = driver.findElements(By.xpath("//div[contains(@class, 'panel-body ng-scope')]\n"
-				+ "\n"
-				+ ""));
-
-        int length = list.size();
-        System.out.println("VALUE OF length: "+length);
-
-        for (int i = 0; i < length; i++) {
-            System.out.println("VALUE OF i: "+i);
+//		List<WebElement> list = driver.findElements(By.xpath("//div[contains(@class, 'panel-body ng-scope')]\n"
+//				+ "\n"
+//				+ ""));
+//
+//        int length = list.size();
+//        System.out.println("VALUE OF length: "+length);
+//
+//        for (int i = 0; i < length; i++) {
+//            System.out.println("VALUE OF i: "+i);
 //            WebElement card= driver.findElement(By.xpath("(//div[contains(@class,'panel-body')])["+i+"]"));
 //            utilities.fluent_wait(card);
 //            card.click();
 //            driver.navigate().back();
 //            utilities.implicitWait();
 //            System.out.println("click done");
-        }
+//        }
 				
 	}
 
@@ -163,25 +163,22 @@ public class HomePage extends BaseSelenium {
 	
 		}
 	}
+	
 
-	public void select_created_appointment() {
-		utilities.fluent_wait(All_slots_cards);
+
+	public void select_created_appointment() throws InterruptedException {
 //		for (WebElement slot : All_slots_cards) {
-//			utilities.fluent_wait(slot);
 //			if ((slot.getAttribute("class")).contains("non-members")) {
 //				WebElement slot_rect = slot.findElement(By.cssSelector(".panel-body.ng-scope"));
 //				JavascriptExecutor js = (JavascriptExecutor) driver;
 //				js.executeScript("arguments[0].click();", slot_rect);
-//				for(WebElement addedcfd : added_cfd_list)
-//				{
-//					if(addedcfd.isDisplayed())
-//					{
-//						driver.navigate().back();
-//					}
-//					else {
-//						break;
-//					}
-//				}
+////				for(WebElement addedcfd : added_cfd_list)
+////				{
+////					if(addedcfd.isDisplayed())
+////					{
+////						driver.navigate().back();
+////					}
+////				}
 //			}
 //
 //			else {
@@ -189,17 +186,34 @@ public class HomePage extends BaseSelenium {
 //			}
 //		}
 		
-		int length = rectangleList.size();
-        for (int i = 2; i < length; i++) {
-            WebElement card= driver.findElement(By.xpath("(//div[contains(@class,'panel-body')])["+i+"]"));
-            if ((card.getAttribute("class")).contains("non-members")) {
-            	card.click();
-            	System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!card class"+card.getAttribute("class"));
-            }
-            driver.navigate().back();
-            System.out.println("click done");
-        }
+//		int length = rectangleList.size();
+//        for (int i = 2; i < length; i++) {
+//        	System.out.println("Value of i: "+i);
+//            WebElement card= driver.findElement(By.xpath("(//div[contains(@class,'panel-body')])["+i+"]"));
+//            if ((card.getAttribute("class")).contains("non-members")) {
+//            	card.click();
+//            	System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!card class"+card.getAttribute("class"));
+//            }
+//            driver.navigate().back();
+//        }
 		
-
+		 int length = rectangleList.size();
+		 System.out.println(length);
+		 for (int i = 2; i < length; i++) {
+		 WebElement card= driver.findElement(By.xpath("(//div[contains(@class,\"panel-body\")])["+i+"]"));
+		 card.click();
+		 Thread.sleep(5000);
+		 for(WebElement addedcfd : added_cfd_list)
+			{
+				if(addedcfd.isDisplayed())
+				{
+					driver.navigate().back();
+				}
+				else {
+					System.out.println("Diagnosis not added");
+				}
+			}
+		 
+		 }
 	}
 }

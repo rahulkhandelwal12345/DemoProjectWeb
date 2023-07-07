@@ -1,5 +1,7 @@
 package com.demo.testcases.web;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -36,7 +38,7 @@ public class WebLoginTest extends BaseSelenium {
 		page.click_conformation_Logout_btn();
 		WebElement recent_login = page.recent_login_disply();
 		logger.info("Verifying the recent login text is displayed");
-		assertTrue(recent_login.isDisplayed(), "Recent login is not displaying on the page");
+		Assert.assertTrue(recent_login.isDisplayed(), "Recent login is not displaying on the page");
 		logger.info("Logout test cases executed successfully");
 	}
 
@@ -47,7 +49,7 @@ public class WebLoginTest extends BaseSelenium {
 		page.enterInvalidPassword();
 		page.click_login_btn();
 		String actualErrorMessage = page.validateErrorMessage();
-		assertEquals(actualErrorMessage, "The password that you've entered is incorrect. Forgotten password?");
+		AssertJUnit.assertEquals(actualErrorMessage, "The password that you've entered is incorrect. Forgotten password?");
 	}
 
 }

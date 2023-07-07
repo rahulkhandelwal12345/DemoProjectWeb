@@ -1,5 +1,6 @@
 package com.demo.actions.web;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.JavascriptExecutor;
@@ -8,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.demo.setup.BaseSelenium;
@@ -49,6 +52,9 @@ public class CFDPage extends BaseSelenium{
 
 	@FindBy(css = "md-toast > div > span")
 	private WebElement deleted_cfd_msg;
+	
+	@FindBy(xpath = "//a[contains(text(),'INSTRUCTIONS')]")
+	private WebElement Instruction_tab;
 	
 	public void verify_popular_diagnosis() {
 		utilities.implicitWait();
@@ -263,7 +269,7 @@ public class CFDPage extends BaseSelenium{
 		Assert.assertTrue(deleted_cfd_msg.getText().contains("deleted successfully"));
 	}
 
-	public void open_prescription_tab() {
+	public void open_prescription_tab() throws InterruptedException {
 		for (WebElement tab : tabs) {
 			if (tab.getText().equalsIgnoreCase("PRESCRIPTION")) {
 				utilities.click(tab);
@@ -272,24 +278,33 @@ public class CFDPage extends BaseSelenium{
 		}
 	}
 
-	public void open_instruction_tab() {
-		for (WebElement tab : tabs) {
-			utilities.fluent_wait(tab);
-			if (tab.getText().equalsIgnoreCase("INSTRUCTIONS")) {
-				utilities.fluent_wait(tab);
-				((JavascriptExecutor)driver).executeScript("arguments[0].click();", tab);
-			}
+	
+	public void open_instruction_tab() throws InterruptedException {
+//        for (WebElement tabElement : tabs) {
+//        	Thread.sleep(5000);
+//            if (tabElement.getText().equalsIgnoreCase("INSTRUCTIONS")) {
+//            	Thread.sleep(1000);
+//            	//utilities.scroll_to_element(tabElement);
+//                tabElement.click();
+//            }
+//        }
+		Thread.sleep(2000);
 
-		}
-	}
+		utilities.scroll_to_element();
+		Thread.sleep(3000);
+		Instruction_tab.click();
+		
+    }
 
-	public void open_summary_tab() {
-		for (WebElement tab : tabs) {
-			if (tab.getText().equalsIgnoreCase("SUMMARY")) {
-				((JavascriptExecutor)driver).executeScript("arguments[0].click();", tab);
-			}
-
-		}
+	public void open_summary_tab() throws InterruptedException {
+		for (WebElement tabElement : tabs) {
+        	Thread.sleep(5000);
+            if (tabElement.getText().equalsIgnoreCase("SUMMARY")) {
+        		utilities.scroll_to_element();
+        		Thread.sleep(3000);
+                tabElement.click();
+            }
+        }
 	}
 
 }

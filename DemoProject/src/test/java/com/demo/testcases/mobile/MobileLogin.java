@@ -1,5 +1,6 @@
 package com.demo.testcases.mobile;
 
+import org.testng.annotations.Test;
 import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
 

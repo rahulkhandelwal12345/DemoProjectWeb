@@ -1,5 +1,6 @@
 package com.demo.testcases.web;
 
+import org.testng.annotations.Test;
 import java.text.ParseException;
 
 import org.apache.log4j.Logger;
@@ -17,10 +18,8 @@ public class WebAppointmentCFDTest extends BaseSelenium {
 	@Test(priority = 1, enabled = true, description = "Verify doctor's should be able to create appointment for the available appointment slot.")
 	public void appointment_for_existing_patient() throws Exception {
 		HomePage page = new HomePage(driver);
-		utilities.implicitWait();
+		Thread.sleep(5000);
 		page.select_evening_time();
-		utilities.implicitWait();
-		utilities.implicitWait();
 		page.select_a_slot();
 		utilities.implicitWait();
 		page.enter_mobile_no();
@@ -44,7 +43,7 @@ public class WebAppointmentCFDTest extends BaseSelenium {
 	}
 	
 	@Test(priority = 4)
-	public void open_created_appointment() {
+	public void open_created_appointment() throws InterruptedException {
 		HomePage page = new HomePage(driver);
 		utilities.implicitWait();
 		page.select_created_appointment();

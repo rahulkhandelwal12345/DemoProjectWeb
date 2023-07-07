@@ -3,6 +3,7 @@ package com.demo.utilities;
 import java.time.Duration;
 import java.util.List;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -36,6 +37,11 @@ public class WebUtilities extends BaseSelenium{
 		extent.attachReporter(reporter);
 		extent.setSystemInfo("Tester", "Rahul Khandelwal");
 		return extent;
+	}
+	
+	public void scroll_to_element() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0, -document.body.scrollHeight);");
 	}
 	
 	public void implicitWait() {

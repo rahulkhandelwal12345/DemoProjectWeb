@@ -1,5 +1,6 @@
 package com.demo.testcases.web;
 
+import org.testng.annotations.Test;
 import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
 
@@ -14,7 +15,7 @@ public class WebAppointmentPrescriptionPageTest extends BaseSelenium {
 	WebUtilities utilities = new WebUtilities();
 	
 	@Test(priority = 1, enabled = true)
-	public void prescription_tab() {
+	public void prescription_tab() throws InterruptedException {
 		CFDPage page = new CFDPage(driver);
 		page.open_prescription_tab();
 	}

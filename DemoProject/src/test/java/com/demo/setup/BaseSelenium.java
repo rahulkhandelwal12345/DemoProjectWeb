@@ -1,5 +1,8 @@
 package com.demo.setup;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -15,6 +18,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
@@ -82,6 +86,7 @@ public class BaseSelenium {
 		}
 	}
 	
+	@Test
 	public static Properties test_data() throws IOException {
 		String path = System.getProperty("user.dir") + "/src/test/java/com/demo/properties/demo.properties";
 		Properties properties = new Properties();
@@ -129,8 +134,10 @@ public class BaseSelenium {
 			System.out.println("Test");
 			String cromedriverPath = System.getProperty("user.dir") + "/driver/chromedriver";
 			System.setProperty("webdriver.chrome.driver", cromedriverPath);
-			driver = new ChromeDriver();
-
+			ChromeOptions chrome_options = new ChromeOptions();
+			chrome_options.addArguments("--incognito");
+			driver = new ChromeDriver(chrome_options);
+			driver.manage().deleteAllCookies();
 			logger.info("Chrome driver executed successfully");
 		} else if (browser_name.equals("firefox")) {
 			String geckodriverPath = System.getProperty("user.dir") + "/drivergeckodriver.exe";
@@ -143,14 +150,14 @@ public class BaseSelenium {
 			throw new IllegalArgumentException("Invalid browser type: " + browser_name);
 		}
 		
-		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get(properties.getProperty("app_url"));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		logger.info("Url is opening successfully");
 
 	}
 
+	
 	@AfterTest
 	public void tearDown() {
 
