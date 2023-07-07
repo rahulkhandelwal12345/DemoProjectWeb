@@ -58,6 +58,7 @@ public class Instructions extends BaseSelenium {
 		String test = data.getCellDataasstring(1, 0);
 		for(WebElement result : search_results)
 		{
+			utilities.fluent_wait(result);
 				try {
 					if(result.getText().contains(test))
 					{
@@ -105,8 +106,11 @@ public class Instructions extends BaseSelenium {
 	public void add_instruction() throws Exception {
 		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Test Instructions");
 		String instruction = data.getCellDataasstring(1, 1);
+		utilities.fluent_wait(search_results);
+
 		for(WebElement result : search_results)
 		{
+			utilities.fluent_wait(result);
 			String backgroundColor = result.getCssValue("background-color");
 				try {
 					if(result.getText().contains(instruction))
@@ -156,8 +160,11 @@ public class Instructions extends BaseSelenium {
 	public void add_procedure() throws Exception {
 		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Test Instructions");
 		String procedure = data.getCellDataasstring(1, 2);
+		utilities.fluent_wait(search_results);
+
 		for(WebElement result : search_results)
 		{
+			utilities.fluent_wait(result);
 			String backgroundColor = result.getCssValue("background-color");
 				try {
 

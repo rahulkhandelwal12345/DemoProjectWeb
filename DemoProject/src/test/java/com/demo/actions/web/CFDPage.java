@@ -2,6 +2,7 @@ package com.demo.actions.web;
 
 import java.util.List;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -53,21 +54,21 @@ public class CFDPage extends BaseSelenium{
 		utilities.implicitWait();
 		int count = 0;
 		for (WebElement result : Search_Result_cfd) {
+			utilities.fluent_wait(result);
 			if (result.isDisplayed()) {
 				count++;
 			}
 		}
 
 		Assert.assertTrue(count == 20);
-		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>POPULAR DRUGS:" + count);
 	}
 
 	public void add_popular_diagnosis() throws Exception {
 		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","CFD");
 		String popularDiagnosis = data.getCellDataasstring(1, 3);
 		for (WebElement result : Search_Result_cfd) {
+			utilities.explicitwait(result);
 			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>POPULAR DIAGNOSIS: "+result.getText());
-
 			try {
 
 				if (result.getText().contains(popularDiagnosis)) {
@@ -104,9 +105,11 @@ public class CFDPage extends BaseSelenium{
 		String searchedDiagnosis = data.getCellDataasstring(1, 2);
 		utilities.implicitWait();
 		utilities.sendkeys(searchbox, searchedDiagnosis);
+		utilities.fluent_wait(Search_Result_cfd);
 
 			try {
 				for (WebElement result : Search_Result_cfd) {
+				utilities.fluent_wait(result);
 				System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEARCHED DIAGNOSIS  "+result.getText());
 				if (result.getText().equalsIgnoreCase(searchedDiagnosis)) {
 					Actions builder = new Actions(driver);
@@ -151,10 +154,11 @@ public class CFDPage extends BaseSelenium{
 		searchbox.clear();
 		utilities.sendkeys(searchbox, searchedComplaint);
 		utilities.implicitWait();
+		utilities.fluent_wait(Search_Result_cfd);
 
 		for (WebElement result : Search_Result_cfd) {
 			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEARCHED COMPLAINT  "+result.getText());
-
+			utilities.fluent_wait(result);
 			try {
 				if (result.getText().equalsIgnoreCase(searchedComplaint)) {
 					Actions builder = new Actions(driver);
@@ -192,10 +196,12 @@ public class CFDPage extends BaseSelenium{
 		searchbox.clear();
 		utilities.sendkeys(searchbox, "OTHER FINDINGS");
 		utilities.implicitWait();
+		//utilities.explicitwait(Search_Result_cfd);
+		utilities.fluent_wait(Search_Result_cfd);
 
 		for (WebElement result : Search_Result_cfd) {
 			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEARCHED FINDINGS:  "+result.getText());
-
+			utilities.fluent_wait(result);
 			try {
 				if (result.getText().equalsIgnoreCase(searchedFinding) ){
 					Actions builder = new Actions(driver);
@@ -235,6 +241,7 @@ public class CFDPage extends BaseSelenium{
 		String searchedFinding = data.getCellDataasstring(1, 1);
 		
 		for (WebElement added_cfd : added_cfd_list) {
+			utilities.fluent_wait(added_cfd);
 			Assert.assertTrue(added_cfd.getText().equalsIgnoreCase(popularDiagnosis)||added_cfd.getText().equalsIgnoreCase(searchedDiagnosis) || added_cfd.getText().equalsIgnoreCase(searchedComplaint)|| added_cfd.getText().equalsIgnoreCase(searchedFinding));
 
 		}
@@ -267,8 +274,10 @@ public class CFDPage extends BaseSelenium{
 
 	public void open_instruction_tab() {
 		for (WebElement tab : tabs) {
+			utilities.fluent_wait(tab);
 			if (tab.getText().equalsIgnoreCase("INSTRUCTIONS")) {
-				utilities.click(tab);
+				utilities.fluent_wait(tab);
+				((JavascriptExecutor)driver).executeScript("arguments[0].click();", tab);
 			}
 
 		}
@@ -277,7 +286,7 @@ public class CFDPage extends BaseSelenium{
 	public void open_summary_tab() {
 		for (WebElement tab : tabs) {
 			if (tab.getText().equalsIgnoreCase("SUMMARY")) {
-				utilities.click(tab);
+				((JavascriptExecutor)driver).executeScript("arguments[0].click();", tab);
 			}
 
 		}

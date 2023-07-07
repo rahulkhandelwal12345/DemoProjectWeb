@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 6 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 8 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">9 methods, 6 failed,   3 passed</span>
+                    <span class="method-stats">9 methods, 8 failed,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -113,12 +113,17 @@
                       <br/>
                       <span>
                         <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebAppointmentCFDTest" class="method navigator-link" hash-for-method="diagnosis_tab_add_cfd">diagnosis_tab_add_cfd</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebAppointmentCFDTest" class="method navigator-link" hash-for-method="diagnosis_tab_verify_added_cfd">diagnosis_tab_verify_added_cfd</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebLoginTest" class="method navigator-link" hash-for-method="login">login</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebAppointmentCFDTest" class="method navigator-link" hash-for-method="open_created_appointment">open_created_appointment</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -129,6 +134,11 @@
                       <span>
                         <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebAppointmentCFDTest" class="method navigator-link" hash-for-method="verify_booked_slot">verify_booked_slot</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebAppointmentCFDTest" class="method navigator-link" hash-for-method="verify_disabled_slot">verify_disabled_slot</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
@@ -142,17 +152,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebAppointmentCFDTest" class="method navigator-link" hash-for-method="diagnosis_tab_add_cfd">diagnosis_tab_add_cfd</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebAppointmentCFDTest" class="method navigator-link" hash-for-method="open_created_appointment">open_created_appointment</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebAppointmentCFDTest" class="method navigator-link" hash-for-method="verify_disabled_slot">verify_disabled_slot</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebLoginTest" class="method navigator-link" hash-for-method="login">login</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -170,47 +170,6 @@
           <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">com.demo.testcases.web.WebLoginTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="login">
-                  </a> <!-- login -->
-                  <span class="method-name">login</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button name=&quot;button&quot; class=&quot;btn btn-greensea btn-rounded&quot; style=&quot;margin-top: -5px;&quot;&gt;...&lt;/button&gt; is not clickable at point (685, 22). Other element would receive the click: &lt;div class=&quot;md-dialog-container ng-scope&quot; tabindex=&quot;-1&quot; style=&quot;top: 0px; height: 621px;&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=111.0.5563.146)
-Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
-System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.14.0-1059-oem&apos;, java.version: &apos;17.0.5&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [162f284a946623a0cace98dfc0844082, clickElement {id=88473635-4cb4-4084-9c81-cf6a14089ba8}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.4ktXIn}, goog:chromeOptions: {debuggerAddress: localhost:42419}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:42419/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on LINUX (162f284a946623a0cace98dfc0844082)] -&gt; css selector: .btn]
-Session ID: 162f284a946623a0cace98dfc0844082
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-	at jdk.proxy2/jdk.proxy2.$Proxy17.click(Unknown Source)
-	at com.demo.utilities.WebUtilities.click(WebUtilities.java:19)
-	at com.demo.actions.web.LoginPage.verify_otp(LoginPage.java:123)
-	at com.demo.testcases.web.WebLoginTest.login(WebLoginTest.java:26)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 36 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
-          <div class="suite-Suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
               <span class="class-name">com.demo.testcases.web.WebAppointmentCFDTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -219,11 +178,33 @@ Session ID: 162f284a946623a0cace98dfc0844082
                   <a name="add_popular_diagnosis">
                   </a> <!-- add_popular_diagnosis -->
                   <span class="method-name">add_popular_diagnosis</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at com.demo.actions.web.CFDPage.verify_added_cfd(CFDPage.java:238)
-	at com.demo.testcases.web.WebAppointmentCFDTest.add_popular_diagnosis(WebAppointmentCFDTest.java:61)
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: disconnected: received Inspector.detached event
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
+  (Session info: chrome=111.0.5563.146)
+Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.14.0-1059-oem&apos;, java.version: &apos;17.0.5&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9a3b54295d99d6dbb750e4048f46dbec, findElements {using=css selector, value=.field-wrap.field-name.ng-binding}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.ia9LMR}, goog:chromeOptions: {debuggerAddress: localhost:42247}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:42247/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 9a3b54295d99d6dbb750e4048f46dbec
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElements(ElementLocation.java:179)
+	at org.openqa.selenium.remote.ElementLocation.findElements(ElementLocation.java:102)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:359)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElements(DefaultElementLocator.java:87)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:37)
+	at jdk.proxy2/jdk.proxy2.$Proxy18.iterator(Unknown Source)
+	at com.demo.actions.web.CFDPage.verify_added_cfd(CFDPage.java:243)
+	at com.demo.testcases.web.WebAppointmentCFDTest.add_popular_diagnosis(WebAppointmentCFDTest.java:63)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 31 stack frames
+... Removed 32 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -238,9 +219,9 @@ For documentation on this error, please visit: https://selenium.dev/exceptions/#
 Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
 System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.14.0-1059-oem&apos;, java.version: &apos;17.0.5&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [162f284a946623a0cace98dfc0844082, findElement {using=name, value=mobile}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.4ktXIn}, goog:chromeOptions: {debuggerAddress: localhost:42419}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:42419/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 162f284a946623a0cace98dfc0844082
+Command: [9a3b54295d99d6dbb750e4048f46dbec, findElement {using=name, value=mobile}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.ia9LMR}, goog:chromeOptions: {debuggerAddress: localhost:42247}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:42247/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 9a3b54295d99d6dbb750e4048f46dbec
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
@@ -255,9 +236,9 @@ Session ID: 162f284a946623a0cace98dfc0844082
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
 	at jdk.proxy2/jdk.proxy2.$Proxy17.sendKeys(Unknown Source)
-	at com.demo.utilities.WebUtilities.sendkeys(WebUtilities.java:14)
-	at com.demo.actions.web.HomePage.enter_mobile_no(HomePage.java:118)
-	at com.demo.testcases.web.WebAppointmentCFDTest.appointment_for_existing_patient(WebAppointmentCFDTest.java:24)
+	at com.demo.utilities.WebUtilities.sendkeys(WebUtilities.java:18)
+	at com.demo.actions.web.HomePage.enter_mobile_no(HomePage.java:114)
+	at com.demo.testcases.web.WebAppointmentCFDTest.appointment_for_existing_patient(WebAppointmentCFDTest.java:26)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 ... Removed 32 stack frames
 </div> <!-- stack-trace -->
@@ -267,14 +248,104 @@ Session ID: 162f284a946623a0cace98dfc0844082
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="diagnosis_tab_add_cfd">
+                  </a> <!-- diagnosis_tab_add_cfd -->
+                  <span class="method-name">diagnosis_tab_add_cfd</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=111.0.5563.146)
+Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.14.0-1059-oem&apos;, java.version: &apos;17.0.5&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9a3b54295d99d6dbb750e4048f46dbec, findElement {using=xpath, value=//label[@class=&apos;item item-input&apos;]/input}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.ia9LMR}, goog:chromeOptions: {debuggerAddress: localhost:42247}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:42247/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 9a3b54295d99d6dbb750e4048f46dbec
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy17.sendKeys(Unknown Source)
+	at com.demo.utilities.WebUtilities.sendkeys(WebUtilities.java:18)
+	at com.demo.actions.web.CFDPage.search_diagnosis(CFDPage.java:107)
+	at com.demo.testcases.web.WebAppointmentCFDTest.diagnosis_tab_add_cfd(WebAppointmentCFDTest.java:75)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="diagnosis_tab_verify_added_cfd">
                   </a> <!-- diagnosis_tab_verify_added_cfd -->
                   <span class="method-name">diagnosis_tab_verify_added_cfd</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at com.demo.actions.web.CFDPage.verify_added_cfd(CFDPage.java:238)
-	at com.demo.testcases.web.WebAppointmentCFDTest.diagnosis_tab_verify_added_cfd(WebAppointmentCFDTest.java:81)
+                  <div class="stack-trace">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=111.0.5563.146)
+Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.14.0-1059-oem&apos;, java.version: &apos;17.0.5&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9a3b54295d99d6dbb750e4048f46dbec, findElements {using=css selector, value=.field-wrap.field-name.ng-binding}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.ia9LMR}, goog:chromeOptions: {debuggerAddress: localhost:42247}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:42247/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 9a3b54295d99d6dbb750e4048f46dbec
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElements(ElementLocation.java:179)
+	at org.openqa.selenium.remote.ElementLocation.findElements(ElementLocation.java:102)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:359)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElements(DefaultElementLocator.java:87)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:37)
+	at jdk.proxy2/jdk.proxy2.$Proxy18.iterator(Unknown Source)
+	at com.demo.actions.web.CFDPage.verify_added_cfd(CFDPage.java:243)
+	at com.demo.testcases.web.WebAppointmentCFDTest.diagnosis_tab_verify_added_cfd(WebAppointmentCFDTest.java:83)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 31 stack frames
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="open_created_appointment">
+                  </a> <!-- open_created_appointment -->
+                  <span class="method-name">open_created_appointment</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//div[contains(@class,&apos;panel-body&apos;)])[6]&quot;}
+  (Session info: chrome=111.0.5563.146)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.14.0-1059-oem&apos;, java.version: &apos;17.0.5&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9a3b54295d99d6dbb750e4048f46dbec, findElement {using=xpath, value=(//div[contains(@class,&apos;panel-body&apos;)])[6]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /tmp/.com.google.Chrome.ia9LMR}, goog:chromeOptions: {debuggerAddress: localhost:42247}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:42247/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 9a3b54295d99d6dbb750e4048f46dbec
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at com.demo.actions.web.HomePage.select_created_appointment(HomePage.java:194)
+	at com.demo.testcases.web.WebAppointmentCFDTest.open_created_appointment(WebAppointmentCFDTest.java:50)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -284,8 +355,8 @@ Session ID: 162f284a946623a0cace98dfc0844082
                   </a> <!-- verify_20_popular_diagnosis -->
                   <span class="method-name">verify_20_popular_diagnosis</span>
                   <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at com.demo.actions.web.CFDPage.verify_popular_diagnosis(CFDPage.java:61)
-	at com.demo.testcases.web.WebAppointmentCFDTest.verify_20_popular_diagnosis(WebAppointmentCFDTest.java:54)
+	at com.demo.actions.web.CFDPage.verify_popular_diagnosis(CFDPage.java:63)
+	at com.demo.testcases.web.WebAppointmentCFDTest.verify_20_popular_diagnosis(WebAppointmentCFDTest.java:56)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 ... Removed 31 stack frames
 </div> <!-- stack-trace -->
@@ -297,8 +368,8 @@ Session ID: 162f284a946623a0cace98dfc0844082
                   </a> <!-- verify_booked_slot -->
                   <span class="method-name">verify_booked_slot</span>
                   <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at com.demo.actions.web.HomePage.verify_booked_slot(HomePage.java:168)
-	at com.demo.testcases.web.WebAppointmentCFDTest.verify_booked_slot(WebAppointmentCFDTest.java:35)
+	at com.demo.actions.web.HomePage.verify_booked_slot(HomePage.java:162)
+	at com.demo.testcases.web.WebAppointmentCFDTest.verify_booked_slot(WebAppointmentCFDTest.java:37)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 ... Removed 31 stack frames
 </div> <!-- stack-trace -->
@@ -306,35 +377,38 @@ Session ID: 162f284a946623a0cace98dfc0844082
 (Verify that doctor shouldn't able to create appointment in the already booked appointment slot.)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
-          <div class="suite-Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.demo.testcases.web.WebAppointmentCFDTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="diagnosis_tab_add_cfd">
-                  </a> <!-- diagnosis_tab_add_cfd -->
-                  <span class="method-name">diagnosis_tab_add_cfd</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="open_created_appointment">
-                  </a> <!-- open_created_appointment -->
-                  <span class="method-name">open_created_appointment</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="verify_disabled_slot">
                   </a> <!-- verify_disabled_slot -->
                   <span class="method-name">verify_disabled_slot</span>
+                  <div class="stack-trace">java.time.format.DateTimeParseException: Text &apos;12:22 pm&apos; could not be parsed, unparsed text found at index 5
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2055)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954)
+	at java.base/java.time.LocalTime.parse(LocalTime.java:465)
+	at java.base/java.time.LocalTime.parse(LocalTime.java:450)
+	at com.demo.actions.web.HomePage.verify_diabled_slot(HomePage.java:138)
+	at com.demo.testcases.web.WebAppointmentCFDTest.verify_disabled_slot(WebAppointmentCFDTest.java:43)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
                   <em>
 (Verify if appointment slot is expired slot should be disable for appointment creation & doctor shouldn't able to create appointment for the same expired slot .)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.demo.testcases.web.WebLoginTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="login">
+                  </a> <!-- login -->
+                  <span class="method-name">login</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -397,46 +471,46 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(9);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'login')
-data.setCell(0, 2, 'com.demo.testcases.web.WebLoginTest')
-data.setCell(0, 3, 13537);
+data.setCell(0, 1, 'add_popular_diagnosis')
+data.setCell(0, 2, 'com.demo.testcases.web.WebAppointmentCFDTest')
+data.setCell(0, 3, 18001);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'appointment_for_existing_patient')
-data.setCell(1, 2, 'com.demo.testcases.web.WebAppointmentCFDTest')
-data.setCell(1, 3, 11336);
+data.setCell(1, 1, 'login')
+data.setCell(1, 2, 'com.demo.testcases.web.WebLoginTest')
+data.setCell(1, 3, 13906);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'diagnosis_tab_add_cfd')
+data.setCell(2, 1, 'open_created_appointment')
 data.setCell(2, 2, 'com.demo.testcases.web.WebAppointmentCFDTest')
-data.setCell(2, 3, 1850);
+data.setCell(2, 3, 11470);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'verify_20_popular_diagnosis')
+data.setCell(3, 1, 'appointment_for_existing_patient')
 data.setCell(3, 2, 'com.demo.testcases.web.WebAppointmentCFDTest')
-data.setCell(3, 3, 1479);
+data.setCell(3, 3, 10885);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'add_popular_diagnosis')
+data.setCell(4, 1, 'verify_20_popular_diagnosis')
 data.setCell(4, 2, 'com.demo.testcases.web.WebAppointmentCFDTest')
-data.setCell(4, 3, 1356);
+data.setCell(4, 3, 10079);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'verify_disabled_slot')
+data.setCell(5, 1, 'verify_booked_slot')
 data.setCell(5, 2, 'com.demo.testcases.web.WebAppointmentCFDTest')
-data.setCell(5, 3, 1130);
+data.setCell(5, 3, 686);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'diagnosis_tab_verify_added_cfd')
+data.setCell(6, 1, 'diagnosis_tab_add_cfd')
 data.setCell(6, 2, 'com.demo.testcases.web.WebAppointmentCFDTest')
-data.setCell(6, 3, 250);
+data.setCell(6, 3, 312);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'open_created_appointment')
+data.setCell(7, 1, 'diagnosis_tab_verify_added_cfd')
 data.setCell(7, 2, 'com.demo.testcases.web.WebAppointmentCFDTest')
-data.setCell(7, 3, 247);
+data.setCell(7, 3, 108);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'verify_booked_slot')
+data.setCell(8, 1, 'verify_disabled_slot')
 data.setCell(8, 2, 'com.demo.testcases.web.WebAppointmentCFDTest')
-data.setCell(8, 3, 217);
+data.setCell(8, 3, 75);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 31 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -451,15 +525,15 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">7 ignored methods</span>
+            <span class="header-content">6 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">com.demo.testcases.web.WebLoginTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">Logout</span>
-                <br/>
                 <span class="ignored-method-name">validate_error_message</span>
+                <br/>
+                <span class="ignored-method-name">Logout</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -468,13 +542,11 @@ return data;
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">setup</span>
                 <br/>
-                <span class="ignored-method-name">diagnosis_tab_delete_cfd</span>
-                <br/>
-                <span class="ignored-method-name">summary_tab</span>
-                <br/>
                 <span class="ignored-method-name">delete_added_popular_diagnosis</span>
                 <br/>
                 <span class="ignored-method-name">tearDown</span>
+                <br/>
+                <span class="ignored-method-name">diagnosis_tab_delete_cfd</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -492,10 +564,8 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">login</span>
-                <span class="method-start">7620 ms</span>
+                <span class="method-start">4167 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
@@ -504,50 +574,56 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">appointment_for_existing_patient</span>
-                <span class="method-start">21199 ms</span>
+                <span class="method-start">18097 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">verify_booked_slot</span>
-                <span class="method-start">32549 ms</span>
+                <span class="method-start">29005 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">verify_disabled_slot</span>
-                <span class="method-start">32773 ms</span>
+                <span class="method-start">29699 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">open_created_appointment</span>
-                <span class="method-start">33909 ms</span>
+                <span class="method-start">29781 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">verify_20_popular_diagnosis</span>
-                <span class="method-start">34159 ms</span>
+                <span class="method-start">41260 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">add_popular_diagnosis</span>
-                <span class="method-start">35645 ms</span>
+                <span class="method-start">51345 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">diagnosis_tab_add_cfd</span>
-                <span class="method-start">37003 ms</span>
+                <span class="method-start">69364 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">diagnosis_tab_verify_added_cfd</span>
-                <span class="method-start">38855 ms</span>
+                <span class="method-start">69679 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.demo.testcases.web.WebLoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-test after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">39108 ms</span>
+                <span class="method-start">69790 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

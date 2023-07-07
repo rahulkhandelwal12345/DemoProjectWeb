@@ -118,6 +118,7 @@ public class Prescription extends BaseSelenium {
 		int count = 0;
 		for(WebElement result : search_result_drugs)
 		{
+			utilities.explicitwait(result);
 			if(result.isDisplayed())
 			{
 				count++;
@@ -136,9 +137,10 @@ public class Prescription extends BaseSelenium {
 	public void add_popular_drug() throws Exception {
 		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Prescription");
 		String popularDrug = data.getCellDataasstring(1, 0);
-		utilities.implicitWait();
+		//utilities.implicitWait();
 		for(WebElement result : search_result_drugs)
 		{
+			utilities.fluent_wait(result);
 			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>POPULAR DRUGS  "+result.getText());
 				try {
 					if(result.getText().contains(popularDrug))
@@ -222,8 +224,11 @@ public class Prescription extends BaseSelenium {
 	public void add_searched_drug() throws Exception {
 		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Prescription");
 		String searchedDrug = data.getCellDataasstring(1, 1);
+		utilities.fluent_wait(search_result_drugs);
+
 		for(WebElement result : search_result_drugs)
 		{
+			utilities.explicitwait(result);
 			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEARCHED DRUGS  "+result.getText());
 
 				try {

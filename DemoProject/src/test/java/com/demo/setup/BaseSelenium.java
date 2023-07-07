@@ -93,6 +93,7 @@ public class BaseSelenium {
 	@BeforeTest
 	public void setup() throws MalformedURLException {
 		BaseSelenium base = new BaseSelenium();
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		String runMode = properties.getProperty("run_mode");
 		String app_type = properties.getProperty("app_type");
 		if (runMode.equalsIgnoreCase("local")) {
@@ -107,7 +108,7 @@ public class BaseSelenium {
 				throw new IllegalArgumentException("Invalid app type: " + app_type);
 		
 		} 	}
-		
+
 	}
 
 	public static void screenshot() {

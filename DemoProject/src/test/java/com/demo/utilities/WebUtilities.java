@@ -1,8 +1,12 @@
 package com.demo.utilities;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
@@ -37,6 +41,29 @@ public class WebUtilities extends BaseSelenium{
 	public void implicitWait() {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
+	}
+	
+	public void fluent_wait(WebElement element) {
+		FluentWait wait = new FluentWait(driver);
+		wait.withTimeout(Duration.ofSeconds(5));
+		wait.pollingEvery(Duration.ofSeconds(2));
+		wait.until(ExpectedConditions.visibilityOf(element));
+	}
+	
+	public void fluent_wait(List<WebElement> element) {
+		FluentWait wait = new FluentWait(driver);
+		wait.withTimeout(Duration.ofSeconds(5));
+		wait.pollingEvery(Duration.ofSeconds(2));
+		wait.until(ExpectedConditions.visibilityOfAllElements(element));
+	}
+	
+	public void explicitwait(WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+	public void explicitwait(List<WebElement> element) {
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.visibilityOfAllElements(element));
 	}
 
 }

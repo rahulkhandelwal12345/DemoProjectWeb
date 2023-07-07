@@ -1,5 +1,7 @@
 package com.demo.testcases.web;
 
+import java.text.ParseException;
+
 import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
 
@@ -36,7 +38,7 @@ public class WebAppointmentCFDTest extends BaseSelenium {
 	}
 	
 	@Test(priority = 3, description = "Verify if appointment slot is expired slot should be disable for appointment creation & doctor shouldn't able to create appointment for the same expired slot .")
-	public void verify_disabled_slot() {
+	public void verify_disabled_slot() throws ParseException {
 		HomePage page = new HomePage(driver);
 		page.verify_diabled_slot();
 	}
@@ -87,12 +89,5 @@ public class WebAppointmentCFDTest extends BaseSelenium {
 		page.delete_added_diagnosis();
 		page.delete_added_complaint();
 //		page.delete_added_finding();	
-	}
-	
-		
-	@Test(priority = 13, enabled = false)
-	public void summary_tab() {
-		CFDPage page = new CFDPage(driver);
-		page.open_summary_tab();
 	}
 }

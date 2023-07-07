@@ -53,6 +53,9 @@ public class LoginPage extends BaseSelenium {
 	@FindBy(xpath = "//*[@id=\"loginform\"]/div[1]/div[2]")
 	private WebElement errormessage;
 
+	@FindBy(css = ".md-icon-button.md-button.md-ink-ripple")
+	private WebElement close_popup;
+	
 	public WebElement recent_login_disply() {
 		return recentLogin;
 	}
@@ -111,6 +114,8 @@ public class LoginPage extends BaseSelenium {
 	
 	public void click_login_btn() {
 		utilities.click(Login_btn);
+		utilities.explicitwait(Email);
+		utilities.click(close_popup);
 	}
 
 	public void enter_otp() {

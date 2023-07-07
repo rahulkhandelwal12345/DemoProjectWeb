@@ -176,6 +176,13 @@ public class SummaryPage extends BaseSelenium {
 		}
 	}
 	
+	public void verify_drug_timings() {
+		for(WebElement time : Drug_Frequency_Checkmarks_row1)
+		{
+			
+		}
+	}
+	
 	public void verify_record_is_saved() throws Exception {
 		utilities.click(Save_Button);
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", Records_Button);
@@ -197,15 +204,11 @@ public class SummaryPage extends BaseSelenium {
 	
 	public void verify_record_can_be_printed() {
 		//Navigating Back to CFD page
+		utilities.explicitwait(Records_Back_Button);
 		utilities.click(Records_Back_Button);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
-		//Navigating Back to summary page
-//		for (WebElement tab : tabs) {
-//			if (tab.getText().equalsIgnoreCase("SUMMARY")) {
-//				utilities.click(tab);
-//			}
-//		}
 		
+		//Navigating Back to summary page		
 		try {
 			for (WebElement tab : tabs) {
 				if (tab.getText().equalsIgnoreCase("SUMMARY")) {
@@ -236,4 +239,6 @@ public class SummaryPage extends BaseSelenium {
 		Assert.assertTrue(driver.getTitle().contains("prescription"));
 		driver.close();
 	}
+	
+	
 }
