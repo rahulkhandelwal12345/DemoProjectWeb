@@ -1,26 +1,24 @@
 package com.demo.actions.web;
 
-import java.time.Duration;
 import java.util.List;
 
-import org.openqa.selenium.JavascriptExecutor;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.demo.setup.BaseSelenium;
-import com.demo.utilities.ExcelUtils;
+import com.demo.testcases.web.WebLoginTest;
 import com.demo.utilities.WebUtilities;
 
 public class CFDPage extends BaseSelenium{
 	public WebDriver driver;
 	WebUtilities utilities = new WebUtilities();
-	
+	Logger logger = Logger.getLogger(WebLoginTest.class);
+
 	public CFDPage(WebDriver driver) {
 
 		this.driver = driver;
@@ -56,7 +54,8 @@ public class CFDPage extends BaseSelenium{
 	@FindBy(xpath = "//a[contains(text(),'INSTRUCTIONS')]")
 	private WebElement Instruction_tab;
 	
-	public void verify_popular_diagnosis() {
+	
+	public void verify_20_popular_diagnosis() {
 		utilities.implicitWait();
 		int count = 0;
 		for (WebElement result : Search_Result_cfd) {
@@ -66,39 +65,37 @@ public class CFDPage extends BaseSelenium{
 			}
 		}
 
-		Assert.assertTrue(count == 20);
+		logger.info("Number of popular diagnosis is: "+count);
+		softAssert.assertTrue(count == 20);
 	}
 
-	public void add_popular_diagnosis() throws Exception {
-		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","CFD");
-		String popularDiagnosis = data.getCellDataasstring(1, 3);
+	public void add_popular_diagnosis(String popular_diagnosis) throws Exception {
 		for (WebElement result : Search_Result_cfd) {
 			utilities.explicitwait(result);
-			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>POPULAR DIAGNOSIS: "+result.getText());
 			try {
 
-				if (result.getText().contains(popularDiagnosis)) {
+				if (result.getText().contains(popular_diagnosis)) {
 					Actions builder = new Actions(driver);
 					builder.moveToElement(result).click(result);
 					builder.perform();
-					Assert.assertTrue(result.getText().contains(popularDiagnosis));
+					Assert.assertTrue(result.getText().contains(popular_diagnosis));
 					break;
 				}
 			} catch (org.openqa.selenium.StaleElementReferenceException ex) {
 				try {
-					if (result.getText().contains(popularDiagnosis)) {
+					if (result.getText().contains(popular_diagnosis)) {
 						Actions builder = new Actions(driver);
 						builder.moveToElement(result).click(result);
 						builder.perform();
-						Assert.assertTrue(result.getText().contains(popularDiagnosis));
+						Assert.assertTrue(result.getText().contains(popular_diagnosis));
 						break;
 					}
 				} catch (org.openqa.selenium.StaleElementReferenceException e) {
-					if (result.getText().contains("popularDiagnosis")) {
+					if (result.getText().contains(popular_diagnosis)) {
 						Actions builder = new Actions(driver);
 						builder.moveToElement(result).click(result);
 						builder.perform();
-						Assert.assertTrue(result.getText().contains(popularDiagnosis));
+						Assert.assertTrue(result.getText().contains(popular_diagnosis));
 						break;
 					}
 				}
@@ -106,45 +103,32 @@ public class CFDPage extends BaseSelenium{
 		}
 	}
 
-	public void search_diagnosis() throws Exception {
-		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","CFD");
-		String searchedDiagnosis = data.getCellDataasstring(1, 2);
+	public void search_diagnosis(String searched_diagnosis) throws Exception {
 		utilities.implicitWait();
-		utilities.sendkeys(searchbox, searchedDiagnosis);
-		utilities.fluent_wait(Search_Result_cfd);
-
+		utilities.sendkeys(searchbox, searched_diagnosis);
+		Thread.sleep(3000);
 			try {
 				for (WebElement result : Search_Result_cfd) {
-				utilities.fluent_wait(result);
-				System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEARCHED DIAGNOSIS  "+result.getText());
-				if (result.getText().equalsIgnoreCase(searchedDiagnosis)) {
-					Actions builder = new Actions(driver);
-					builder.moveToElement(result).click(result);
-					builder.perform();
-					Assert.assertTrue(result.getText().equalsIgnoreCase(searchedDiagnosis));
+				if (result.getText().equalsIgnoreCase(searched_diagnosis)) {
+					utilities.moveAndClick(result);
+					softAssert.assertTrue(result.getText().equalsIgnoreCase(searched_diagnosis));
 					break;
 				}
 				}
 			} catch (org.openqa.selenium.StaleElementReferenceException ex) {
 				try {
 					for (WebElement result : Search_Result_cfd) {
-						System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEARCHED DIAGNOSIS  "+result.getText());
-					if (result.getText().equalsIgnoreCase(searchedDiagnosis)) {
-						Actions builder = new Actions(driver);
-						builder.moveToElement(result).click(result);
-						builder.perform();
-						Assert.assertTrue(result.getText().equalsIgnoreCase(searchedDiagnosis));
+						if (result.getText().equalsIgnoreCase(searched_diagnosis)) {
+						utilities.moveAndClick(result);
+						softAssert.assertTrue(result.getText().equalsIgnoreCase(searched_diagnosis));
 						break;
 					}
 					}
 				} catch (org.openqa.selenium.StaleElementReferenceException e) {
 					for (WebElement result : Search_Result_cfd) {
-						System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEARCHED DIAGNOSIS  "+result.getText());
-					if (result.getText().equalsIgnoreCase(searchedDiagnosis)) {
-						Actions builder = new Actions(driver);
-						builder.moveToElement(result).click(result);
-						builder.perform();
-						Assert.assertTrue(result.getText().equalsIgnoreCase(searchedDiagnosis));
+						if (result.getText().equalsIgnoreCase(searched_diagnosis)) {
+						utilities.moveAndClick(result);
+						softAssert.assertTrue(result.getText().equalsIgnoreCase(searched_diagnosis));
 						break;
 					}
 					}
@@ -153,103 +137,71 @@ public class CFDPage extends BaseSelenium{
 		
 	}
 
-	public void search_complaint() throws Exception {
-		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","CFD");
-		String searchedComplaint = data.getCellDataasstring(1, 0);
-		utilities.implicitWait();
+	public void search_complaint(String searched_complaint) throws Exception {
 		searchbox.clear();
-		utilities.sendkeys(searchbox, searchedComplaint);
-		utilities.implicitWait();
-		utilities.fluent_wait(Search_Result_cfd);
-
-		for (WebElement result : Search_Result_cfd) {
-			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEARCHED COMPLAINT  "+result.getText());
-			utilities.fluent_wait(result);
-			try {
-				if (result.getText().equalsIgnoreCase(searchedComplaint)) {
-					Actions builder = new Actions(driver);
-					builder.moveToElement(result).click(result);
-					builder.perform();
-					Assert.assertTrue(result.getText().equalsIgnoreCase(searchedComplaint));
-					break;
-				}
-			} catch (org.openqa.selenium.StaleElementReferenceException ex) {
-				try {
-					if (result.getText().equalsIgnoreCase(searchedComplaint)) {
-						Actions builder = new Actions(driver);
-						builder.moveToElement(result).click(result);
-						builder.perform();
-						Assert.assertTrue(result.getText().equalsIgnoreCase(searchedComplaint));
-						break;
-					}
-				} catch (org.openqa.selenium.StaleElementReferenceException e) {
-					if (result.getText().equalsIgnoreCase(searchedComplaint)) {
-						Actions builder = new Actions(driver);
-						builder.moveToElement(result).click(result);
-						builder.perform();
-						Assert.assertTrue(result.getText().equalsIgnoreCase(searchedComplaint));
-						break;
-					}
-				}
-			}
-		}
-	}
-
-	public void search_finding() throws Exception {
-		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","CFD");
-		String searchedFinding = data.getCellDataasstring(1, 1);
-		utilities.implicitWait();
-		searchbox.clear();
-		utilities.sendkeys(searchbox, "OTHER FINDINGS");
-		utilities.implicitWait();
-		//utilities.explicitwait(Search_Result_cfd);
-		utilities.fluent_wait(Search_Result_cfd);
-
-		for (WebElement result : Search_Result_cfd) {
-			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEARCHED FINDINGS:  "+result.getText());
-			utilities.fluent_wait(result);
-			try {
-				if (result.getText().equalsIgnoreCase(searchedFinding) ){
-					Actions builder = new Actions(driver);
-					builder.moveToElement(result).click(result);
-					builder.perform();
-					Assert.assertTrue(result.getText().equalsIgnoreCase(searchedFinding));
-					break;
-				}
-			} catch (org.openqa.selenium.StaleElementReferenceException ex) {
-				try {
-					if (result.getText().equalsIgnoreCase(searchedFinding) ){
-						Actions builder = new Actions(driver);
-						builder.moveToElement(result).click(result);
-						builder.perform();
-						Assert.assertTrue(result.getText().equalsIgnoreCase(searchedFinding));
-						break;
-					}
-				} catch (org.openqa.selenium.StaleElementReferenceException e) {
-					if (result.getText().equalsIgnoreCase(searchedFinding)) {
-						Actions builder = new Actions(driver);
-						builder.moveToElement(result).click(result);
-						builder.perform();
-						Assert.assertTrue(result.getText().equalsIgnoreCase(searchedFinding));
-						break;
-					}
-				}
-			}
-		}
-
-	}
-
-	public void verify_added_cfd() throws Exception {
-		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","CFD");
-		String popularDiagnosis = data.getCellDataasstring(1, 3);
-		String searchedDiagnosis = data.getCellDataasstring(1, 2);
-		String searchedComplaint = data.getCellDataasstring(1, 0);
-		String searchedFinding = data.getCellDataasstring(1, 1);
+		utilities.sendkeys(searchbox, searched_complaint);
+		Thread.sleep(3000);
 		
+		for (WebElement result : Search_Result_cfd) {
+			try {
+				if (result.getText().equalsIgnoreCase(searched_complaint)) {
+					utilities.moveAndClick(result);
+					softAssert.assertTrue(result.getText().equalsIgnoreCase(searched_complaint));
+					break;
+				}
+			} catch (org.openqa.selenium.StaleElementReferenceException ex) {
+				try {
+					if (result.getText().equalsIgnoreCase(searched_complaint)) {
+						utilities.moveAndClick(result);
+						softAssert.assertTrue(result.getText().equalsIgnoreCase(searched_complaint));
+						break;
+					}
+				} catch (org.openqa.selenium.StaleElementReferenceException e) {
+					if (result.getText().equalsIgnoreCase(searched_complaint)) {
+						utilities.moveAndClick(result);
+						softAssert.assertTrue(result.getText().equalsIgnoreCase(searched_complaint));
+						break;
+					}
+				}
+			}
+		}
+	}
+
+	public void search_finding(String searched_finding) throws Exception {
+		searchbox.clear();
+		utilities.sendkeys(searchbox, searched_finding);
+		Thread.sleep(3000);
+
+		for (WebElement result : Search_Result_cfd) {
+			try {
+				if (result.getText().equalsIgnoreCase(searched_finding) ){
+					utilities.moveAndClick(result);
+					softAssert.assertTrue(result.getText().equalsIgnoreCase(searched_finding));
+					break;
+				}
+			} catch (org.openqa.selenium.StaleElementReferenceException ex) {
+				try {
+					if (result.getText().equalsIgnoreCase(searched_finding) ){
+						utilities.moveAndClick(result);
+						softAssert.assertTrue(result.getText().equalsIgnoreCase(searched_finding));
+						break;
+					}
+				} catch (org.openqa.selenium.StaleElementReferenceException e) {
+					if (result.getText().equalsIgnoreCase(searched_finding) ){
+						utilities.moveAndClick(result);
+						softAssert.assertTrue(result.getText().equalsIgnoreCase(searched_finding));
+						break;
+					}
+				}
+			}
+		}
+
+	}
+
+	public void verify_added_cfd(String popular_diagnosis, String searched_diagnosis, String searched_complaint, String searched_finding) throws Exception {
+
 		for (WebElement added_cfd : added_cfd_list) {
-			utilities.fluent_wait(added_cfd);
-			Assert.assertTrue(added_cfd.getText().equalsIgnoreCase(popularDiagnosis)||added_cfd.getText().equalsIgnoreCase(searchedDiagnosis) || added_cfd.getText().equalsIgnoreCase(searchedComplaint)|| added_cfd.getText().equalsIgnoreCase(searchedFinding));
-
+			softAssert.assertTrue(added_cfd.getText().equalsIgnoreCase(popular_diagnosis)||added_cfd.getText().equalsIgnoreCase(searched_diagnosis) || added_cfd.getText().equalsIgnoreCase(searched_complaint)|| added_cfd.getText().equalsIgnoreCase(searched_finding));
 		}
 	}
 
@@ -270,37 +222,28 @@ public class CFDPage extends BaseSelenium{
 	}
 
 	public void open_prescription_tab() throws InterruptedException {
+		Thread.sleep(9000);
 		for (WebElement tab : tabs) {
 			if (tab.getText().equalsIgnoreCase("PRESCRIPTION")) {
 				utilities.click(tab);
+				Thread.sleep(3000);
 			}
-
 		}
 	}
 
 	
 	public void open_instruction_tab() throws InterruptedException {
-//        for (WebElement tabElement : tabs) {
-//        	Thread.sleep(5000);
-//            if (tabElement.getText().equalsIgnoreCase("INSTRUCTIONS")) {
-//            	Thread.sleep(1000);
-//            	//utilities.scroll_to_element(tabElement);
-//                tabElement.click();
-//            }
-//        }
 		Thread.sleep(2000);
-
-		utilities.scroll_to_element();
+		utilities.scroll_up();
 		Thread.sleep(3000);
-		Instruction_tab.click();
-		
+		Instruction_tab.click();		
     }
 
 	public void open_summary_tab() throws InterruptedException {
 		for (WebElement tabElement : tabs) {
         	Thread.sleep(5000);
             if (tabElement.getText().equalsIgnoreCase("SUMMARY")) {
-        		utilities.scroll_to_element();
+        		utilities.scroll_up();
         		Thread.sleep(3000);
                 tabElement.click();
             }

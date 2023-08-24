@@ -4,43 +4,20 @@
   <listeners>
     <listener class-name="com.demo.listeners.Listeners"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="Test Classes(failed)">
     <classes>
-      <class name="com.demo.testcases.web.WebAppointmentCFDTest">
-        <methods>
-          <include name="diagnosis_tab_add_cfd"/>
-          <include name="appointment_for_existing_patient"/>
-          <include name="verify_20_popular_diagnosis"/>
-          <include name="tearDown"/>
-          <include name="open_created_appointment"/>
-          <include name="setup"/>
-          <include name="verify_disabled_slot"/>
-        </methods>
-      </class> <!-- com.demo.testcases.web.WebAppointmentCFDTest -->
-      <class name="com.demo.testcases.web.WebAppointmentInstructionsPageTest">
-        <methods>
-          <include name="search_procedure"/>
-          <include name="tearDown"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.demo.testcases.web.WebAppointmentInstructionsPageTest -->
-      <class name="com.demo.testcases.web.WebAppointmentSummaryPageTest">
+      <class name="com.demo.testcases.web.WebCFDPageTest">
         <methods>
           <include name="tearDown"/>
-          <include name="verify_record_is_printed"/>
-          <include name="setup"/>
         </methods>
-      </class> <!-- com.demo.testcases.web.WebAppointmentSummaryPageTest -->
-      <class name="com.demo.testcases.web.WebAppointmentPrescriptionPageTest">
+      </class> <!-- com.demo.testcases.web.WebCFDPageTest -->
+      <class name="com.demo.testcases.web.WebPrescriptionPageTest">
         <methods>
           <include name="tearDown"/>
-          <include name="setup"/>
-          <include name="verify_created_drug_is_added"/>
-          <include name="search_drugs"/>
-          <include name="verify_20_popular_drugs"/>
-          <include name="verify_same_drug_cannot_be_added_twice"/>
+          <include name="prescription_tab"/>
+          <include name="webSetup"/>
         </methods>
-      </class> <!-- com.demo.testcases.web.WebAppointmentPrescriptionPageTest -->
+      </class> <!-- com.demo.testcases.web.WebPrescriptionPageTest -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Test Classes(failed) -->
 </suite> <!-- Failed suite [Suite] -->

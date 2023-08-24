@@ -1,28 +1,29 @@
 package com.demo.actions.web;
 
+import java.io.IOException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalTime;
-import java.util.Date;
+import java.time.Duration;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.demo.setup.BaseSelenium;
-import com.demo.utilities.ExcelUtils;
+import com.demo.testcases.web.WebLoginTest;
 import com.demo.utilities.WebUtilities;
 
 public class HomePage extends BaseSelenium {
 	public WebDriver driver;
 	WebUtilities utilities = new WebUtilities();
-	
+	Logger logger = Logger.getLogger(WebLoginTest.class);
+
 	public HomePage(WebDriver driver) {
 
 		this.driver = driver;
@@ -63,11 +64,25 @@ public class HomePage extends BaseSelenium {
 	@FindBy(css = ".field-wrap.field-name.ng-binding")
 	private List<WebElement> added_cfd_list;
 
+	@FindBy(name = "child_name")
+	private WebElement enter_name;
 	
+	@FindBy(name = "year")
+	private WebElement enter_age_years;
 	
-	public void select_evening_time() {
+	@FindBy(xpath = "//div[@class = 'app_box text-center']/p[1]")
+	private List<WebElement> created_appointment_patient_names;
+	
+	@FindBy(xpath = "//md-select[@ng-model='appointment.user.child.gender']")
+	private WebElement gender_dropdown_btn;
+	
+	@FindBy(xpath = "//*[@ng-repeat = 'gender in genderList']")
+	private List<WebElement> gender_dropdown_options;
+	
+	public void select_evening_time() throws InterruptedException {
 		Select s = new Select(drop);
 		s.selectByVisibleText("Evening");
+		Thread.sleep(3000);
 	}
 
 	public void select_a_slot() {
@@ -80,38 +95,16 @@ public class HomePage extends BaseSelenium {
 
 			else {
 				WebElement slot_rect = slot.findElement(By.cssSelector(".panel-body.ng-scope"));
-				// WebElement slot_rect = slot.findElements(rectangle);
 				System.out.println(">>>>>" + slot.getAttribute("class"));
-				JavascriptExecutor js = (JavascriptExecutor) driver;
-				js.executeScript("arguments[0].click();", slot_rect);
+				utilities.javascript_click(slot_rect);
 				break;
 			}
 		}
-		
-
-//		List<WebElement> list = driver.findElements(By.xpath("//div[contains(@class, 'panel-body ng-scope')]\n"
-//				+ "\n"
-//				+ ""));
-//
-//        int length = list.size();
-//        System.out.println("VALUE OF length: "+length);
-//
-//        for (int i = 0; i < length; i++) {
-//            System.out.println("VALUE OF i: "+i);
-//            WebElement card= driver.findElement(By.xpath("(//div[contains(@class,'panel-body')])["+i+"]"));
-//            utilities.fluent_wait(card);
-//            card.click();
-//            driver.navigate().back();
-//            utilities.implicitWait();
-//            System.out.println("click done");
-//        }
-				
 	}
 
-	public void enter_mobile_no() throws Exception {
-		ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Appointment");
-		String mobileNo = data.getCellDataasstring(0, 1);
-		utilities.sendkeys(enter_mobile, mobileNo);
+	public void enter_mobile_no(String mobile) throws Exception {
+		utilities.sendkeys(enter_mobile, mobile);
+
 	}
 
 	public void choose_patient() {
@@ -122,98 +115,107 @@ public class HomePage extends BaseSelenium {
 				utilities.click(single_patient);
 			}
 		}
+	}
+	
+	public void enter_patient_name(String name) throws IOException {
+		utilities.sendkeys(enter_name, name);
 
 	}
+	
+	public void enter_patient_age(String age) throws IOException {
+		utilities.sendkeys(enter_age_years, age);
 
+	}
+	
+	public void select_patient_gender(String patient_gender) throws IOException, InterruptedException {
+		utilities.click(gender_dropdown_btn);
+		Thread.sleep(4000);
+		for(WebElement gender : gender_dropdown_options)
+		{
+			if(gender.getText().equalsIgnoreCase(patient_gender))
+			{
+				Thread.sleep(4000);
+				utilities.scroll_into_view(gender);
+				utilities.explicitwait(gender);
+				utilities.click(gender);
+				softAssert.assertEquals(gender.getText(), properties.getProperty("patient_gender"));
+			}
+		}
+	}
+	
 	public void click_on_Add_Appointment_Button() {
 		utilities.click(Add_Appointment_Btn);
 	}
 
 	public void verify_diabled_slot() throws ParseException {
 		for (WebElement slot : All_slots_cards) {
-			// Create object of SimpleDateFormat class and decide the format
-			SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm aa");
-			Date dateTime = new Date();
-			String time = dateFormat.format(dateTime);
-			LocalTime final_local_time = LocalTime.parse( time ) ;
-			System.out.println("Current date and time is " + time);
-			for(WebElement slot_time : Slots_Time)
+			int current_time = utilities.get_current_time();
+			
+			for (int i = 1; i < Slots_Time.size(); i++) 
 			{
-				String verify_time = slot_time.getText().substring(9).toLowerCase();
-				String sub_time1 = verify_time.substring(0, 4);
-				String sub_time2 = verify_time.substring(4);
-				String final_slot_time = sub_time1+" "+sub_time2;
-				System.out.println(">>>>>SLOT TIMES: "+final_slot_time);
-
-				LocalTime final_slot_timing = LocalTime.parse( final_slot_time ) ;
-
-//				if(final_local_time < final_slot_timing)
-//				{
-//					Assert.assertTrue(slot.getAttribute("class").contains("disabled"));
-//				}
+				String cardTime = Slots_Time.get(i).getText();
+				
+				String verify_time = cardTime.substring(9).toLowerCase();
+				
+				String sub_time1 = verify_time.substring(0, 1);
+				logger.info("Slot Time: "+sub_time1);
+				int slot_timing = 0; 
+				
+				try {
+					slot_timing = Integer.parseInt(sub_time1);
+				}
+				catch(NumberFormatException e) {
+					e.printStackTrace();
+				}
+				
+								
+				if(current_time>slot_timing)
+				{
+					softAssert.assertTrue(slot.getAttribute("class").contains("disabled"));
+				}
 			}
 			break;
 		}
 	}
 
-	public void verify_booked_slot() {
-		for (WebElement slot : All_slots_cards) {
-
-			Assert.assertTrue(slot.getAttribute("class").contains("non-members"));
-	
-		}
+	public void verify_booked_slot(String patient_name) throws InterruptedException, IOException {
+		 List<WebElement> cards = driver.findElements(By.xpath("//div[@class=\"panel-body ng-scope\"]"));
+	        
+		 for (int i = 2; i < cards.size(); i++) 
+		 {
+	         
+			 Thread.sleep(2000);
+	         WebElement card = driver.findElement(By.xpath("(//div[contains(@class,\"panel-body\")])[" + i + "]"));   			
+//   			 if(card.getText().contains(patient_name)) {
+//   			  }
+   			softAssert.assertTrue(card.getText().contains(patient_name));
+   			
+	     }
 	}
 	
 
 
-	public void select_created_appointment() throws InterruptedException {
-//		for (WebElement slot : All_slots_cards) {
-//			if ((slot.getAttribute("class")).contains("non-members")) {
-//				WebElement slot_rect = slot.findElement(By.cssSelector(".panel-body.ng-scope"));
-//				JavascriptExecutor js = (JavascriptExecutor) driver;
-//				js.executeScript("arguments[0].click();", slot_rect);
-////				for(WebElement addedcfd : added_cfd_list)
-////				{
-////					if(addedcfd.isDisplayed())
-////					{
-////						driver.navigate().back();
-////					}
-////				}
-//			}
-//
-//			else {
-//
-//			}
-//		}
-		
-//		int length = rectangleList.size();
-//        for (int i = 2; i < length; i++) {
-//        	System.out.println("Value of i: "+i);
-//            WebElement card= driver.findElement(By.xpath("(//div[contains(@class,'panel-body')])["+i+"]"));
-//            if ((card.getAttribute("class")).contains("non-members")) {
-//            	card.click();
-//            	System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!card class"+card.getAttribute("class"));
-//            }
-//            driver.navigate().back();
-//        }
-		
-		 int length = rectangleList.size();
-		 System.out.println(length);
-		 for (int i = 2; i < length; i++) {
-		 WebElement card= driver.findElement(By.xpath("(//div[contains(@class,\"panel-body\")])["+i+"]"));
-		 card.click();
-		 Thread.sleep(5000);
-		 for(WebElement addedcfd : added_cfd_list)
-			{
-				if(addedcfd.isDisplayed())
-				{
-					driver.navigate().back();
-				}
-				else {
-					System.out.println("Diagnosis not added");
-				}
-			}
-		 
-		 }
+	public void select_created_appointment(String patient_name) throws InterruptedException, IOException {		
+		 List<WebElement> cards = driver.findElements(By.xpath("//div[@class=\"panel-body ng-scope\"]"));
+	        int cardlength = cards.size();
+	        for (int i = 2; i < cardlength; i++) {
+	          Thread.sleep(2000);
+	          WebElement card = driver.findElement(By.xpath("(//div[contains(@class,\"panel-body\")])[" + i + "]"));
+	          System.out.println("???????????PATIENT NAMES:"+card.getText());
+      			System.out.println("!!!!!!!!!!PATIENT NAME TXT FILE: "+patient_name);
+      			if(card.getText().contains(patient_name)) {
+      				Thread.sleep(3000);
+      				card.click();
+      				break;
+      			}
+      			else {
+      				logger.info("Matching patint not found to click on card.");
+      			}
+	        }
+	           
+
+	        
 	}
+
+	
 }
