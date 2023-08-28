@@ -57,7 +57,7 @@ public class Instructions extends BaseSelenium {
 				try {
 					if(result.getText().contains(searchedTest))
 					{
-						Assert.assertTrue(result.getText().contains(searchedTest));
+						utilities.verify_true(result.getText().contains(searchedTest));
 						utilities.moveAndClick(result);
 					    break;
 					}
@@ -67,7 +67,7 @@ public class Instructions extends BaseSelenium {
 					try {
 						if(result.getText().contains(searchedTest))
 						{
-							Assert.assertTrue(result.getText().contains(searchedTest));
+							utilities.verify_true(result.getText().contains(searchedTest));
 							utilities.moveAndClick(result);
 						    break;
 						}
@@ -76,7 +76,7 @@ public class Instructions extends BaseSelenium {
 					{
 						if(result.getText().contains(searchedTest))
 						{
-							Assert.assertTrue(result.getText().contains(searchedTest));
+							utilities.verify_true(result.getText().contains(searchedTest));
 							utilities.moveAndClick(result);
 						    break;
 						}					}
@@ -97,7 +97,7 @@ public class Instructions extends BaseSelenium {
 				try {
 					if(result.getText().contains(searchedInstruction))
 					{
-						Assert.assertTrue(result.getText().contains(searchedInstruction));
+						utilities.verify_true(result.getText().contains(searchedInstruction));
 						utilities.moveAndClick(result);
 					    break;
 					}
@@ -107,7 +107,7 @@ public class Instructions extends BaseSelenium {
 					try {
 						if(result.getText().contains(searchedInstruction))
 						{
-							Assert.assertTrue(result.getText().contains(searchedInstruction));
+							utilities.verify_true(result.getText().contains(searchedInstruction));
 							utilities.moveAndClick(result);
 						    break;
 						}
@@ -116,7 +116,7 @@ public class Instructions extends BaseSelenium {
 					{
 						if(result.getText().contains(searchedInstruction))
 						{
-							Assert.assertTrue(result.getText().contains(searchedInstruction));
+							utilities.verify_true(result.getText().contains(searchedInstruction));
 							utilities.moveAndClick(result);
 						    break;
 						}
@@ -141,7 +141,7 @@ public class Instructions extends BaseSelenium {
 
 					if(result.getText().contains(searchedProcedure))
 					{
-						Assert.assertTrue(result.getText().contains(searchedProcedure));
+						utilities.verify_true(result.getText().contains(searchedProcedure));
 						utilities.moveAndClick(result);
 					    break;
 					}
@@ -151,7 +151,7 @@ public class Instructions extends BaseSelenium {
 					try {
 						if(result.getText().contains(searchedProcedure))
 						{
-							Assert.assertTrue(result.getText().contains(searchedProcedure));
+							utilities.verify_true(result.getText().contains(searchedProcedure));
 							utilities.moveAndClick(result);
 						    break;
 						}
@@ -160,7 +160,7 @@ public class Instructions extends BaseSelenium {
 					{
 						if(result.getText().contains(searchedProcedure))
 						{
-							Assert.assertTrue(result.getText().contains(searchedProcedure));
+							utilities.verify_true(result.getText().contains(searchedProcedure));
 							utilities.moveAndClick(result);
 						    break;
 						}

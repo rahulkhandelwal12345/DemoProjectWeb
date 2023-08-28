@@ -119,5 +119,12 @@ public class WebUtilities extends BaseSelenium{
 		return destinationFilePath;
 	}
 	
+	public void verify_equals(String actual, String expected) {
+			softAssert.assertEquals(actual, expected);
+	}
+	
+	public void verify_true(Boolean condition) {
+		softAssert.assertTrue(condition);
+	}
 
 }

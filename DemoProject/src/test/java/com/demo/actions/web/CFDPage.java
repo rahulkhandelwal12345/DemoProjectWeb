@@ -78,7 +78,7 @@ public class CFDPage extends BaseSelenium{
 					Actions builder = new Actions(driver);
 					builder.moveToElement(result).click(result);
 					builder.perform();
-					Assert.assertTrue(result.getText().contains(popular_diagnosis));
+					utilities.verify_true(result.getText().contains(popular_diagnosis));
 					break;
 				}
 			} catch (org.openqa.selenium.StaleElementReferenceException ex) {
@@ -87,7 +87,7 @@ public class CFDPage extends BaseSelenium{
 						Actions builder = new Actions(driver);
 						builder.moveToElement(result).click(result);
 						builder.perform();
-						Assert.assertTrue(result.getText().contains(popular_diagnosis));
+						utilities.verify_true(result.getText().contains(popular_diagnosis));
 						break;
 					}
 				} catch (org.openqa.selenium.StaleElementReferenceException e) {
@@ -95,7 +95,7 @@ public class CFDPage extends BaseSelenium{
 						Actions builder = new Actions(driver);
 						builder.moveToElement(result).click(result);
 						builder.perform();
-						Assert.assertTrue(result.getText().contains(popular_diagnosis));
+						utilities.verify_true(result.getText().contains(popular_diagnosis));
 						break;
 					}
 				}
@@ -111,7 +111,7 @@ public class CFDPage extends BaseSelenium{
 				for (WebElement result : Search_Result_cfd) {
 				if (result.getText().equalsIgnoreCase(searched_diagnosis)) {
 					utilities.moveAndClick(result);
-					softAssert.assertTrue(result.getText().equalsIgnoreCase(searched_diagnosis));
+					utilities.verify_true(result.getText().equalsIgnoreCase(searched_diagnosis));
 					break;
 				}
 				}
@@ -120,7 +120,7 @@ public class CFDPage extends BaseSelenium{
 					for (WebElement result : Search_Result_cfd) {
 						if (result.getText().equalsIgnoreCase(searched_diagnosis)) {
 						utilities.moveAndClick(result);
-						softAssert.assertTrue(result.getText().equalsIgnoreCase(searched_diagnosis));
+						utilities.verify_true(result.getText().equalsIgnoreCase(searched_diagnosis));
 						break;
 					}
 					}
@@ -128,7 +128,7 @@ public class CFDPage extends BaseSelenium{
 					for (WebElement result : Search_Result_cfd) {
 						if (result.getText().equalsIgnoreCase(searched_diagnosis)) {
 						utilities.moveAndClick(result);
-						softAssert.assertTrue(result.getText().equalsIgnoreCase(searched_diagnosis));
+						utilities.verify_true(result.getText().equalsIgnoreCase(searched_diagnosis));
 						break;
 					}
 					}
@@ -146,20 +146,19 @@ public class CFDPage extends BaseSelenium{
 			try {
 				if (result.getText().equalsIgnoreCase(searched_complaint)) {
 					utilities.moveAndClick(result);
-					softAssert.assertTrue(result.getText().equalsIgnoreCase(searched_complaint));
-					break;
+					utilities.verify_true(result.getText().equalsIgnoreCase(searched_complaint));;
 				}
 			} catch (org.openqa.selenium.StaleElementReferenceException ex) {
 				try {
 					if (result.getText().equalsIgnoreCase(searched_complaint)) {
 						utilities.moveAndClick(result);
-						softAssert.assertTrue(result.getText().equalsIgnoreCase(searched_complaint));
+						utilities.verify_true(result.getText().equalsIgnoreCase(searched_complaint));;
 						break;
 					}
 				} catch (org.openqa.selenium.StaleElementReferenceException e) {
 					if (result.getText().equalsIgnoreCase(searched_complaint)) {
 						utilities.moveAndClick(result);
-						softAssert.assertTrue(result.getText().equalsIgnoreCase(searched_complaint));
+						utilities.verify_true(result.getText().equalsIgnoreCase(searched_complaint));;
 						break;
 					}
 				}
@@ -176,20 +175,20 @@ public class CFDPage extends BaseSelenium{
 			try {
 				if (result.getText().equalsIgnoreCase(searched_finding) ){
 					utilities.moveAndClick(result);
-					softAssert.assertTrue(result.getText().equalsIgnoreCase(searched_finding));
+					utilities.verify_true(result.getText().equalsIgnoreCase(searched_finding));
 					break;
 				}
 			} catch (org.openqa.selenium.StaleElementReferenceException ex) {
 				try {
 					if (result.getText().equalsIgnoreCase(searched_finding) ){
 						utilities.moveAndClick(result);
-						softAssert.assertTrue(result.getText().equalsIgnoreCase(searched_finding));
+						utilities.verify_true(result.getText().equalsIgnoreCase(searched_finding));
 						break;
 					}
 				} catch (org.openqa.selenium.StaleElementReferenceException e) {
 					if (result.getText().equalsIgnoreCase(searched_finding) ){
 						utilities.moveAndClick(result);
-						softAssert.assertTrue(result.getText().equalsIgnoreCase(searched_finding));
+						utilities.verify_true(result.getText().equalsIgnoreCase(searched_finding));
 						break;
 					}
 				}
@@ -201,24 +200,24 @@ public class CFDPage extends BaseSelenium{
 	public void verify_added_cfd(String popular_diagnosis, String searched_diagnosis, String searched_complaint, String searched_finding) throws Exception {
 
 		for (WebElement added_cfd : added_cfd_list) {
-			softAssert.assertTrue(added_cfd.getText().equalsIgnoreCase(popular_diagnosis)||added_cfd.getText().equalsIgnoreCase(searched_diagnosis) || added_cfd.getText().equalsIgnoreCase(searched_complaint)|| added_cfd.getText().equalsIgnoreCase(searched_finding));
+			utilities.verify_true(added_cfd.getText().equalsIgnoreCase(popular_diagnosis)||added_cfd.getText().equalsIgnoreCase(searched_diagnosis) || added_cfd.getText().equalsIgnoreCase(searched_complaint)|| added_cfd.getText().equalsIgnoreCase(searched_finding));
 		}
 	}
 
 	public void delete_added_diagnosis() {
 		utilities.click(delete_diagnosis);
-		Assert.assertTrue(deleted_cfd_msg.getText().contains("deleted successfully"));
+		utilities.verify_true(deleted_cfd_msg.getText().contains("deleted successfully"));
 	}
 
 	public void delete_added_complaint() {
 		Actions builder = new Actions(driver);
 		builder.moveToElement(delete_complaint).click(delete_complaint).perform();
-		Assert.assertTrue(deleted_cfd_msg.getText().contains("deleted successfully"));
+		utilities.verify_true(deleted_cfd_msg.getText().contains("deleted successfully"));
 	}
 
 	public void delete_added_finding() {
 		utilities.click(delete_finding);
-		Assert.assertTrue(deleted_cfd_msg.getText().contains("deleted successfully"));
+		utilities.verify_true(deleted_cfd_msg.getText().contains("deleted successfully"));
 	}
 
 	public void open_prescription_tab() throws InterruptedException {

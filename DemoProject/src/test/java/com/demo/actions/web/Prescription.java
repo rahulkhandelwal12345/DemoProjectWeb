@@ -130,7 +130,7 @@ public class Prescription extends BaseSelenium {
 	
 	public void verify_popular_drugs_delete_icon() {
 		utilities.scroll_into_view(delete_all_drugs_icon);
-		softAssert.assertTrue(delete_all_drugs_icon.isDisplayed());
+		utilities.verify_true(delete_all_drugs_icon.isDisplayed());
 		utilities.scroll_up();
 	}
 	
@@ -167,7 +167,7 @@ public class Prescription extends BaseSelenium {
 	public void verify_added_popular_drug(String popularDrug) throws Exception {
 		for(WebElement added_drug : added_drugs_list)
 		{
-			softAssert.assertTrue(added_drug.getText().contains(popularDrug));
+			utilities.verify_true(added_drug.getText().contains(popularDrug));
 
 		}
 	}
@@ -177,14 +177,14 @@ public class Prescription extends BaseSelenium {
 		{
 			while(i == 1)
 			{
-				softAssert.assertTrue(added_drugs_list.get(i).getText().contains(searchedDrug));
+				utilities.verify_true(added_drugs_list.get(i).getText().contains(searchedDrug));
 		
 			}
 		}
 	}
 	
 	public void verify_delete_icon_for_added_drug() {
-		Assert.assertTrue(delete_drugs_icon.isDisplayed());
+		utilities.verify_true(delete_drugs_icon.isDisplayed());
 
 	}
 	
@@ -209,7 +209,7 @@ public class Prescription extends BaseSelenium {
 				try {
 					if(result.getText().contains(searchedDrug))
 					{
-						Assert.assertTrue(result.getText().contains(searchedDrug));
+						utilities.verify_true(result.getText().contains(searchedDrug));
 						utilities.moveAndClick(result);
 					    break;
 					}
@@ -219,7 +219,7 @@ public class Prescription extends BaseSelenium {
 					try {
 						if(result.getText().contains(searchedDrug))
 						{
-							Assert.assertTrue(result.getText().contains(searchedDrug));
+							utilities.verify_true(result.getText().contains(searchedDrug));
 							utilities.moveAndClick(result);
 						    break;
 						}
@@ -228,7 +228,7 @@ public class Prescription extends BaseSelenium {
 					{
 						if(result.getText().contains(searchedDrug))
 						{
-							Assert.assertTrue(result.getText().contains(searchedDrug));
+							utilities.verify_true(result.getText().contains(searchedDrug));
 							utilities.moveAndClick(result);
 						    break;
 						}
@@ -349,7 +349,7 @@ public class Prescription extends BaseSelenium {
 			{
 				if(i==2)
 				{
-					softAssert.assertTrue(drugList.get(i).getText().contains(newdrugName));
+					utilities.verify_true(drugList.get(i).getText().contains(newdrugName));
 				}
 			}
 		}
@@ -363,13 +363,13 @@ public class Prescription extends BaseSelenium {
 		{
 				try 
 				{
-					softAssert.assertTrue(result.getText().contains(newdrugName));
+					utilities.verify_true(result.getText().contains(newdrugName));
 						
 				}
 
 				catch(org.openqa.selenium.StaleElementReferenceException ex)
 				{
-					softAssert.assertTrue(result.getText().contains(newdrugName));
+					utilities.verify_true(result.getText().contains(newdrugName));
 
 				}
 		}
@@ -388,7 +388,7 @@ public class Prescription extends BaseSelenium {
 			    break;
 			}
 
-			softAssert.assertTrue(drug_already_added_msg.getText().contains("Drug already added"));	
+			utilities.verify_true(drug_already_added_msg.getText().contains("Drug already added"));	
 		}
 	
 	}

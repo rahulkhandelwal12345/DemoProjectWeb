@@ -107,11 +107,11 @@ public class SummaryPage extends BaseSelenium {
 		for(int i=0; i<Diagnosis_List.size(); i++)
 			{
 				if(i == 0) {
-					softAssert.assertTrue(Complaints_Findings_List.get(i).getText().equals(popularDiagnosis));
+					utilities.verify_true(Complaints_Findings_List.get(i).getText().equals(popularDiagnosis));
 
 				}
 				else if(i == 1) {
-					softAssert.assertTrue(Complaints_Findings_List.get(i).getText().equals(searchedDiagnosis));
+					utilities.verify_true(Complaints_Findings_List.get(i).getText().equals(searchedDiagnosis));
 				}
 			}
 	}
@@ -120,11 +120,11 @@ public class SummaryPage extends BaseSelenium {
 		for(int i=0; i<Complaints_Findings_List.size(); i++)
 		{
 			if(i == 0) {
-				softAssert.assertTrue(Complaints_Findings_List.get(i).getText().equals(searchedComplaint));
+				utilities.verify_true(Complaints_Findings_List.get(i).getText().equals(searchedComplaint));
 
 			}
 			else if(i == 1) {
-				softAssert.assertTrue(Complaints_Findings_List.get(i).getText().equals(searchedFinding));
+				utilities.verify_true(Complaints_Findings_List.get(i).getText().equals(searchedFinding));
 			}
 		}
 	}
@@ -135,12 +135,12 @@ public class SummaryPage extends BaseSelenium {
 			if(i == 0)
 			{
 				System.out.println("----Instructions_List"+Instructions_List.get(i).getText());
-				softAssert.assertTrue(Instructions_List.get(i).getText().equalsIgnoreCase(searchedInstruction));
+				utilities.verify_true(Instructions_List.get(i).getText().equalsIgnoreCase(searchedInstruction));
 			}
 			else if(i == 1)
 			{
 				System.out.println("----Instructions_List"+Instructions_List.get(i).getText());
-				softAssert.assertTrue(Instructions_List.get(i).getText().equalsIgnoreCase(createdInstruction));	
+				utilities.verify_true(Instructions_List.get(i).getText().equalsIgnoreCase(createdInstruction));	
 			}
 		}
 	}
@@ -153,13 +153,13 @@ public class SummaryPage extends BaseSelenium {
 			{
 				Thread.sleep(3000);
 				System.out.println("----test"+Tests_List.get(i).getText());
-				softAssert.assertTrue(Tests_List.get(i).getText().equalsIgnoreCase(searchedTest));
+				utilities.verify_true(Tests_List.get(i).getText().equalsIgnoreCase(searchedTest));
 			}
 			else if(i == 1)
 			{
 				Thread.sleep(3000);
 				System.out.println("----test"+Tests_List.get(i).getText());
-				softAssert.assertTrue(Tests_List.get(i).getText().equalsIgnoreCase(createdTest));	
+				utilities.verify_true(Tests_List.get(i).getText().equalsIgnoreCase(createdTest));	
 			}
 		}
 	}
@@ -171,12 +171,12 @@ public class SummaryPage extends BaseSelenium {
 			if(i == 0)
 			{
 				System.out.println("----Procedures_List"+Procedures_List.get(i).getText());
-				softAssert.assertTrue(Procedures_List.get(i).getText().equalsIgnoreCase(searchedProcedure));
+				utilities.verify_true(Procedures_List.get(i).getText().equalsIgnoreCase(searchedProcedure));
 			}
 			else if(i == 1)
 			{
 				System.out.println("----Procedures_List"+Procedures_List.get(i).getText());
-				softAssert.assertTrue(Procedures_List.get(i).getText().equalsIgnoreCase(createdProcedure));	
+				utilities.verify_true(Procedures_List.get(i).getText().equalsIgnoreCase(createdProcedure));	
 			}
 		}
 	}
@@ -187,12 +187,12 @@ public class SummaryPage extends BaseSelenium {
 			if(i == 0)
 			{
 				System.out.println("----"+Drugs_Names_List.get(i).getText());
-				softAssert.assertTrue(Drugs_Names_List.get(i).getText().equalsIgnoreCase(popularDrug));
+				utilities.verify_true(Drugs_Names_List.get(i).getText().equalsIgnoreCase(popularDrug));
 			}
 			else if(i == 1)
 			{
 				System.out.println("----"+Drugs_Names_List.get(i).getText());
-				softAssert.assertTrue(Drugs_Names_List.get(i).getText().equalsIgnoreCase(searchedDrug));	
+				utilities.verify_true(Drugs_Names_List.get(i).getText().equalsIgnoreCase(searchedDrug));	
 			}
 			else
 			{
@@ -207,7 +207,7 @@ public class SummaryPage extends BaseSelenium {
 			if(i == 2)
 			{
 				System.out.println("----"+Drugs_Names_List.get(i).getText());
-				softAssert.assertTrue(Drugs_Names_List.get(i).getText().equalsIgnoreCase(createdDrug));
+				utilities.verify_true(Drugs_Names_List.get(i).getText().equalsIgnoreCase(createdDrug));
 			}
 			
 			else
@@ -222,15 +222,15 @@ public class SummaryPage extends BaseSelenium {
 		{
 			if(i == 0)
 			{
-				softAssert.assertEquals(popularDrugFrequency, Duration_Column.get(i).getText());
+				utilities.verify_equals(popularDrugFrequency, Duration_Column.get(i).getText());
 			}
 			if(i == 1)
 			{
-				softAssert.assertEquals(searchedDrugFrequency, Duration_Column.get(i).getText());
+				utilities.verify_equals(searchedDrugFrequency, Duration_Column.get(i).getText());
 			}
 			if(i == 2)
 			{
-				softAssert.assertEquals(newDrugFrequency, Duration_Column.get(i).getText());
+				utilities.verify_equals(newDrugFrequency, Duration_Column.get(i).getText());
 			}
 		}
 	}
@@ -246,11 +246,11 @@ public class SummaryPage extends BaseSelenium {
 						{
 							if(j == 0)
 							{					
-								softAssert.assertTrue(checks.get(j).getAttribute("ng-if").contains(frequency_M));
+								utilities.verify_true(checks.get(j).getAttribute("ng-if").contains(frequency_M));
 							}
 							if(j == 1)
 							{
-								softAssert.assertTrue(checks.get(j).getAttribute("ng-if").contains(frequency_N));
+								utilities.verify_true(checks.get(j).getAttribute("ng-if").contains(frequency_N));
 							}
 						}
 					
@@ -261,15 +261,15 @@ public class SummaryPage extends BaseSelenium {
 						for(int j = 0; j < checks.size(); j++)
 						{if(j == 0)
 						{					
-							softAssert.assertTrue(checks.get(j).getAttribute("ng-if").contains(frequency_M));
+							utilities.verify_true(checks.get(j).getAttribute("ng-if").contains(frequency_M));
 						}
 						if(j == 1)
 						{
-							softAssert.assertTrue(checks.get(j).getAttribute("ng-if").contains(frequency_A));
+							utilities.verify_true(checks.get(j).getAttribute("ng-if").contains(frequency_A));
 						}
 						if(j == 2)
 						{
-							softAssert.assertTrue(checks.get(j).getAttribute("ng-if").contains(frequency_E));
+							utilities.verify_true(checks.get(j).getAttribute("ng-if").contains(frequency_E));
 						}
 						}
 					
@@ -289,7 +289,7 @@ public class SummaryPage extends BaseSelenium {
 		
 		for(WebElement date : Records_Date)
 		{
-			softAssert.assertEquals(date.getText(), recordDate);
+			utilities.verify_equals(date.getText(), recordDate);
 			System.out.println("########################### DATE: "+date.getText());
 			System.out.println("########################### EXCEL DATE: "+recordDate);
 
@@ -306,7 +306,7 @@ public class SummaryPage extends BaseSelenium {
 		//Navigating Back to summary page		
 		utilities.click(summary);
 		System.out.println(">>Class Name: "+summary.getAttribute("class"));
-		softAssert.assertTrue(summary.getAttribute("class").equalsIgnoreCase("active"));
+		utilities.verify_true(summary.getAttribute("class").equalsIgnoreCase("active"));
 		Thread.sleep(4000);
 		try {
 			utilities.click(Save_Print_Button);
@@ -335,7 +335,7 @@ public class SummaryPage extends BaseSelenium {
 		
 		driver.switchTo().window(childwindow);
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>.Child window titile"+driver.getTitle());
-		Assert.assertTrue(driver.getTitle().contains("prescription"));
+		utilities.verify_true(driver.getTitle().contains("prescription"));
 		driver.close();
 	}
 	

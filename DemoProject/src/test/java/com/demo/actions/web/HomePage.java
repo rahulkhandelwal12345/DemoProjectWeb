@@ -138,7 +138,7 @@ public class HomePage extends BaseSelenium {
 				utilities.scroll_into_view(gender);
 				utilities.explicitwait(gender);
 				utilities.click(gender);
-				softAssert.assertEquals(gender.getText(), properties.getProperty("patient_gender"));
+				utilities.verify_equals(gender.getText(), properties.getProperty("patient_gender"));
 			}
 		}
 	}
@@ -171,7 +171,7 @@ public class HomePage extends BaseSelenium {
 								
 				if(current_time>slot_timing)
 				{
-					softAssert.assertTrue(slot.getAttribute("class").contains("disabled"));
+					utilities.verify_true(slot.getAttribute("class").contains("disabled"));
 				}
 			}
 			break;
@@ -188,7 +188,7 @@ public class HomePage extends BaseSelenium {
 	         WebElement card = driver.findElement(By.xpath("(//div[contains(@class,\"panel-body\")])[" + i + "]"));   			
 //   			 if(card.getText().contains(patient_name)) {
 //   			  }
-   			softAssert.assertTrue(card.getText().contains(patient_name));
+	         utilities.verify_true(card.getText().contains(patient_name));
    			
 	     }
 	}

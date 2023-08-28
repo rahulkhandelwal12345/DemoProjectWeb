@@ -84,7 +84,7 @@ public class Login_Page extends BaseSelenium {
 		properties = readPropertiesFile(System.getProperty("user.dir") + "/src/test/java/com/demo/properties/testdata.properties");
 //		utilities.sendkeys(Email, properties.getProperty("user_name") );
 		utilities.sendkeys(Email, username );
-		//Assert.assertTrue(Email.getText().equals(username));
+		//utilities.verify_true(Email.getText().equals(username));
 		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$Username: "+Email.getText());
 	}
 
@@ -99,7 +99,7 @@ public class Login_Page extends BaseSelenium {
 	public void enter_Valid_Password(String password) throws Exception {
 		properties = readPropertiesFile(System.getProperty("user.dir") + "/src/test/java/com/demo/properties/testdata.properties");
 		utilities.sendkeys(Password, password);
-		//Assert.assertTrue(Password.getText().equals(password));
+		//utilities.verify_true(Password.getText().equals(password));
 		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$Username: "+Password.getText());
 
 	}
